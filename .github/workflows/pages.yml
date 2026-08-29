@@ -28,6 +28,11 @@ jobs:
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v6
 
+      - name: Prepare web artifact
+        run: |
+          mkdir -p web/assets/logos
+          cp assets/logos/logo-pjhunters.png web/assets/logos/logo-pjhunters.png
+
       - name: Upload web artifact
         uses: actions/upload-pages-artifact@v4
         with:
