@@ -33,6 +33,7 @@ Estado: **EN CURSO.**
 - WEB 1.2 — Contenido y función de las 7 secciones: **CERRADA Y APROBADA.**
 - WEB 1.3 — Arquitectura de navegación y jerarquía de páginas: **CERRADA Y APROBADA.**
 - WEB 1.4 — Estructura de páginas y rutas funcionales: **CERRADA Y APROBADA.**
+- WEB 1.5 — Modelo de contenido de las páginas: **CERRADA Y APROBADA.**
 
 ### FASE 2 — ORGANIZACIÓN Y TRATAMIENTO DEL MATERIAL HISTÓRICO
 
@@ -52,7 +53,7 @@ Estado: **EN CURSO.**
 
 Los elementos históricos `ANT-02 → ANT-46` quedan **EN ESPERA** y no serán examinados hasta que exista una necesidad concreta de utilización.
 
-**Siguiente bloque de trabajo: WEB 1.5.**
+**Siguiente bloque de trabajo: WEB 1.6.**
 
 ---
 
@@ -677,145 +678,130 @@ Las páginas de contenido comercial deberán disponer de una salida clara hacia 
 
 ---
 
-## 16. Estructura de páginas y rutas funcionales
+## 16. Modelo de contenido de las páginas
 
-La estructura funcional de páginas queda aprobada como referencia para la construcción posterior.
+WEB 1.5 establece el modelo interno de contenido de los distintos tipos de páginas, antes del diseño visual y la programación.
 
-### INICIO
-
-```text
-/
-└── index
-```
-
-### CAZA
+### 16.1 — Página de inicio
 
 ```text
-/caza/
-├── index
-├── menor
-└── mayor
-```
-
-- `/caza/` — presentación general de la actividad cinegética.
-- `/caza/menor/` — agrupación de especies y modalidades de caza menor.
-- `/caza/mayor/` — agrupación de especies y modalidades de caza mayor.
-
-No se establece todavía una página independiente para cada especie.
-
-### COTOS
-
-```text
-/cotos/
-├── index
-├── el-pozanco
-└── rambla-del-conde
-```
-
-Cada coto tendrá una página propia.
-
-### TARJETAS Y JORNADAS
-
-```text
-/tarjetas/
-├── index
-├── tarjetas
-├── jornadas
-└── ofertas
-```
-
-La página principal será el punto de entrada comercial. Las fichas concretas se desarrollarán cuando se prepare el contenido real.
-
-### GALERÍA
-
-```text
-/galeria/
-├── index
-├── cotos
-├── caza
-├── fauna
-├── jornadas
-├── pena-jabali-hunters
-└── historico
-```
-
-La sección `historico` queda preparada, pero no poblada.
-
-### LA PEÑA
-
-```text
-/pena/
-├── index
-├── quienes-somos
-├── filosofia
-├── actividad
-├── territorio
-└── historia
-```
-
-La sección `historia` queda preparada para un uso futuro del material histórico que corresponda.
-
-### CONTACTO
-
-```text
-/contacto/
-├── index
-├── reservas
-└── formulario
-```
-
-Será el punto final de los principales recorridos comerciales y de contacto.
-
-### Estructura completa de referencia
-
-```text
-WEB
+INICIO
 │
-├── INICIO
-│   └── /
-│
-├── CAZA
-│   ├── /caza/
-│   ├── /caza/menor/
-│   └── /caza/mayor/
-│
-├── COTOS
-│   ├── /cotos/
-│   ├── /cotos/el-pozanco/
-│   └── /cotos/rambla-del-conde/
-│
-├── TARJETAS Y JORNADAS
-│   ├── /tarjetas/
-│   ├── /tarjetas/tarjetas/
-│   ├── /tarjetas/jornadas/
-│   └── /tarjetas/ofertas/
-│
-├── GALERÍA
-│   ├── /galeria/
-│   ├── /galeria/cotos/
-│   ├── /galeria/caza/
-│   ├── /galeria/fauna/
-│   ├── /galeria/jornadas/
-│   ├── /galeria/pena-jabali-hunters/
-│   └── /galeria/historico/
-│
-├── LA PEÑA
-│   ├── /pena/
-│   ├── /pena/quienes-somos/
-│   ├── /pena/filosofia/
-│   ├── /pena/actividad/
-│   ├── /pena/territorio/
-│   └── /pena/historia/
-│
-└── CONTACTO
-    ├── /contacto/
-    ├── /contacto/reservas/
-    └── /contacto/formulario/
+├── Cabecera / navegación
+├── Presentación principal
+├── Acceso a Caza
+├── Acceso a Cotos
+├── Tarjetas y Jornadas destacadas
+├── Selección visual / Galería
+├── Presentación de La Peña
+├── Llamada a la acción
+└── Pie de página
 ```
 
-Esta estructura es una arquitectura de referencia. No implica crear automáticamente todas las páginas o archivos indicados.
+### 16.2 — Página de sección
 
-Antes de crear archivos se determinará cuáles necesitan contenido propio y cuáles pueden resolverse mediante componentes o páginas compartidas.
+Para las páginas generales de Caza, Cotos, Tarjetas y Jornadas, Galería y La Peña se utilizará un modelo común:
+
+```text
+PÁGINA DE SECCIÓN
+│
+├── Título
+├── Introducción
+├── Contenido principal
+├── Elementos destacados
+├── Enlaces relacionados
+└── Llamada a la acción
+```
+
+### 16.3 — Página de coto
+
+```text
+COTO
+│
+├── Identificación
+├── Presentación
+├── Territorio
+├── Especies
+├── Modalidades
+├── Temporada
+├── Galería
+├── Tarjetas / Jornadas relacionadas
+└── Contacto / Reserva
+```
+
+### 16.4 — Página de tarjeta o jornada
+
+```text
+FICHA COMERCIAL
+│
+├── Nombre
+├── Imagen
+├── Descripción
+├── Coto
+├── Modalidad
+├── Especies
+├── Fecha / periodo
+├── Precio
+├── Qué incluye
+├── Condiciones
+└── RESERVAR / CONSULTAR
+```
+
+Los campos concretos podrán variar según el producto.
+
+### 16.5 — Página de galería
+
+```text
+GALERÍA
+│
+├── Categoría
+├── Elementos visuales
+├── Información asociada
+└── Enlaces relacionados
+```
+
+### 16.6 — Página de La Peña
+
+```text
+LA PEÑA
+│
+├── Quiénes somos
+├── Filosofía
+├── Actividad
+├── Territorio
+├── Historia
+└── Contacto
+```
+
+### 16.7 — Página de contacto
+
+```text
+CONTACTO
+│
+├── Contacto directo
+├── WhatsApp
+├── Teléfono
+├── Email
+├── Ubicación
+├── Reservas
+└── Formulario
+```
+
+### 16.8 — Elementos comunes
+
+```text
+TODAS LAS PÁGINAS
+│
+├── Navegación
+├── Identidad Peña Jabalí Hunters
+├── Navegación contextual
+├── Llamada a la acción
+└── Pie de página
+```
+
+WEB 1.5 no determina todavía diseño visual, colores, tipografías, animaciones, fotografías definitivas, vídeos, textos finales, código o tecnologías concretas.
+
+Tampoco implica crear automáticamente todas las páginas definidas en la arquitectura.
 
 ---
 
@@ -840,14 +826,13 @@ Los elementos `ANT-02 → ANT-46` permanecen archivados y **no serán examinados
 - WEB 1.2 — Contenido y función de las 7 secciones: **APROBADA.**
 - WEB 1.3 — Arquitectura de navegación y jerarquía: **APROBADA.**
 - WEB 1.4 — Estructura de páginas y rutas funcionales: **APROBADA.**
-
-La estructura de páginas y rutas incluida en el apartado 16 queda fijada como referencia para la construcción posterior.
-
-No se crean todavía todas las páginas de la estructura. Su creación se decidirá en los siguientes bloques de construcción.
+- WEB 1.5 — Modelo de contenido de las páginas: **APROBADA.**
 
 ### Próximo bloque
 
-**WEB 1.5 — siguiente bloque de construcción web.**
+**WEB 1.6 — siguiente bloque de construcción web.**
+
+No se inicia todavía programación ni creación masiva de páginas hasta definir y aprobar el alcance del siguiente bloque.
 
 ---
 
@@ -917,8 +902,8 @@ No se crean todavía todas las páginas de la estructura. Su creación se decidi
 
 29/08/2026 — WEB 1.4 — Estructura de páginas y rutas funcionales: aprobada.
 
-29/08/2026 — Estructura completa de páginas y rutas funcionales incorporada al control de proyecto como referencia para la construcción posterior.
+29/08/2026 — WEB 1.5 — Modelo de contenido de las páginas: aprobada.
 
-29/08/2026 — Control de proyecto actualizado. Siguiente bloque de trabajo: WEB 1.5.
+29/08/2026 — Control de proyecto sincronizado con el cierre de WEB 1.5. Siguiente bloque de trabajo: WEB 1.6.
 
 **Documento de control interno del proyecto.**
