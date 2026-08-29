@@ -1,6 +1,6 @@
 # INVENTARIO MAESTRO DE PLANOS ANTONINO
 
-**Estado:** CERRADO Y VALIDADO 46/46  
+**Estado:**  INCORPORACIÓN EN CURSO — 1/46 
 **Naturaleza:** Archivo histórico definitivo  
 **Ubicación:** `assets/documents/historico/antonino/`
 
@@ -16,9 +16,9 @@ Los originales se conservarán íntegros. No se eliminarán documentos por apare
 
 ## Inventario 46/46
 
-| Nº | Documento | Año | Bloque |
+| Nº | Documento | Año | Bloque | Estado | Ubicación |
 |---:|---|---:|---|
-| 01 | Barranco de la Mosca | 1979 | Barranco de la Mosca / Ardacheras |
+| 01 | Barranco de la Mosca | 1979 | Barranco de la Mosca / Ardacheras | INCORPORADO | `assets/documents/historico/antonino/Barranco de la Mosca 1979.pdf` |
 | 02 | Barranco de la Mosca | 1980 | Barranco de la Mosca / Ardacheras |
 | 03 | Barranco de la Mosca | 1981 | Barranco de la Mosca / Ardacheras |
 | 04 | Borregueta | 1973 | Borregueta |
@@ -67,7 +67,7 @@ Los originales se conservarán íntegros. No se eliminarán documentos por apare
 
 ## Estado de incorporación
 
-- [x] Archivo histórico cerrado: 46/46
+- [x]  PDF nº 01 incorporado: `Barranco de la Mosca 1979.pdf`
 - [x] Validación de autenticidad por el responsable del archivo
 - [x] Estructura `assets/documents/historico/antonino/` creada
 - [x] Índice maestro creado
@@ -75,6 +75,7 @@ Los originales se conservarán íntegros. No se eliminarán documentos por apare
 - [ ] Registro de nombres de archivo originales
 - [ ] Comprobación de integridad tras la subida
 - [ ] Selección posterior del material destinado a la web pública
+- [ ] Incorporación de los 45 PDF restantes
 
 ## Regla de conservación
 
