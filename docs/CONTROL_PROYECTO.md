@@ -24,11 +24,14 @@ Esta copia no debe modificarse.
 
 ### FASE 1 — GITHUB Y CONSTRUCCIÓN
 
-Estado: **INICIADA.**
+Estado: **EN CURSO.**
 
 - FASE 1.1 — Repositorio: **COMPLETADA.**
 - FASE 1.2 — Arquitectura: **COMPLETADA.**
 - FASE 1.3 — Estructura física: **COMPLETADA.**
+- WEB 1.1 — Arquitectura funcional de la nueva web: **CERRADA Y APROBADA.**
+- WEB 1.2 — Contenido y función de las 7 secciones: **CERRADA Y APROBADA.**
+- WEB 1.3 — Arquitectura de navegación y jerarquía de páginas: **CERRADA Y APROBADA.**
 
 ### FASE 2 — ORGANIZACIÓN Y TRATAMIENTO DEL MATERIAL HISTÓRICO
 
@@ -46,7 +49,9 @@ Estado: **EN CURSO.**
 - 2.10 — Protocolo de inicio del tratamiento histórico: **CERRADA.**
 - 2.11 — Tratamiento inicial y registro de ANT-01: **CERRADA.**
 
-**Siguiente elemento de trabajo: ANT-02.**
+Los elementos históricos `ANT-02 → ANT-46` quedan **EN ESPERA** y no serán examinados hasta que exista una necesidad concreta de utilización.
+
+**Siguiente bloque de trabajo: WEB 1.4.**
 
 ---
 
@@ -443,7 +448,235 @@ El PDF original permanece íntegro y no ha sido modificado.
 
 ---
 
-## 13. Estado actual
+## 13. Arquitectura funcional de la nueva web
+
+La arquitectura funcional de la nueva web queda aprobada con siete secciones principales:
+
+1. **INICIO**
+2. **CAZA**
+3. **COTOS**
+4. **TARJETAS Y JORNADAS**
+5. **GALERÍA**
+6. **LA PEÑA**
+7. **CONTACTO**
+
+La web incluirá una llamada a la acción permanente orientada a:
+
+**RESERVAR / CONTACTAR**
+
+### Función de las secciones
+
+- **INICIO** — puerta de entrada visual y comercial.
+- **CAZA** — presentación de la oferta cinegética.
+- **COTOS** — presentación de los territorios.
+- **TARJETAS Y JORNADAS** — presentación y comercialización de la oferta.
+- **GALERÍA** — presentación visual de cotos, caza, fauna, jornadas y Peña Jabalí Hunters.
+- **LA PEÑA** — identidad, filosofía, actividad, territorio e historia.
+- **CONTACTO** — contacto directo, reservas y formulario.
+
+La sección histórica de la web queda preparada conceptualmente, pero no implica incorporar ahora los elementos `ANT-02 → ANT-46`.
+
+---
+
+## 14. Arquitectura definitiva de navegación y jerarquía de páginas
+
+La navegación principal queda establecida como:
+
+```text
+INICIO
+CAZA
+COTOS
+TARJETAS Y JORNADAS
+GALERÍA
+LA PEÑA
+CONTACTO
+```
+
+La llamada a la acción **RESERVAR / CONTACTAR** permanecerá accesible desde la navegación.
+
+### Jerarquía de CAZA
+
+```text
+CAZA
+├── CAZA MENOR
+│   ├── Perdiz
+│   ├── Conejo
+│   ├── Liebre
+│   ├── Paloma torcaz
+│   ├── Codorniz
+│   ├── Tórtola
+│   └── Faisán
+│
+└── CAZA MAYOR
+    ├── Jabalí
+    └── Muflón
+```
+
+Las modalidades se integrarán dentro de las páginas correspondientes y no se convierten necesariamente en elementos independientes del menú principal.
+
+### Jerarquía de COTOS
+
+```text
+COTOS
+├── EL POZANCO
+└── RAMBLA DEL CONDE
+```
+
+Cada coto dispondrá de una página propia y podrá conducir a información de modalidades, tarjetas, jornadas y reserva.
+
+### Jerarquía de TARJETAS Y JORNADAS
+
+```text
+TARJETAS Y JORNADAS
+├── TARJETAS
+├── JORNADAS
+└── OFERTAS
+```
+
+Cada elemento comercial podrá conducir a **RESERVAR / CONSULTAR**.
+
+### Jerarquía de GALERÍA
+
+```text
+GALERÍA
+├── COTOS
+├── CAZA
+├── FAUNA
+├── JORNADAS
+├── PEÑA JABALÍ HUNTERS
+└── HISTÓRICO
+```
+
+La categoría **HISTÓRICO** queda preparada arquitectónicamente, sin implicar el tratamiento inmediato de los documentos `ANT-XX`.
+
+### Jerarquía de LA PEÑA
+
+```text
+LA PEÑA
+├── QUIÉNES SOMOS
+├── NUESTRA FILOSOFÍA
+├── NUESTRA ACTIVIDAD
+├── TERRITORIO
+└── HISTORIA
+```
+
+### Jerarquía de CONTACTO
+
+```text
+CONTACTO
+├── CONTACTO DIRECTO
+├── RESERVAS
+└── FORMULARIO
+```
+
+---
+
+## 15. Gráfico de navegación definitivo
+
+El flujo general aprobado para la nueva web queda establecido de la siguiente forma:
+
+```text
+                         INICIO
+                           │
+          ┌────────────────┼────────────────┐
+          │                │                │
+          ↓                ↓                ↓
+        CAZA             COTOS       TARJETAS/JORNADAS
+          │                │                │
+          └────────────────┼────────────────┘
+                           ↓
+                    INFORMACIÓN
+                           │
+                           ↓
+                  CONTACTO / RESERVA
+                           │
+                           ↓
+                    PEÑA JABALÍ HUNTERS
+```
+
+La **GALERÍA** funcionará transversalmente como apoyo visual:
+
+```text
+CAZA ───────┐
+COTOS ──────┤
+JORNADAS ───┼──→ GALERÍA
+LA PEÑA ────┘
+```
+
+### Recorridos principales
+
+#### Recorrido comercial
+
+```text
+INICIO
+   ↓
+CAZA
+   ↓
+MODALIDAD / ESPECIE
+   ↓
+TARJETA O JORNADA
+   ↓
+RESERVAR
+   ↓
+CONTACTO
+```
+
+#### Recorrido por territorio
+
+```text
+INICIO
+   ↓
+COTOS
+   ↓
+EL POZANCO / RAMBLA DEL CONDE
+   ↓
+CAZA DISPONIBLE
+   ↓
+TARJETAS / JORNADAS
+   ↓
+RESERVAR
+```
+
+#### Recorrido visual
+
+```text
+INICIO
+   ↓
+GALERÍA
+   ↓
+COTO / CAZA / JORNADA
+   ↓
+INFORMACIÓN
+   ↓
+RESERVAR
+```
+
+#### Recorrido institucional
+
+```text
+INICIO
+   ↓
+LA PEÑA
+   ↓
+QUIÉNES SOMOS / HISTORIA
+   ↓
+CONTACTO
+```
+
+### Regla general de navegación
+
+Cada página importante deberá responder al menos a una de estas necesidades:
+
+- qué ofrecemos;
+- dónde lo hacemos;
+- cómo participar;
+- cómo contactar o reservar.
+
+Las páginas de contenido comercial deberán disponer de una salida clara hacia la acción correspondiente.
+
+---
+
+## 16. Estado actual
 
 Repositorio GitHub operativo y estructura inicial desplegada.
 
@@ -451,30 +684,30 @@ El bloque histórico de Antonino se encuentra actualmente incorporado en su tota
 
 **46/46 PDF — 0 pendientes.**
 
-El inventario correspondiente se encuentra completado.
-
-La estructura histórica y la estructura destinada al material derivado han sido creadas y aprobadas.
-
-Los 46 PDF constituyen el archivo histórico primario y permanecen íntegros.
+Los elementos `ANT-02 → ANT-46` permanecen archivados y **no serán examinados hasta que exista una necesidad concreta de utilización**.
 
 ### Estado de la FASE 2
 
 - 2.1 → 2.10: **COMPLETADOS Y APROBADOS.**
 - 2.11 — Tratamiento inicial de ANT-01: **CERRADO.**
 
-El procedimiento aplicado a ANT-01 queda establecido como **procedimiento general para todos los elementos ANT-XX**, salvo modificación posterior expresamente aprobada.
+### Estado de construcción web
 
-### Próximo elemento
+- WEB 1.1 — Arquitectura funcional: **APROBADA.**
+- WEB 1.2 — Contenido y función de las 7 secciones: **APROBADA.**
+- WEB 1.3 — Arquitectura de navegación y jerarquía: **APROBADA.**
 
-**ANT-02 — Inicio de tratamiento individual conforme al procedimiento aprobado.**
+La arquitectura de navegación incluida en los apartados 14 y 15 queda fijada como referencia para la construcción posterior.
 
-No se crearán derivados de ANT-02 hasta que el documento haya sido examinado, registrado y los derivados correspondientes hayan sido decididos y aprobados.
+### Próximo bloque
 
-No se definirán las rutas de los derivados de ANT-02 hasta que exista una necesidad real de utilización.
+**WEB 1.4 — siguiente bloque de construcción web.**
+
+No se modifica todavía el diseño visual definitivo ni se inicia programación hasta definir y aprobar el contenido correspondiente al siguiente bloque.
 
 ---
 
-## 14. Historial
+## 17. Historial
 
 28/08/2026 — Cierre de FASE 0 y comienzo de FASE 1.
 
@@ -528,6 +761,16 @@ No se definirán las rutas de los derivados de ANT-02 hasta que exista una neces
 
 29/08/2026 — Cierre de 2.11.
 
-29/08/2026 — Control de proyecto actualizado. Siguiente elemento de trabajo: ANT-02.
+29/08/2026 — ANT-02 → ANT-46 pasan a estado de espera hasta necesidad concreta de utilización.
+
+29/08/2026 — WEB 1.1 — Arquitectura funcional de la nueva web: aprobada.
+
+29/08/2026 — WEB 1.2 — Contenido y función de las 7 secciones: aprobada.
+
+29/08/2026 — WEB 1.3 — Arquitectura de navegación y jerarquía de páginas: aprobada.
+
+29/08/2026 — Gráfico de navegación definitivo de la nueva web incorporado al control de proyecto.
+
+29/08/2026 — Control de proyecto sincronizado con el estado aprobado de WEB 1.3.
 
 **Documento de control interno del proyecto.**
