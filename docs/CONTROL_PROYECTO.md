@@ -27,14 +27,17 @@ Estado: INICIADA.
 ### FASE 2 — ORGANIZACIÓN Y TRATAMIENTO DEL MATERIAL HISTÓRICO
 Estado: EN CURSO.
 
-- 2.1 — Estructura del bloque histórico dentro de la arquitectura GitHub: CERRADA.
-- 2.2 — Criterios para material derivado y/o web: CERRADA.
-- 2.3 — Estructura de organización del material histórico: CERRADA.
+- 2.1 — Arquitectura del bloque histórico dentro de la arquitectura GitHub: CERRADA.
+- 2.2 — Criterios para decidir qué elementos pueden pasar a material derivado, reeditado y/o web: CERRADA.
+- 2.3 — Ficha de tratamiento de cada elemento histórico: CERRADA.
 - 2.4 — Estructura de almacenamiento del material derivado: CERRADA.
-- 2.5 — Creación de carpetas necesarias para material derivado: CERRADA.
-- 2.6 — Procedimiento de trabajo y control de incorporación: CERRADA.
+- 2.5 — Procedimiento de incorporación de cada elemento histórico: CERRADA.
+- 2.6 — Sistema de identificación y nomenclatura: CERRADA.
+- 2.7 — Registro individual de cada elemento histórico: CERRADA.
+- 2.8 — Criterio de control y validación de los derivados: CERRADA.
+- 2.9 — Preparación para el tratamiento individual: CERRADA.
 
-Siguiente bloque de trabajo: 2.7.
+Siguiente bloque de trabajo: 2.10.
 
 ## 3. Estructura aprobada
 
@@ -118,23 +121,62 @@ Cualquier incorporación deberá respetar la estructura y el procedimiento aprob
 
 ## 8. Procedimiento de trabajo aprobado
 
-El proyecto seguirá el siguiente orden:
+El tratamiento de cada elemento histórico seguirá el siguiente proceso:
 
-1. Identificación del material.
-2. Comprobación.
-3. Clasificación.
-4. Incorporación al archivo correspondiente.
-5. Registro en el inventario cuando proceda.
-6. Creación de material derivado, si se decide.
-7. Revisión.
-8. Publicación web, únicamente cuando corresponda.
-9. Control de proyecto al finalizar cada fase o bloque.
+1. Identificación del elemento en el inventario.
+2. Localización del documento original.
+3. Revisión del documento.
+4. Registro de la información correspondiente.
+5. Decisión sobre los derivados necesarios.
+6. Creación de los derivados que se hayan decidido.
+7. Almacenamiento en la ubicación correspondiente.
+8. Comprobación y validación.
+9. Registro de la trazabilidad.
+10. Cierre del elemento.
+
+El trabajo se realizará de forma individual y respetando el orden del inventario, salvo decisión expresa.
 
 No se avanzará de forma automática a un bloque posterior si durante el trabajo aparece una modificación relevante de la ruta de trabajo.
 
 Cualquier cambio de procedimiento, arquitectura o criterio deberá ser expuesto y aprobado antes de aplicarse.
 
-## 9. Estado actual
+## 9. Identificación y trazabilidad
+
+Cada elemento histórico utilizará como identificador de trabajo:
+
+`ANT-01` → `ANT-46`
+
+El identificador no sustituye al nombre original del documento.
+
+Los PDF originales conservarán sus nombres originales.
+
+Los derivados utilizarán el identificador `ANT-XX` para mantener la relación inequívoca con el documento primario.
+
+Todo derivado deberá permitir identificar su documento de origen y su ubicación.
+
+## 10. Validación de derivados
+
+Todo material derivado deberá ser revisado antes de considerarse válido.
+
+La validación comprobará, según corresponda:
+
+- fidelidad al documento original;
+- integridad del documento primario;
+- calidad y legibilidad del derivado;
+- correcta identificación;
+- correcta ubicación;
+- trazabilidad;
+- ausencia de información inventada o atribuida incorrectamente al documento histórico.
+
+Los estados de validación serán:
+
+`NO REVISADO → REVISADO → VALIDADO → CERRADO`
+
+Si se detecta un error en un derivado, este se corregirá y volverá a revisarse.
+
+El documento histórico primario no se modificará para corregir un derivado.
+
+## 11. Estado actual
 
 Repositorio GitHub operativo y estructura inicial desplegada.
 
@@ -152,11 +194,11 @@ La FASE 2 continúa en desarrollo.
 
 ### Próximo paso
 
-**2.7 — siguiente bloque de organización y tratamiento del material histórico.**
+**2.10 — siguiente bloque de organización y tratamiento del material histórico.**
 
 No se modificará el archivo histórico primario salvo que exista una decisión expresa y documentada.
 
-## 10. Historial
+## 12. Historial
 
 28/08/2026 — Cierre de FASE 0 y comienzo de FASE 1.
 
@@ -174,18 +216,24 @@ No se modificará el archivo histórico primario salvo que exista una decisión 
 
 29/08/2026 — Inventario de Antonino actualizado a 46/46, con 0 documentos pendientes.
 
-29/08/2026 — Aprobación de la estructura del bloque histórico dentro de la arquitectura GitHub (2.1).
+29/08/2026 — Aprobación de la arquitectura del bloque histórico (2.1).
 
-29/08/2026 — Cierre de criterios para material derivado y/o web (2.2).
+29/08/2026 — Cierre de los criterios para material derivado, reeditado y/o web (2.2).
 
-29/08/2026 — Cierre de la estructura de organización del material histórico (2.3).
+29/08/2026 — Cierre de la ficha de tratamiento de cada elemento histórico (2.3).
 
 29/08/2026 — Aprobación de la estructura de almacenamiento del material derivado (2.4).
 
-29/08/2026 — Creación de las carpetas necesarias para el material derivado (2.5).
+29/08/2026 — Aprobación del procedimiento de incorporación de cada elemento histórico (2.5).
 
-29/08/2026 — Aprobación y cierre del procedimiento de trabajo y control (2.6).
+29/08/2026 — Aprobación del sistema de identificación y nomenclatura (2.6).
 
-29/08/2026 — Control de proyecto realizado. FASE 2 continúa con el bloque 2.7.
+29/08/2026 — Cierre del registro individual de cada elemento histórico (2.7).
+
+29/08/2026 — Aprobación del criterio de control y validación de los derivados (2.8).
+
+29/08/2026 — Aprobación y cierre de la preparación para el tratamiento individual (2.9).
+
+29/08/2026 — Control de proyecto actualizado. FASE 2 continúa con el bloque 2.10.
 
 **Documento de control interno del proyecto.**
