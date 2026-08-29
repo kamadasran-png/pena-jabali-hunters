@@ -201,16 +201,19 @@ Si se detecta un error en un derivado, este se corregirá y volverá a revisarse
 El documento histórico primario no se modificará para corregir un derivado.
 
 ---
+## 11. Protocolo general de tratamiento de los elementos históricos ANT-XX
 
-## 11. Protocolo de inicio del tratamiento histórico
+Todos los elementos del archivo histórico de Antonino seguirán el mismo procedimiento general de tratamiento.
 
-El tratamiento comenzará siguiendo el orden establecido en el inventario:
+El procedimiento se aplicará a:
 
 `ANT-01 → ANT-02 → ... → ANT-46`
 
 Cada elemento constituirá una unidad independiente de trabajo.
 
-La secuencia será:
+### 11.1 — Secuencia obligatoria
+
+El tratamiento de cada `ANT-XX` seguirá esta secuencia:
 
 ```text
 INVENTARIO
@@ -219,14 +222,22 @@ IDENTIFICACIÓN ANT-XX
     ↓
 LOCALIZACIÓN DEL PDF ORIGINAL
     ↓
-REVISIÓN
+EXAMEN DEL ORIGINAL
     ↓
-REGISTRO
+REGISTRO FORMAL DEL CONTENIDO
     ↓
-DECISIÓN SOBRE DERIVADOS
+PROPUESTA DE DERIVADOS
     ↓
-CREACIÓN DE DERIVADOS
+APROBACIÓN O EXCLUSIÓN DE DERIVADOS
+    ↓
+ESPERA HASTA SU UTILIZACIÓN
+    ↓
+CREACIÓN DEL DERIVADO CUANDO SEA NECESARIO
+    ↓
+DEFINICIÓN DE SU RUTA EN ESE MOMENTO
     ↓
 VALIDACIÓN
+    ↓
+REGISTRO DE TRAZABILIDAD
     ↓
 CIERRE DEL ELEMENTO
