@@ -44,8 +44,9 @@ Estado: **EN CURSO.**
 - 2.8 — Criterio de control y validación de los derivados: **CERRADA.**
 - 2.9 — Preparación para el tratamiento individual: **CERRADA.**
 - 2.10 — Protocolo de inicio del tratamiento histórico: **CERRADA.**
+- 2.11 — Tratamiento inicial y registro de ANT-01: **CERRADA.**
 
-**Siguiente bloque de trabajo: 2.11.**
+**Siguiente elemento de trabajo: ANT-02.**
 
 ---
 
@@ -119,6 +120,14 @@ No se establece en esta fase una exclusión previa de documentos por su antigüe
 
 La decisión concreta sobre qué versión derivada crear, cómo tratarla y si finalmente pasa a la web se realizará en el momento de trabajar cada elemento o grupo de elementos.
 
+La aprobación conceptual de un derivado no implica su creación inmediata.
+
+Los derivados se crearán únicamente cuando exista una necesidad real de utilización.
+
+Las rutas definitivas de los derivados no se fijarán por adelantado.
+
+La ruta, nombre, formato y ubicación de cada derivado se decidirán en el momento de su utilización.
+
 El material derivado nunca sustituirá al documento histórico primario.
 
 ---
@@ -145,20 +154,24 @@ El tratamiento de cada elemento histórico seguirá el siguiente proceso:
 
 1. Identificación del elemento en el inventario.
 2. Localización del documento original.
-3. Revisión del documento.
-4. Registro de la información correspondiente.
-5. Decisión sobre los derivados necesarios.
-6. Creación de los derivados que se hayan decidido.
-7. Almacenamiento en la ubicación correspondiente.
-8. Comprobación y validación.
-9. Registro de la trazabilidad.
-10. Cierre del elemento.
+3. Examen del documento original.
+4. Registro formal del contenido.
+5. Propuesta de posibles derivados.
+6. Aprobación o exclusión de los derivados propuestos.
+7. Espera hasta que exista una necesidad real de utilización.
+8. Creación del derivado cuando sea necesario.
+9. Definición de su nombre, formato y ruta en ese momento.
+10. Comprobación y validación.
+11. Registro de la trazabilidad.
+12. Cierre del elemento.
 
 El trabajo se realizará de forma individual y respetando el orden del inventario, salvo decisión expresa.
 
-No se avanzará de forma automática a un bloque posterior si durante el trabajo aparece una modificación relevante de la ruta de trabajo.
+No se avanzará de forma automática a un elemento posterior si durante el trabajo aparece una modificación relevante de la ruta de trabajo.
 
 Cualquier cambio de procedimiento, arquitectura o criterio deberá ser expuesto y aprobado antes de aplicarse.
+
+El procedimiento establecido mediante el tratamiento de ANT-01 queda fijado como procedimiento general para todos los elementos `ANT-XX`, salvo modificación posterior expresamente aprobada.
 
 ---
 
@@ -175,6 +188,8 @@ Los PDF originales conservarán sus nombres originales.
 Los derivados utilizarán el identificador `ANT-XX` para mantener la relación inequívoca con el documento primario.
 
 Todo derivado deberá permitir identificar su documento de origen y su ubicación.
+
+La relación entre original y derivados deberá mantenerse durante todo el proyecto.
 
 ---
 
@@ -201,6 +216,7 @@ Si se detecta un error en un derivado, este se corregirá y volverá a revisarse
 El documento histórico primario no se modificará para corregir un derivado.
 
 ---
+
 ## 11. Protocolo general de tratamiento de los elementos históricos ANT-XX
 
 Todos los elementos del archivo histórico de Antonino seguirán el mismo procedimiento general de tratamiento.
@@ -241,3 +257,277 @@ VALIDACIÓN
 REGISTRO DE TRAZABILIDAD
     ↓
 CIERRE DEL ELEMENTO
+```
+
+### 11.2 — Examen del original
+
+Antes de decidir cualquier derivado se examinará el documento original.
+
+El examen podrá incluir:
+
+- contenido textual;
+- imágenes;
+- planos;
+- anotaciones manuscritas;
+- fechas;
+- nombres;
+- numeraciones;
+- leyendas;
+- elementos gráficos;
+- estructura y número de páginas;
+- cualquier otro elemento documental relevante.
+
+La información que no pueda leerse o verificarse con seguridad no se presentará como dato confirmado.
+
+No se completará ni corregirá automáticamente la información histórica.
+
+### 11.3 — Registro formal
+
+Después del examen se realizará un registro formal de cada `ANT-XX`.
+
+Como mínimo se registrará:
+
+- identificador;
+- nombre original;
+- ruta del PDF primario;
+- año o fecha que figure en el documento;
+- naturaleza del documento;
+- número de páginas;
+- contenido relevante;
+- elementos documentales destacados;
+- observaciones;
+- cuestiones pendientes de verificación.
+
+El registro no sustituirá al documento histórico original.
+
+### 11.4 — Propuesta de derivados
+
+Una vez examinado y registrado el documento se podrán proponer uno o varios derivados.
+
+La propuesta no implica su creación automática.
+
+Los derivados deberán ser aprobados antes de ser creados.
+
+También podrán excluirse expresamente determinados derivados cuando no aporten utilidad suficiente.
+
+### 11.5 — Creación de derivados
+
+Los derivados aprobados no se crearán necesariamente en el momento de aprobarlos.
+
+Se crearán únicamente cuando exista una necesidad real de utilización.
+
+La creación podrá producirse posteriormente para:
+
+- la web;
+- la aplicación;
+- documentación;
+- catálogo;
+- archivo estructurado;
+- presentación;
+- cualquier otro uso que sea aprobado.
+
+### 11.6 — Rutas de los derivados
+
+Las rutas definitivas de los derivados no se fijarán por adelantado.
+
+Cuando un derivado vaya a utilizarse se decidirá:
+
+1. qué derivado se necesita;
+2. qué formato tendrá;
+3. cómo se nombrará;
+4. dónde se almacenará;
+5. cómo se relacionará con su `ANT-XX`;
+6. cómo se incorporará a la web o aplicación, si corresponde.
+
+Esta decisión se tomará en el momento de su utilización.
+
+### 11.7 — Conservación del original
+
+El PDF original constituye siempre el archivo histórico primario.
+
+Los derivados:
+
+- no sustituyen al original;
+- no modifican el original;
+- no eliminan el original;
+- deben mantener trazabilidad con el `ANT-XX` correspondiente.
+
+### 11.8 — Control entre elementos
+
+Cada `ANT-XX` será cerrado individualmente.
+
+Antes de pasar al siguiente elemento se comprobará:
+
+```text
+EXAMINADO             ✅
+REGISTRADO            ✅
+DERIVADOS DECIDIDOS   ✅
+DERIVADOS CREADOS     ⏸ SI SE NECESITAN
+RUTAS DEFINIDAS       ⏸ CUANDO SE UTILICEN
+VALIDADO              ⏸
+CERRADO               ⏸
+```
+
+Si durante el tratamiento aparece un problema que obligue a modificar el procedimiento, el trabajo se detendrá.
+
+La modificación será expuesta y aprobada antes de continuar.
+
+---
+
+## 12. Registro de ANT-01
+
+### ANT-01 — Barranco de la Mosca 1979.pdf
+
+Estado del tratamiento: **CERRADO COMO UNIDAD DE EXAMEN Y DECISIÓN.**
+
+Datos registrados:
+
+- Identificador: **ANT-01**
+- Nombre original: **Barranco de la Mosca 1979.pdf**
+- Ruta del original: `assets/documents/historico/antonino/Barranco de la Mosca 1979.pdf`
+- Año: **1979**
+- Fecha indicada en el documento: **8-4-1979**
+- Denominación: **BARRANCO DE LA MOSCA (ARDACHERAS)**
+- Formato: **PDF**
+- Número de páginas: **2**
+- Naturaleza: **documento histórico manuscrito / plano de organización de batida**
+- Original localizado: **SÍ**
+- Original conservado: **SÍ**
+- Examen visual: **COMPLETADO**
+- Registro formal: **COMPLETADO**
+
+### Contenido registrado
+
+La primera página contiene una portada manuscrita con la denominación:
+
+**“BARRANCO DE LA MOSCA”**
+
+**“(ARDACHERAS)”**
+
+y la fecha:
+
+**“8-4-1979”**
+
+La segunda página contiene un plano manuscrito de la zona de la batida, con distribución y numeración de puestos, referencias del terreno, caminos, edificaciones, anotaciones manuscritas, marcas realizadas en distintos colores y una leyenda de puestos.
+
+Se observan referencias territoriales y elementos manuscritos que deberán conservarse como aparecen en el original.
+
+Las anotaciones cuya lectura no sea completamente segura no se considerarán datos confirmados hasta su posterior verificación.
+
+### Derivados aprobados
+
+Para ANT-01 se aprobaron conceptualmente:
+
+- **DER-01** — Ficha histórica/documental.
+- **DER-02** — Imagen de la portada.
+- **DER-03** — Imagen del plano completo.
+- **DER-04** — Ficha/página documental para la web.
+- **DER-05** — Registro estructurado JSON.
+
+Se excluyó expresamente:
+
+- **DER-06** — Detalles ampliados del plano.
+
+### Estado de los derivados
+
+Los derivados aprobados:
+
+- no han sido creados todavía;
+- no tienen todavía una ruta definitiva;
+- se crearán únicamente cuando exista una necesidad real de utilización;
+- su ruta se decidirá en el momento de su utilización.
+
+No se considera pendiente la creación de los derivados, ya que su creación queda condicionada a una necesidad futura de uso.
+
+El PDF original permanece íntegro y no ha sido modificado.
+
+---
+
+## 13. Estado actual
+
+Repositorio GitHub operativo y estructura inicial desplegada.
+
+El bloque histórico de Antonino se encuentra actualmente incorporado en su totalidad:
+
+**46/46 PDF — 0 pendientes.**
+
+El inventario correspondiente se encuentra completado.
+
+La estructura histórica y la estructura destinada al material derivado han sido creadas y aprobadas.
+
+Los 46 PDF constituyen el archivo histórico primario y permanecen íntegros.
+
+### Estado de la FASE 2
+
+- 2.1 → 2.10: **COMPLETADOS Y APROBADOS.**
+- 2.11 — Tratamiento inicial de ANT-01: **CERRADO.**
+
+El procedimiento aplicado a ANT-01 queda establecido como **procedimiento general para todos los elementos ANT-XX**, salvo modificación posterior expresamente aprobada.
+
+### Próximo elemento
+
+**ANT-02 — Inicio de tratamiento individual conforme al procedimiento aprobado.**
+
+No se crearán derivados de ANT-02 hasta que el documento haya sido examinado, registrado y los derivados correspondientes hayan sido decididos y aprobados.
+
+No se definirán las rutas de los derivados de ANT-02 hasta que exista una necesidad real de utilización.
+
+---
+
+## 14. Historial
+
+28/08/2026 — Cierre de FASE 0 y comienzo de FASE 1.
+
+28/08/2026 — Creación del repositorio y estructura inicial.
+
+28/08/2026 — Creación del documento de control del proyecto.
+
+29/08/2026 — Incorporación del PDF nº 01 como primera prueba del archivo histórico de Antonino.
+
+29/08/2026 — Creación y actualización del inventario histórico de Antonino.
+
+29/08/2026 — Incorporación progresiva de los documentos históricos restantes de Antonino.
+
+29/08/2026 — Completada la incorporación de los 46/46 PDF históricos de Antonino.
+
+29/08/2026 — Inventario de Antonino actualizado a 46/46, con 0 documentos pendientes.
+
+29/08/2026 — Aprobación de la arquitectura del bloque histórico (2.1).
+
+29/08/2026 — Cierre de los criterios para material derivado, reeditado y/o web (2.2).
+
+29/08/2026 — Cierre de la ficha de tratamiento de cada elemento histórico (2.3).
+
+29/08/2026 — Aprobación de la estructura de almacenamiento del material derivado (2.4).
+
+29/08/2026 — Aprobación del procedimiento de incorporación de cada elemento histórico (2.5).
+
+29/08/2026 — Aprobación del sistema de identificación y nomenclatura (2.6).
+
+29/08/2026 — Cierre del registro individual de cada elemento histórico (2.7).
+
+29/08/2026 — Aprobación del criterio de control y validación de los derivados (2.8).
+
+29/08/2026 — Aprobación y cierre de la preparación para el tratamiento individual (2.9).
+
+29/08/2026 — Aprobación y cierre del protocolo de inicio del tratamiento histórico (2.10).
+
+29/08/2026 — Inicio del tratamiento individual de ANT-01 (2.11).
+
+29/08/2026 — Examen visual y registro formal de ANT-01.
+
+29/08/2026 — Aprobación de DER-01, DER-02, DER-03, DER-04 y DER-05 para ANT-01.
+
+29/08/2026 — Exclusión de DER-06 para ANT-01.
+
+29/08/2026 — Establecido que los derivados aprobados se crearán únicamente cuando exista una necesidad real de utilización.
+
+29/08/2026 — Establecido que las rutas de los derivados se definirán en el momento de su utilización.
+
+29/08/2026 — El procedimiento aplicado a ANT-01 queda establecido como procedimiento general para todos los elementos ANT-XX.
+
+29/08/2026 — Cierre de 2.11.
+
+29/08/2026 — Control de proyecto actualizado. Siguiente elemento de trabajo: ANT-02.
+
+**Documento de control interno del proyecto.**
