@@ -34,6 +34,7 @@ Estado: **EN CURSO.**
 - WEB 1.3 — Arquitectura de navegación y jerarquía de páginas: **CERRADA Y APROBADA.**
 - WEB 1.4 — Estructura de páginas y rutas funcionales: **CERRADA Y APROBADA.**
 - WEB 1.5 — Modelo de contenido de las páginas: **CERRADA Y APROBADA.**
+- WEB 1.6 — Directrices visuales generales: **CERRADA Y APROBADA.**
 
 ### FASE 2 — ORGANIZACIÓN Y TRATAMIENTO DEL MATERIAL HISTÓRICO
 
@@ -53,7 +54,7 @@ Estado: **EN CURSO.**
 
 Los elementos históricos `ANT-02 → ANT-46` quedan **EN ESPERA** y no serán examinados hasta que exista una necesidad concreta de utilización.
 
-**Siguiente bloque de trabajo: WEB 1.6.**
+**Siguiente bloque de trabajo: WEB 1.7.**
 
 ---
 
@@ -805,7 +806,155 @@ Tampoco implica crear automáticamente todas las páginas definidas en la arquit
 
 ---
 
-## 17. Estado actual
+## 17. Directrices visuales generales de la nueva web
+
+WEB 1.6 establece las directrices visuales generales que deberán respetar las páginas de la nueva web antes de la maquetación y programación.
+
+### 17.1 — Identidad visual
+
+La web deberá transmitir:
+
+**Peña Jabalí Hunters → caza, territorio, naturaleza, tradición y actividad cinegética.**
+
+La imagen general deberá ser:
+
+- rural;
+- natural;
+- profesional;
+- masculina sin resultar agresiva;
+- vinculada al territorio;
+- auténtica;
+- visualmente potente;
+- orientada también a la captación de cazadores.
+
+Se evitará una estética de plantilla genérica de empresa.
+
+### 17.2 — Fotografía
+
+La fotografía tendrá un papel protagonista.
+
+Prioridad visual:
+
+```text
+TERRITORIO
+   ↓
+FAUNA
+   ↓
+CAZA
+   ↓
+JORNADAS
+   ↓
+PEÑA
+```
+
+Las imágenes deberán conservar su aspecto natural.
+
+No se aplicarán filtros excesivos ni tratamientos que falseen los colores del material original.
+
+### 17.3 — Jerarquía visual
+
+Cada página deberá mantener una lectura clara:
+
+```text
+IMAGEN / IMPACTO
+       ↓
+TÍTULO
+       ↓
+MENSAJE PRINCIPAL
+       ↓
+INFORMACIÓN
+       ↓
+ACCIÓN
+```
+
+El visitante deberá poder identificar rápidamente:
+
+**qué ofrecemos → dónde → cómo participar → cómo reservar.**
+
+### 17.4 — Llamadas a la acción
+
+La acción principal será fácilmente identificable:
+
+**RESERVAR**
+
+o, cuando todavía no corresponda una reserva directa:
+
+**CONSULTAR**
+
+Como acción secundaria:
+
+**CONTACTAR**
+
+No se llenarán las páginas de botones innecesarios.
+
+### 17.5 — Tratamiento de los cotos
+
+Las páginas de **El Pozanco** y **Rambla del Conde** tendrán una fuerte presencia visual territorial.
+
+El objetivo será que el visitante pueda:
+
+- identificar el lugar;
+- entender el tipo de caza;
+- conocer las especies;
+- conocer las modalidades;
+- consultar las opciones disponibles;
+- pasar a reserva.
+
+### 17.6 — Tratamiento comercial
+
+Las tarjetas y jornadas deberán presentarse como productos reales, no como simples artículos de blog.
+
+La información esencial tendrá prioridad:
+
+```text
+NOMBRE
+IMAGEN
+QUÉ ES
+DÓNDE
+CUÁNDO
+PRECIO
+QUÉ INCLUYE
+CONDICIONES
+RESERVAR
+```
+
+### 17.7 — Histórico
+
+La sección histórica tendrá un tratamiento visual diferenciado del contenido comercial.
+
+Cuando en el futuro se utilicen documentos `ANT-XX`, se conservará su carácter documental.
+
+No se incorporan ahora.
+
+### 17.8 — Diseño responsive
+
+La arquitectura visual deberá funcionar correctamente en:
+
+- ordenador;
+- tablet;
+- móvil.
+
+La versión móvil no será una simple reducción de la versión de escritorio: se priorizará la lectura y la acción.
+
+### 17.9 — Elementos fuera del alcance de WEB 1.6
+
+WEB 1.6 no fija todavía:
+
+- colores exactos;
+- códigos HEX;
+- tipografías concretas;
+- logotipo definitivo;
+- fotografías concretas;
+- textos definitivos;
+- animaciones;
+- código HTML/CSS/JS;
+- implementación.
+
+Estos elementos se definirán en bloques posteriores cuando corresponda.
+
+---
+
+## 18. Estado actual
 
 Repositorio GitHub operativo y estructura inicial desplegada.
 
@@ -827,16 +976,19 @@ Los elementos `ANT-02 → ANT-46` permanecen archivados y **no serán examinados
 - WEB 1.3 — Arquitectura de navegación y jerarquía: **APROBADA.**
 - WEB 1.4 — Estructura de páginas y rutas funcionales: **APROBADA.**
 - WEB 1.5 — Modelo de contenido de las páginas: **APROBADA.**
+- WEB 1.6 — Directrices visuales generales: **APROBADA.**
+
+Las directrices visuales del apartado 17 quedan fijadas como referencia para la construcción posterior.
 
 ### Próximo bloque
 
-**WEB 1.6 — siguiente bloque de construcción web.**
+**WEB 1.7 — siguiente bloque de construcción web.**
 
 No se inicia todavía programación ni creación masiva de páginas hasta definir y aprobar el alcance del siguiente bloque.
 
 ---
 
-## 18. Historial
+## 19. Historial
 
 28/08/2026 — Cierre de FASE 0 y comienzo de FASE 1.
 
@@ -904,6 +1056,8 @@ No se inicia todavía programación ni creación masiva de páginas hasta defini
 
 29/08/2026 — WEB 1.5 — Modelo de contenido de las páginas: aprobada.
 
-29/08/2026 — Control de proyecto sincronizado con el cierre de WEB 1.5. Siguiente bloque de trabajo: WEB 1.6.
+29/08/2026 — WEB 1.6 — Directrices visuales generales de la nueva web: aprobada.
+
+29/08/2026 — Control de proyecto sincronizado con el cierre de WEB 1.6. Siguiente bloque de trabajo: WEB 1.7.
 
 **Documento de control interno del proyecto.**
