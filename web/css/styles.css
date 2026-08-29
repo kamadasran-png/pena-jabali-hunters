@@ -131,13 +131,58 @@ button {
 }
 
 .site-footer {
-  padding: 2rem 0;
+  padding: 3rem 0 1.25rem;
   background: #1f241f;
   color: #ffffff;
 }
 
-.site-footer p {
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.footer-block h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+}
+
+.footer-block p {
+  margin: 0 0 0.35rem;
+}
+
+.footer-block a {
+  text-decoration: none;
+}
+
+.footer-block a:hover,
+.footer-block a:focus-visible {
+  text-decoration: underline;
+}
+
+.footer-logo {
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin-top: 0.5rem;
+  object-fit: contain;
+}
+
+.footer-bottom {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.9rem;
+}
+
+.footer-bottom p {
   margin: 0;
+}
+
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 760px) {
@@ -182,5 +227,10 @@ button {
 
   .hero {
     padding: 5rem 0 4rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 }
