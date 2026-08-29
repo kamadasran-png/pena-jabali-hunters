@@ -35,6 +35,7 @@ Estado: **EN CURSO.**
 - WEB 1.4 — Estructura de páginas y rutas funcionales: **CERRADA Y APROBADA.**
 - WEB 1.5 — Modelo de contenido de las páginas: **CERRADA Y APROBADA.**
 - WEB 1.6 — Directrices visuales generales: **CERRADA Y APROBADA.**
+- WEB 1.7 — Sistema de componentes y elementos reutilizables: **CERRADA Y APROBADA.**
 
 ### FASE 2 — ORGANIZACIÓN Y TRATAMIENTO DEL MATERIAL HISTÓRICO
 
@@ -54,7 +55,7 @@ Estado: **EN CURSO.**
 
 Los elementos históricos `ANT-02 → ANT-46` quedan **EN ESPERA** y no serán examinados hasta que exista una necesidad concreta de utilización.
 
-**Siguiente bloque de trabajo: WEB 1.7.**
+**Siguiente bloque de trabajo: WEB 1.8.**
 
 ---
 
@@ -954,7 +955,217 @@ Estos elementos se definirán en bloques posteriores cuando corresponda.
 
 ---
 
-## 18. Estado actual
+## 18. Sistema de componentes y elementos reutilizables
+
+WEB 1.7 establece los componentes base que después utilizaremos para construir las páginas y concreta qué elementos visuales y funcionales serán comunes a toda la web, evitando diseñar cada página de forma independiente.
+
+### 18.1 — Objetivo
+
+Establecer los componentes base que después utilizaremos para construir las páginas.
+
+La secuencia conceptual queda establecida como:
+
+```text
+ARQUITECTURA
+     ↓
+CONTENIDO
+     ↓
+NAVEGACIÓN
+     ↓
+RUTAS
+     ↓
+MODELO DE CONTENIDO
+     ↓
+ESTILO VISUAL
+     ↓
+COMPONENTES
+     ↓
+CONSTRUCCIÓN
+```
+
+### 18.2 — Componentes globales
+
+**CABECERA**
+
+Componente común a toda la web:
+
+```text
+LOGOTIPO
+MENÚ PRINCIPAL
+RESERVAR / CONTACTAR
+```
+
+En móvil deberá disponer de navegación adaptada.
+
+**PIE DE PÁGINA**
+
+Contendrá como mínimo:
+
+```text
+IDENTIDAD
+CONTACTO
+RESERVAS
+NAVEGACIÓN SECUNDARIA
+AVISOS LEGALES
+```
+
+### 18.3 — Botones y llamadas a la acción
+
+Se establecen tres niveles:
+
+**Principal**
+
+`RESERVAR`
+
+**Secundario**
+
+`CONSULTAR`
+
+**Complementario**
+
+`VER MÁS`
+
+La función de cada botón deberá ser evidente y no depender únicamente del diseño.
+
+### 18.4 — Tarjeta de contenido
+
+Componente reutilizable para:
+
+- cotos;
+- especies;
+- modalidades;
+- jornadas;
+- tarjetas;
+- ofertas;
+- elementos de galería.
+
+Modelo:
+
+```text
+IMAGEN
+TÍTULO
+BREVE INFORMACIÓN
+ACCIÓN
+```
+
+No todos los tipos tendrán necesariamente exactamente los mismos campos.
+
+### 18.5 — Ficha comercial
+
+Para tarjetas y jornadas:
+
+```text
+IMAGEN PRINCIPAL
+NOMBRE
+DESCRIPCIÓN
+DATOS PRINCIPALES
+PRECIO
+CONDICIONES
+RESERVAR / CONSULTAR
+```
+
+Será un componente especialmente importante porque la web tiene una función comercial.
+
+### 18.6 — Bloque de coto
+
+Componente reutilizable para presentar:
+
+```text
+NOMBRE DEL COTO
+IMAGEN
+UBICACIÓN / TERRITORIO
+ESPECIES
+MODALIDADES
+TEMPORADA
+ACCESO A INFORMACIÓN
+```
+
+### 18.7 — Galería visual
+
+Componente para presentar imágenes de:
+
+- cotos;
+- caza;
+- fauna;
+- jornadas;
+- Peña Jabalí Hunters;
+- histórico cuando corresponda.
+
+La galería deberá poder utilizarse tanto como sección completa como integrada dentro de otras páginas.
+
+### 18.8 — Bloque histórico
+
+Se prepara un componente específico para material documental histórico:
+
+```text
+DOCUMENTO
+     ↓
+IMAGEN / VISTA
+     ↓
+IDENTIFICACIÓN
+     ↓
+INFORMACIÓN
+     ↓
+DOCUMENTO COMPLETO / DETALLE
+```
+
+Pero **no se incorporará todavía ANT-02 → ANT-46**.
+
+Cuando exista una necesidad real, se utilizará el procedimiento `ANT-XX` aprobado.
+
+### 18.9 — Bloque de contacto / reserva
+
+Componente transversal:
+
+```text
+¿QUIERES RESERVAR?
+        ↓
+RESERVAR
+        ↓
+CONTACTO
+```
+
+Deberá poder aparecer en:
+
+- inicio;
+- cotos;
+- jornadas;
+- tarjetas;
+- ofertas;
+- páginas comerciales.
+
+### 18.10 — Principio de reutilización
+
+No construiremos cada página desde cero.
+
+La web utilizará componentes comunes para conseguir:
+
+- coherencia;
+- mantenimiento sencillo;
+- menor duplicación;
+- facilidad para añadir nuevos cotos;
+- facilidad para añadir nuevas jornadas;
+- facilidad para añadir nuevas ofertas;
+- futura integración con la aplicación.
+
+### 18.11 — Fuera del alcance de WEB 1.7
+
+WEB 1.7 no incluye todavía:
+
+- código HTML/CSS/JS;
+- creación física de componentes;
+- diseño definitivo;
+- fotografías;
+- textos finales;
+- configuración del CMS;
+- base de datos;
+- aplicación.
+
+Este bloque define **el sistema conceptual de componentes**, no su implementación.
+
+---
+
+## 19. Estado actual
 
 Repositorio GitHub operativo y estructura inicial desplegada.
 
@@ -977,18 +1188,21 @@ Los elementos `ANT-02 → ANT-46` permanecen archivados y **no serán examinados
 - WEB 1.4 — Estructura de páginas y rutas funcionales: **APROBADA.**
 - WEB 1.5 — Modelo de contenido de las páginas: **APROBADA.**
 - WEB 1.6 — Directrices visuales generales: **APROBADA.**
+- WEB 1.7 — Sistema de componentes y elementos reutilizables: **APROBADA.**
 
 Las directrices visuales del apartado 17 quedan fijadas como referencia para la construcción posterior.
 
+El sistema conceptual de componentes del apartado 18 queda fijado como referencia para la construcción posterior.
+
 ### Próximo bloque
 
-**WEB 1.7 — siguiente bloque de construcción web.**
+**WEB 1.8 — siguiente bloque de construcción web.**
 
 No se inicia todavía programación ni creación masiva de páginas hasta definir y aprobar el alcance del siguiente bloque.
 
 ---
 
-## 19. Historial
+## 20. Historial
 
 28/08/2026 — Cierre de FASE 0 y comienzo de FASE 1.
 
@@ -1058,6 +1272,8 @@ No se inicia todavía programación ni creación masiva de páginas hasta defini
 
 29/08/2026 — WEB 1.6 — Directrices visuales generales de la nueva web: aprobada.
 
-29/08/2026 — Control de proyecto sincronizado con el cierre de WEB 1.6. Siguiente bloque de trabajo: WEB 1.7.
+29/08/2026 — WEB 1.7 — Sistema de componentes y elementos reutilizables: aprobado.
+
+29/08/2026 — Control de proyecto sincronizado con el cierre de WEB 1.7. Siguiente bloque de trabajo: WEB 1.8.
 
 **Documento de control interno del proyecto.**
