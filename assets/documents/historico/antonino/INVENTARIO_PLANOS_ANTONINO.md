@@ -16,53 +16,56 @@ Los originales se conservarán íntegros. No se eliminarán documentos por apare
 
 ## Inventario 46/46
 
+## Inventario 46/46
+
 | Nº | Documento | Año | Bloque | Estado | Ubicación |
+|---:|---|---:|---|---|---|
 | 01 | Barranco de la Mosca | 1979 | Barranco de la Mosca / Ardacheras | INCORPORADO | `assets/documents/historico/antonino/Barranco de la Mosca 1979.pdf` |
-| 02 | Barranco de la Mosca | 1980 | Barranco de la Mosca / Ardacheras |
-| 03 | Barranco de la Mosca | 1981 | Barranco de la Mosca / Ardacheras |
-| 04 | Borregueta | 1973 | Borregueta |
-| 05 | Cabezo del Moro | 1975 | Cabezo del Moro |
-| 06 | Castillicos–Quemao de Garrido | 1980 | Documento compuesto |
-| 07 | El Manzanero | 1981 | Taconeros / Manzanero |
-| 08 | El Piojo | 1974 | El Piojo |
-| 09 | El Piojo | 1975 | El Piojo |
-| 10 | El Piojo | 1977 | El Piojo |
-| 11 | El Piojo | 1979 | El Piojo |
-| 12 | El Rebollo | 1976 | El Rebollo |
-| 13 | El Rebollo | 1977 | El Rebollo |
-| 14 | Hoya Matea | 1972 | Hoya Matea |
-| 15 | Huesas | 1974 | Las Huesas |
-| 16 | Huesas | 1974 | Las Huesas |
-| 17 | Huesas | 1974 | Las Huesas |
-| 18 | La Milaria | 1973 | La Milaria |
-| 19 | La Milaria | 1974 | La Milaria |
-| 20 | La Milaria | 1975 | La Milaria |
-| 21 | La Milaria – con reales | 1975 | La Milaria |
-| 22 | La Milaria | 1976 | La Milaria |
-| 23 | La Milaria | 1980 | La Milaria |
-| 24 | La Milaria | 1981 | La Milaria |
-| 25 | La Silla | 1977 | La Silla |
-| 26 | La Silla – situación | 1977 | La Silla |
-| 27 | La Silla | 1978 | La Silla |
-| 28 | La Silla – situación | 1978 | La Silla |
-| 29 | La Silla | 1979 | La Silla |
-| 30 | La Silla | 1981 | La Silla |
-| 31 | Las Ardacheras | 1978 | Barranco de la Mosca / Ardacheras |
-| 32 | Los Taconeros | 1978 | Taconeros |
-| 33 | Los Taconeros | 1979 | Taconeros |
-| 34 | Pinarejos | 1974 | Pinarejos |
-| 35 | Pinarejos | 1975 | Pinarejos |
-| 36 | Pinarejos | 1976 | Pinarejos |
-| 37 | Piojo y Quemao de Garrido | 1976 | Documento compuesto |
-| 38 | Quemao de Garrido | 1972 | Quemao de Garrido |
-| 39 | Quemao de Garrido | 1973 | Quemao de Garrido |
-| 40 | Quemao de Garrido | 1974 | Quemao de Garrido |
-| 41 | Quemao de Garrido | 1975 | Quemao de Garrido |
-| 42 | Rufa | 1973 | Rufa |
-| 43 | Rufa | 1975 | Rufa |
-| 44 | Rufa | 1977 | Rufa |
-| 45 | Rufa | 1979 | Rufa |
-| 46 | Rufa | 1980 | Rufa |
+| 02 | Barranco de la Mosca | 1980 | Barranco de la Mosca / Ardacheras | PENDIENTE | — |
+| 03 | Barranco de la Mosca | 1981 | Barranco de la Mosca / Ardacheras | PENDIENTE | — |
+| 04 | Borregueta | 1973 | Borregueta | PENDIENTE | — |
+| 05 | Cabezo del Moro | 1975 | Cabezo del Moro | PENDIENTE | — |
+| 06 | Castillicos–Quemao de Garrido | 1980 | Documento compuesto | PENDIENTE | — |
+| 07 | El Manzanero | 1981 | Taconeros / Manzanero | PENDIENTE | — |
+| 08 | El Piojo | 1974 | El Piojo | PENDIENTE | — |
+| 09 | El Piojo | 1975 | El Piojo | PENDIENTE | — |
+| 10 | El Piojo | 1977 | El Piojo | PENDIENTE | — |
+| 11 | El Piojo | 1979 | El Piojo | PENDIENTE | — |
+| 12 | El Rebollo | 1976 | El Rebollo | PENDIENTE | — |
+| 13 | El Rebollo | 1977 | El Rebollo | PENDIENTE | — |
+| 14 | Hoya Matea | 1972 | Hoya Matea | PENDIENTE | — |
+| 15 | Huesas | 1974 | Las Huesas | PENDIENTE | — |
+| 16 | Huesas | 1974 | Las Huesas | PENDIENTE | — |
+| 17 | Huesas | 1974 | Las Huesas | PENDIENTE | — |
+| 18 | La Milaria | 1973 | La Milaria | PENDIENTE | — |
+| 19 | La Milaria | 1974 | La Milaria | PENDIENTE | — |
+| 20 | La Milaria | 1975 | La Milaria | PENDIENTE | — |
+| 21 | La Milaria – con reales | 1975 | La Milaria | PENDIENTE | — |
+| 22 | La Milaria | 1976 | La Milaria | PENDIENTE | — |
+| 23 | La Milaria | 1980 | La Milaria | PENDIENTE | — |
+| 24 | La Milaria | 1981 | La Milaria | PENDIENTE | — |
+| 25 | La Silla | 1977 | La Silla | PENDIENTE | — |
+| 26 | La Silla – situación | 1977 | La Silla | PENDIENTE | — |
+| 27 | La Silla | 1978 | La Silla | PENDIENTE | — |
+| 28 | La Silla – situación | 1978 | La Silla | PENDIENTE | — |
+| 29 | La Silla | 1979 | La Silla | PENDIENTE | — |
+| 30 | La Silla | 1981 | La Silla | PENDIENTE | — |
+| 31 | Las Ardacheras | 1978 | Barranco de la Mosca / Ardacheras | PENDIENTE | — |
+| 32 | Los Taconeros | 1978 | Taconeros | PENDIENTE | — |
+| 33 | Los Taconeros | 1979 | Taconeros | PENDIENTE | — |
+| 34 | Pinarejos | 1974 | Pinarejos | PENDIENTE | — |
+| 35 | Pinarejos | 1975 | Pinarejos | PENDIENTE | — |
+| 36 | Pinarejos | 1976 | Pinarejos | PENDIENTE | — |
+| 37 | Piojo y Quemao de Garrido | 1976 | Documento compuesto | PENDIENTE | — |
+| 38 | Quemao de Garrido | 1972 | Quemao de Garrido | PENDIENTE | — |
+| 39 | Quemao de Garrido | 1973 | Quemao de Garrido | PENDIENTE | — |
+| 40 | Quemao de Garrido | 1974 | Quemao de Garrido | PENDIENTE | — |
+| 41 | Quemao de Garrido | 1975 | Quemao de Garrido | PENDIENTE | — |
+| 42 | Rufa | 1973 | Rufa | PENDIENTE | — |
+| 43 | Rufa | 1975 | Rufa | PENDIENTE | — |
+| 44 | Rufa | 1977 | Rufa | PENDIENTE | — |
+| 45 | Rufa | 1979 | Rufa | PENDIENTE | — |
+| 46 | Rufa | 1980 | Rufa | PENDIENTE | — |
 
 ## Estado de incorporación
 
