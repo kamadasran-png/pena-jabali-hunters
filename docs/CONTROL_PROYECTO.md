@@ -8,8 +8,6 @@
 - Rama principal: `main`
 - Fecha de inicio de FASE 1: 28/08/2026
 
----
-
 ## 2. Estado de las fases
 
 ### FASE 0 — RESCATE Y AUDITORÍA
@@ -36,6 +34,10 @@ Estado: **EN CURSO.**
 - WEB 1.5 — Modelo de contenido de las páginas: **CERRADA Y APROBADA.**
 - WEB 1.6 — Directrices visuales generales: **CERRADA Y APROBADA.**
 - WEB 1.7 — Sistema de componentes y elementos reutilizables: **CERRADA Y APROBADA.**
+- WEB 1.8 — Sistema de contenidos y datos: **CERRADA Y APROBADA.**
+- WEB 1.9 — Estructura técnica de construcción de la nueva web: **CERRADA Y APROBADA.**
+- WEB 1.10 — Metodología y tecnología de construcción: **CERRADA Y APROBADA.**
+- WEB 1.11 — Plan de construcción y validación de la nueva web: **CERRADA Y APROBADA.**
 
 ### FASE 2 — ORGANIZACIÓN Y TRATAMIENTO DEL MATERIAL HISTÓRICO
 
@@ -55,7 +57,7 @@ Estado: **EN CURSO.**
 
 Los elementos históricos `ANT-02 → ANT-46` quedan **EN ESPERA** y no serán examinados hasta que exista una necesidad concreta de utilización.
 
-**Siguiente bloque de trabajo: WEB 1.8.**
+**Siguiente paso de trabajo: CONSTRUCCIÓN FÍSICA DE LA NUEVA WEB.**
 
 ---
 
@@ -1165,7 +1167,397 @@ Este bloque define **el sistema conceptual de componentes**, no su implementaci�
 
 ---
 
-## 19. Estado actual
+## 19. WEB 1.8 — Sistema de contenidos y datos
+
+**Estado: CERRADA Y APROBADA.**
+
+WEB 1.8 establece la separación entre estructura de la web, componentes, datos, contenidos y recursos multimedia.
+
+### Principio fundamental
+
+La información que pueda cambiar con frecuencia no deberá quedar incrustada directamente en las páginas.
+
+Se consideran especialmente susceptibles de mantenerse de forma independiente:
+
+- precios;
+- fechas;
+- temporadas;
+- jornadas;
+- ofertas;
+- tarjetas;
+- especies;
+- modalidades;
+- datos de los cotos.
+
+### Estructuras implicadas
+
+```text
+data/
+content/
+assets/
+```
+
+`data/` contendrá información estructurada reutilizable por la web y, posteriormente, por la aplicación.
+
+`content/` contendrá contenidos editoriales.
+
+`assets/` contendrá imágenes, logotipos y documentos.
+
+### Relación conceptual
+
+```text
+DATA
+ ↓
+información estructurada
+ ↓
+CONTENT
+ ↓
+información editorial
+ ↓
+ASSETS
+ ↓
+recursos multimedia
+ ↓
+COMPONENTES
+ ↓
+PÁGINAS
+```
+
+### Preparación para la aplicación
+
+La información estructurada no se diseñará exclusivamente para la web.
+
+```text
+             DATA
+              │
+       ┌──────┴──────┐
+       ↓             ↓
+      WEB            APP
+       │             │
+       ↓             ↓
+ COMPONENTES    FUNCIONALIDADES
+```
+
+### Histórico
+
+El material `ANT-XX` seguirá separado del contenido operativo.
+
+Cuando se utilice un documento histórico:
+
+```text
+ANT-XX
+ ↓
+DERIVADO APROBADO
+ ↓
+DATA / CONTENT / ASSET
+ ↓
+COMPONENTE
+ ↓
+WEB
+```
+
+La ruta concreta se decidirá en el momento de utilización.
+
+WEB 1.8 no implica todavía crear archivos JSON, redactar todos los textos, introducir precios definitivos, seleccionar todas las fotografías, crear páginas, programar componentes, construir una base de datos ni conectar la aplicación.
+
+---
+
+## 20. WEB 1.9 — Estructura técnica de construcción de la nueva web
+
+**Estado: CERRADA Y APROBADA.**
+
+WEB 1.9 establece cómo se traducirán las decisiones aprobadas anteriormente a una estructura técnica de construcción.
+
+### Estructura física general
+
+```text
+/
+├── web/
+├── app/
+├── assets/
+│   ├── images/
+│   ├── logos/
+│   └── documents/
+├── data/
+├── content/
+├── legal/
+└── docs/
+```
+
+No se crearán nuevos directorios estructurales sin necesidad justificada y aprobación cuando afecten a la arquitectura.
+
+### Páginas
+
+La construcción respetará la arquitectura funcional aprobada:
+
+```text
+INICIO
+CAZA
+COTOS
+TARJETAS Y JORNADAS
+GALERÍA
+LA PEÑA
+CONTACTO
+```
+
+con sus correspondientes páginas internas.
+
+### Rutas
+
+Las rutas deberán corresponder a la jerarquía funcional y utilizar nombres claros y comprensibles.
+
+Ejemplos conceptuales:
+
+```text
+/caza/
+/cotos/
+/cotos/el-pozanco/
+/cotos/rambla-del-conde/
+/tarjetas-y-jornadas/
+/galeria/
+/la-pena/
+/contacto/
+```
+
+Las rutas definitivas se establecerán durante la implementación respetando la arquitectura aprobada.
+
+### Relación técnica
+
+```text
+PÁGINA
+   ↓
+COMPONENTES
+   ↓
+DATOS / CONTENT
+   ↓
+ASSETS
+```
+
+La estructura deberá permitir añadir nuevos cotos, especies, modalidades, tarjetas, jornadas, ofertas y galerías sin reconstruir la arquitectura general.
+
+### Histórico
+
+`ANT-02 → ANT-46` permanece en espera.
+
+Ningún documento histórico se incorporará por el simple hecho de definir la estructura técnica.
+
+---
+
+## 21. WEB 1.10 — Metodología y tecnología de construcción
+
+**Estado: CERRADA Y APROBADA.**
+
+WEB 1.10 establece la base tecnológica y las reglas metodológicas de construcción.
+
+### Tecnología base
+
+```text
+HTML
+CSS
+JavaScript
+JSON
+GitHub
+GitHub Pages
+```
+
+HTML se utilizará para la estructura semántica.
+
+CSS para presentación, responsive y componentes visuales.
+
+JavaScript únicamente cuando aporte una función necesaria.
+
+JSON como formato inicial previsto para datos estructurados.
+
+GitHub continuará siendo el centro de control y versionado del proyecto.
+
+### Criterios técnicos
+
+La web deberá ser:
+
+- ligera;
+- rápida;
+- responsive;
+- mantenible;
+- fácilmente actualizable;
+- compatible con GitHub;
+- preparada para crecer;
+- preparada para compartir información con la futura aplicación.
+
+Se evitará introducir tecnología innecesaria.
+
+### Responsive
+
+Se comprobará como mínimo:
+
+```text
+MÓVIL
+   ↓
+TABLET
+   ↓
+ORDENADOR
+```
+
+### Rendimiento
+
+Se priorizarán:
+
+- imágenes optimizadas;
+- código sencillo;
+- ausencia de dependencias innecesarias;
+- reducción de recursos externos;
+- estructura limpia.
+
+### SEO y accesibilidad
+
+Desde la construcción inicial se tendrán en cuenta:
+
+- HTML semántico;
+- títulos y encabezados correctos;
+- textos alternativos;
+- URLs comprensibles;
+- metadatos básicos;
+- enlaces descriptivos;
+- contraste adecuado;
+- navegación por teclado cuando corresponda.
+
+### Seguridad
+
+No se incorporarán al repositorio público:
+
+- contraseñas;
+- claves privadas;
+- tokens;
+- credenciales;
+- información sensible.
+
+### Control de cambios
+
+Si una decisión aprobada necesita modificarse por una limitación técnica:
+
+```text
+PROBLEMA
+   ↓
+ANÁLISIS
+   ↓
+PROPUESTA DE CAMBIO
+   ↓
+APROBACIÓN
+   ↓
+IMPLEMENTACIÓN
+```
+
+No se modificarán silenciosamente las decisiones aprobadas.
+
+---
+
+## 22. WEB 1.11 — Plan de construcción y validación de la nueva web
+
+**Estado: CERRADA Y APROBADA.**
+
+WEB 1.11 establece el procedimiento para pasar de la definición a la construcción física.
+
+### Principio de construcción progresiva
+
+```text
+ESTRUCTURA BASE
+      ↓
+SISTEMA VISUAL
+      ↓
+COMPONENTES
+      ↓
+DATOS
+      ↓
+PÁGINAS
+      ↓
+FUNCIONES
+      ↓
+PRUEBAS
+      ↓
+PUBLICACIÓN
+```
+
+La web no se desarrollará de una sola vez.
+
+### Orden de construcción
+
+**Bloque A — Base técnica**
+
+Preparación de la estructura de `web/`, `data/`, `content/` y `assets/`.
+
+**Bloque B — Sistema global**
+
+Construcción progresiva de:
+
+- cabecera;
+- navegación;
+- pie de página;
+- botones;
+- responsive;
+- elementos globales.
+
+**Bloque C — Componentes reutilizables**
+
+Construcción de los componentes definidos en WEB 1.7.
+
+**Bloque D — Datos y contenidos**
+
+Incorporación progresiva de la información definida en WEB 1.8.
+
+No se introducirán datos ficticios presentándolos como definitivos.
+
+**Bloque E — Páginas**
+
+Construcción progresiva de las siete secciones y sus páginas internas.
+
+### Primera página de construcción
+
+La página `INICIO` será el primer objetivo de construcción funcional y servirá también como primera prueba real de integración.
+
+### Validación
+
+Cada bloque seguirá:
+
+```text
+CONSTRUIDO
+    ↓
+REVISADO
+    ↓
+PROBADO
+    ↓
+VALIDADO
+    ↓
+CERRADO
+```
+
+Se comprobarán, según corresponda:
+
+- funcionalidad;
+- navegación;
+- enlaces;
+- botones;
+- formularios;
+- galerías;
+- coherencia visual;
+- responsive;
+- fidelidad de los datos;
+- rendimiento;
+- SEO;
+- accesibilidad;
+- seguridad.
+
+### Control de cambios
+
+Si durante la construcción aparece un problema que afecte a una decisión aprobada, se detendrá el avance afectado y se seguirá el procedimiento de análisis, propuesta y aprobación establecido en WEB 1.10.
+
+### Histórico
+
+`ANT-02 → ANT-46` continúa en espera.
+
+La construcción de la web no implica examinar ni incorporar automáticamente material histórico.
+
+---
+
+## 23. Estado actual
 
 Repositorio GitHub operativo y estructura inicial desplegada.
 
@@ -1182,27 +1574,29 @@ Los elementos `ANT-02 → ANT-46` permanecen archivados y **no serán examinados
 
 ### Estado de construcción web
 
-- WEB 1.1 — Arquitectura funcional: **APROBADA.**
-- WEB 1.2 — Contenido y función de las 7 secciones: **APROBADA.**
-- WEB 1.3 — Arquitectura de navegación y jerarquía: **APROBADA.**
-- WEB 1.4 — Estructura de páginas y rutas funcionales: **APROBADA.**
-- WEB 1.5 — Modelo de contenido de las páginas: **APROBADA.**
-- WEB 1.6 — Directrices visuales generales: **APROBADA.**
-- WEB 1.7 — Sistema de componentes y elementos reutilizables: **APROBADA.**
+- WEB 1.1 — Arquitectura funcional: **CERRADA Y APROBADA.**
+- WEB 1.2 — Contenido y función de las 7 secciones: **CERRADA Y APROBADA.**
+- WEB 1.3 — Arquitectura de navegación y jerarquía: **CERRADA Y APROBADA.**
+- WEB 1.4 — Estructura de páginas y rutas funcionales: **CERRADA Y APROBADA.**
+- WEB 1.5 — Modelo de contenido de las páginas: **CERRADA Y APROBADA.**
+- WEB 1.6 — Directrices visuales generales: **CERRADA Y APROBADA.**
+- WEB 1.7 — Sistema de componentes y elementos reutilizables: **CERRADA Y APROBADA.**
+- WEB 1.8 — Sistema de contenidos y datos: **CERRADA Y APROBADA.**
+- WEB 1.9 — Estructura técnica de construcción: **CERRADA Y APROBADA.**
+- WEB 1.10 — Metodología y tecnología de construcción: **CERRADA Y APROBADA.**
+- WEB 1.11 — Plan de construcción y validación: **CERRADA Y APROBADA.**
 
-Las directrices visuales del apartado 17 quedan fijadas como referencia para la construcción posterior.
+Con WEB 1.11 queda cerrado el bloque de definición WEB 1.x.
 
-El sistema conceptual de componentes del apartado 18 queda fijado como referencia para la construcción posterior.
+### Próximo paso
 
-### Próximo bloque
+**CONSTRUCCIÓN FÍSICA DE LA NUEVA WEB — BLOQUE A: BASE TÉCNICA.**
 
-**WEB 1.8 — siguiente bloque de construcción web.**
-
-No se inicia todavía programación ni creación masiva de páginas hasta definir y aprobar el alcance del siguiente bloque.
+No se iniciará el desarrollo de bloques posteriores hasta validar el bloque correspondiente.
 
 ---
 
-## 20. Historial
+## 24. Historial
 
 28/08/2026 — Cierre de FASE 0 y comienzo de FASE 1.
 
@@ -1275,5 +1669,19 @@ No se inicia todavía programación ni creación masiva de páginas hasta defini
 29/08/2026 — WEB 1.7 — Sistema de componentes y elementos reutilizables: aprobado.
 
 29/08/2026 — Control de proyecto sincronizado con el cierre de WEB 1.7. Siguiente bloque de trabajo: WEB 1.8.
+
+29/08/2026 — WEB 1.8 — Sistema de contenidos y datos: aprobada.
+
+29/08/2026 — WEB 1.9 — Estructura técnica de construcción de la nueva web: aprobada.
+
+29/08/2026 — WEB 1.10 — Metodología y tecnología de construcción: aprobada.
+
+29/08/2026 — WEB 1.11 — Plan de construcción y validación de la nueva web: aprobado.
+
+29/08/2026 — Cerrado el bloque de definición WEB 1.x.
+
+29/08/2026 — ANT-02 → ANT-46 continúan en espera hasta necesidad concreta de utilización.
+
+29/08/2026 — Siguiente paso: construcción física de la nueva web, comenzando por el Bloque A — Base técnica.
 
 **Documento de control interno del proyecto.**
