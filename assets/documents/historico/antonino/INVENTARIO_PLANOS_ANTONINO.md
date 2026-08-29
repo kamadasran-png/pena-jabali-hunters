@@ -17,7 +17,6 @@ Los originales se conservarán íntegros. No se eliminarán documentos por apare
 ## Inventario 46/46
 
 | Nº | Documento | Año | Bloque | Estado | Ubicación |
-|---:|---|---:|---|
 | 01 | Barranco de la Mosca | 1979 | Barranco de la Mosca / Ardacheras | INCORPORADO | `assets/documents/historico/antonino/Barranco de la Mosca 1979.pdf` |
 | 02 | Barranco de la Mosca | 1980 | Barranco de la Mosca / Ardacheras |
 | 03 | Barranco de la Mosca | 1981 | Barranco de la Mosca / Ardacheras |
