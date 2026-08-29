@@ -32,6 +32,7 @@ Estado: **EN CURSO.**
 - WEB 1.1 — Arquitectura funcional de la nueva web: **CERRADA Y APROBADA.**
 - WEB 1.2 — Contenido y función de las 7 secciones: **CERRADA Y APROBADA.**
 - WEB 1.3 — Arquitectura de navegación y jerarquía de páginas: **CERRADA Y APROBADA.**
+- WEB 1.4 — Estructura de páginas y rutas funcionales: **CERRADA Y APROBADA.**
 
 ### FASE 2 — ORGANIZACIÓN Y TRATAMIENTO DEL MATERIAL HISTÓRICO
 
@@ -51,7 +52,7 @@ Estado: **EN CURSO.**
 
 Los elementos históricos `ANT-02 → ANT-46` quedan **EN ESPERA** y no serán examinados hasta que exista una necesidad concreta de utilización.
 
-**Siguiente bloque de trabajo: WEB 1.4.**
+**Siguiente bloque de trabajo: WEB 1.5.**
 
 ---
 
@@ -676,7 +677,149 @@ Las páginas de contenido comercial deberán disponer de una salida clara hacia 
 
 ---
 
-## 16. Estado actual
+## 16. Estructura de páginas y rutas funcionales
+
+La estructura funcional de páginas queda aprobada como referencia para la construcción posterior.
+
+### INICIO
+
+```text
+/
+└── index
+```
+
+### CAZA
+
+```text
+/caza/
+├── index
+├── menor
+└── mayor
+```
+
+- `/caza/` — presentación general de la actividad cinegética.
+- `/caza/menor/` — agrupación de especies y modalidades de caza menor.
+- `/caza/mayor/` — agrupación de especies y modalidades de caza mayor.
+
+No se establece todavía una página independiente para cada especie.
+
+### COTOS
+
+```text
+/cotos/
+├── index
+├── el-pozanco
+└── rambla-del-conde
+```
+
+Cada coto tendrá una página propia.
+
+### TARJETAS Y JORNADAS
+
+```text
+/tarjetas/
+├── index
+├── tarjetas
+├── jornadas
+└── ofertas
+```
+
+La página principal será el punto de entrada comercial. Las fichas concretas se desarrollarán cuando se prepare el contenido real.
+
+### GALERÍA
+
+```text
+/galeria/
+├── index
+├── cotos
+├── caza
+├── fauna
+├── jornadas
+├── pena-jabali-hunters
+└── historico
+```
+
+La sección `historico` queda preparada, pero no poblada.
+
+### LA PEÑA
+
+```text
+/pena/
+├── index
+├── quienes-somos
+├── filosofia
+├── actividad
+├── territorio
+└── historia
+```
+
+La sección `historia` queda preparada para un uso futuro del material histórico que corresponda.
+
+### CONTACTO
+
+```text
+/contacto/
+├── index
+├── reservas
+└── formulario
+```
+
+Será el punto final de los principales recorridos comerciales y de contacto.
+
+### Estructura completa de referencia
+
+```text
+WEB
+│
+├── INICIO
+│   └── /
+│
+├── CAZA
+│   ├── /caza/
+│   ├── /caza/menor/
+│   └── /caza/mayor/
+│
+├── COTOS
+│   ├── /cotos/
+│   ├── /cotos/el-pozanco/
+│   └── /cotos/rambla-del-conde/
+│
+├── TARJETAS Y JORNADAS
+│   ├── /tarjetas/
+│   ├── /tarjetas/tarjetas/
+│   ├── /tarjetas/jornadas/
+│   └── /tarjetas/ofertas/
+│
+├── GALERÍA
+│   ├── /galeria/
+│   ├── /galeria/cotos/
+│   ├── /galeria/caza/
+│   ├── /galeria/fauna/
+│   ├── /galeria/jornadas/
+│   ├── /galeria/pena-jabali-hunters/
+│   └── /galeria/historico/
+│
+├── LA PEÑA
+│   ├── /pena/
+│   ├── /pena/quienes-somos/
+│   ├── /pena/filosofia/
+│   ├── /pena/actividad/
+│   ├── /pena/territorio/
+│   └── /pena/historia/
+│
+└── CONTACTO
+    ├── /contacto/
+    ├── /contacto/reservas/
+    └── /contacto/formulario/
+```
+
+Esta estructura es una arquitectura de referencia. No implica crear automáticamente todas las páginas o archivos indicados.
+
+Antes de crear archivos se determinará cuáles necesitan contenido propio y cuáles pueden resolverse mediante componentes o páginas compartidas.
+
+---
+
+## 17. Estado actual
 
 Repositorio GitHub operativo y estructura inicial desplegada.
 
@@ -696,18 +839,19 @@ Los elementos `ANT-02 → ANT-46` permanecen archivados y **no serán examinados
 - WEB 1.1 — Arquitectura funcional: **APROBADA.**
 - WEB 1.2 — Contenido y función de las 7 secciones: **APROBADA.**
 - WEB 1.3 — Arquitectura de navegación y jerarquía: **APROBADA.**
+- WEB 1.4 — Estructura de páginas y rutas funcionales: **APROBADA.**
 
-La arquitectura de navegación incluida en los apartados 14 y 15 queda fijada como referencia para la construcción posterior.
+La estructura de páginas y rutas incluida en el apartado 16 queda fijada como referencia para la construcción posterior.
+
+No se crean todavía todas las páginas de la estructura. Su creación se decidirá en los siguientes bloques de construcción.
 
 ### Próximo bloque
 
-**WEB 1.4 — siguiente bloque de construcción web.**
-
-No se modifica todavía el diseño visual definitivo ni se inicia programación hasta definir y aprobar el contenido correspondiente al siguiente bloque.
+**WEB 1.5 — siguiente bloque de construcción web.**
 
 ---
 
-## 17. Historial
+## 18. Historial
 
 28/08/2026 — Cierre de FASE 0 y comienzo de FASE 1.
 
@@ -771,6 +915,10 @@ No se modifica todavía el diseño visual definitivo ni se inicia programación 
 
 29/08/2026 — Gráfico de navegación definitivo de la nueva web incorporado al control de proyecto.
 
-29/08/2026 — Control de proyecto sincronizado con el estado aprobado de WEB 1.3.
+29/08/2026 — WEB 1.4 — Estructura de páginas y rutas funcionales: aprobada.
+
+29/08/2026 — Estructura completa de páginas y rutas funcionales incorporada al control de proyecto como referencia para la construcción posterior.
+
+29/08/2026 — Control de proyecto actualizado. Siguiente bloque de trabajo: WEB 1.5.
 
 **Documento de control interno del proyecto.**
