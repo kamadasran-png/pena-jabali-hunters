@@ -21,3 +21,20 @@ if (navToggle && siteNav) {
     }
   });
 }
+
+// Promoción común: La Camiseta de la Suerte.
+// Se inserta automáticamente en todas las páginas que cargan main.js.
+const promo = document.createElement("aside");
+promo.className = "site-promo";
+promo.setAttribute("aria-label", "Promoción La Camiseta de la Suerte");
+promo.innerHTML = `
+  <div class="site-promo__inner">
+    <div class="site-promo__text">
+      <strong>🍀 LA CAMISETA DE LA SUERTE</strong>
+      <span>15 € · 1 camiseta = 1 participación · Tarjeta HUNTERS 3 valorada en 300 €</span>
+    </div>
+    <a class="cta cta-primary site-promo__cta" href="formulario-camiseta.html">QUIERO MI CAMISETA</a>
+  </div>
+`;
+
+document.body.prepend(promo);
