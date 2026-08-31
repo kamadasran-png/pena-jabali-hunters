@@ -14,6 +14,15 @@ button { font: inherit; }
 .site-nav a:hover, .site-nav a:focus-visible { text-decoration: underline; }
 .nav-toggle { display: none; width: 44px; height: 44px; padding: 0; border: 1px solid #dfe3dc; border-radius: .5rem; background: #fff; color: #1f241f; cursor: pointer; }
 .nav-toggle:focus-visible, .site-nav a:focus-visible { outline: 3px solid #9a7b3f; outline-offset: 3px; }
+
+/* Promoción común — La Camiseta de la Suerte */
+.site-promo { position: relative; z-index: 9; background: #1f241f; color: #fff; border-bottom: 1px solid #9a7b3f; }
+.site-promo__inner { width: min(1120px, calc(100% - 2rem)); min-height: 58px; margin-inline: auto; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.site-promo__text { display: flex; align-items: baseline; flex-wrap: wrap; gap: .35rem .9rem; min-width: 0; }
+.site-promo__text strong { color: #fff; font-size: .98rem; }
+.site-promo__text span { font-size: .88rem; color: #eef0ea; }
+.site-promo__cta { flex: 0 0 auto; min-height: 38px; padding: .5rem .8rem; font-size: .82rem; white-space: nowrap; }
+
 .hero { padding: 7rem 0 6rem; background: #e9ece4; }
 .eyebrow { margin: 0 0 .5rem; font-size: .85rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .hero h1 { max-width: 800px; margin: 0; font-size: clamp(2.4rem, 7vw, 5rem); line-height: 1; overflow-wrap: anywhere; }
@@ -68,6 +77,11 @@ button { font: inherit; }
   .site-nav { display: none; width: 100%; flex-direction: column; align-items: stretch; gap: 0; padding-bottom: .75rem; }
   .site-nav.is-open { display: flex; }
   .site-nav a { padding: .7rem .25rem; border-top: 1px solid #dfe3dc; }
+  .site-promo__inner { width: min(100% - 1.25rem, 1120px); padding-block: .65rem; align-items: stretch; flex-direction: column; gap: .6rem; }
+  .site-promo__text { display: block; text-align: center; }
+  .site-promo__text strong, .site-promo__text span { display: block; }
+  .site-promo__text span { margin-top: .15rem; }
+  .site-promo__cta { width: 100%; }
   .hero { padding: 5rem 0 4rem; }
   .hero h1 { font-size: clamp(2.2rem, 11vw, 3.5rem); }
   .section { padding-block: 3rem; }
