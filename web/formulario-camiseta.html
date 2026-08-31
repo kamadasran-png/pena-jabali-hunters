@@ -30,7 +30,13 @@
     .notice { margin-bottom: 1.5rem; padding: 1rem 1.25rem; border-left: 4px solid #9a7b3f; background: #f7f7f3; }
     .success { display: none; margin-top: 1.5rem; padding: 1.25rem; border: 1px solid #b8bdb5; border-radius: .6rem; background: #eef0ea; }
     .conditional { display: none; }
-    @media (max-width: 760px) { .form-grid { grid-template-columns: 1fr; } }
+    .review { display: none; margin-top: 1.5rem; }
+    .review-box { padding: 1.25rem; border: 1px solid #dfe3dc; border-radius: .65rem; background: #fafbf8; }
+    .review-box dl { display: grid; grid-template-columns: 180px 1fr; gap: .5rem 1rem; margin: 0; }
+    .review-box dt { font-weight: 700; }
+    .review-box dd { margin: 0; }
+    .review-shirts { margin: 1rem 0 0; padding-left: 1.2rem; }
+    @media (max-width: 760px) { .form-grid { grid-template-columns: 1fr; } .review-box dl { grid-template-columns: 1fr; gap: .2rem; } .review-box dd { margin-bottom: .6rem; } }
   </style>
 </head>
 <body>
@@ -62,19 +68,10 @@
 
         <h2>Tus datos</h2>
         <div class="form-grid">
-          <div class="form-field">
-            <label for="nombre">Nombre y apellidos <span class="form-required">*</span></label>
-            <input id="nombre" name="nombre" type="text" autocomplete="name" required>
-          </div>
-          <div class="form-field">
-            <label for="telefono">Teléfono de contacto <span class="form-required">*</span></label>
-            <input id="telefono" name="telefono" type="tel" autocomplete="tel" required>
-          </div>
+          <div class="form-field"><label for="nombre">Nombre y apellidos <span class="form-required">*</span></label><input id="nombre" name="nombre" type="text" autocomplete="name" required></div>
+          <div class="form-field"><label for="telefono">Teléfono de contacto <span class="form-required">*</span></label><input id="telefono" name="telefono" type="tel" autocomplete="tel" required></div>
         </div>
-        <div class="form-field">
-          <label for="email">Correo electrónico <span class="form-required">*</span></label>
-          <input id="email" name="email" type="email" autocomplete="email" required>
-        </div>
+        <div class="form-field"><label for="email">Correo electrónico <span class="form-required">*</span></label><input id="email" name="email" type="email" autocomplete="email" required></div>
 
         <h2>Camisetas</h2>
         <div class="form-field">
@@ -114,28 +111,41 @@
         </div>
 
         <div class="summary" aria-live="polite">
-          <strong>Total provisional: <span id="resumen-total">15</span> €</strong>
+          <strong>Total: <span id="resumen-total">15</span> €</strong>
           <p><span id="resumen-cantidad">1</span> camiseta(s) · <span id="resumen-participaciones">1</span> participación(es)</p>
-          <p>El pago todavía no se procesa automáticamente. Estamos validando el recorrido antes de conectar el sistema de cobro.</p>
         </div>
 
-        <div class="form-field">
-          <label for="observaciones">Observaciones</label>
-          <textarea id="observaciones" name="observaciones" placeholder="Cualquier indicación sobre tu pedido..."></textarea>
-        </div>
+        <div class="form-field"><label for="observaciones">Observaciones</label><textarea id="observaciones" name="observaciones" placeholder="Cualquier indicación sobre tu pedido..."></textarea></div>
 
-        <label class="check-row" for="acepto">
-          <input id="acepto" name="acepto" type="checkbox" required>
-          <span>Acepto que los datos facilitados se utilicen para gestionar mi solicitud y pedido. <span class="form-required">*</span></span>
-        </label>
+        <label class="check-row" for="acepto"><input id="acepto" name="acepto" type="checkbox" required><span>Acepto que los datos facilitados se utilicen para gestionar mi solicitud y pedido. <span class="form-required">*</span></span></label>
 
-        <button class="cta cta-primary" type="submit">Continuar</button>
-
-        <div id="success" class="success" role="status" aria-live="polite">
-          <h2>Prueba completada</h2>
-          <p>La configuración del pedido funciona correctamente. Todavía no se ha enviado ni cobrado ningún pedido.</p>
-        </div>
+        <button class="cta cta-primary" type="submit">Revisar pedido</button>
       </form>
+
+      <section id="review" class="review form-card" aria-labelledby="review-title">
+        <h2 id="review-title">Revisa tu pedido</h2>
+        <p>Comprueba todos los datos antes de confirmar. En esta fase de pruebas no se realiza ningún cobro.</p>
+        <div class="review-box">
+          <dl>
+            <dt>Cliente</dt><dd id="review-nombre"></dd>
+            <dt>Teléfono</dt><dd id="review-telefono"></dd>
+            <dt>Correo</dt><dd id="review-email"></dd>
+            <dt>Entrega</dt><dd id="review-entrega"></dd>
+            <dt>Pago elegido</dt><dd id="review-pago"></dd>
+            <dt>Total</dt><dd><strong><span id="review-total"></span> €</strong></dd>
+            <dt>Participaciones</dt><dd id="review-participaciones"></dd>
+          </dl>
+          <h3>Camisetas</h3>
+          <ol id="review-shirts" class="review-shirts"></ol>
+          <p id="review-direccion-wrap"><strong>Dirección:</strong> <span id="review-direccion"></span></p>
+          <p><strong>Estado:</strong> pendiente de pago y validación.</p>
+        </div>
+        <button id="confirmar-prueba" class="cta cta-primary" type="button">Confirmar pedido (prueba)</button>
+        <div id="success" class="success" role="status" aria-live="polite">
+          <h2>Pedido de prueba registrado</h2>
+          <p>La revisión funciona correctamente. No se ha realizado ningún cobro ni se ha asignado ninguna participación real.</p>
+        </div>
+      </section>
     </section>
   </main>
 
@@ -156,6 +166,7 @@
     const resumenCantidad = document.querySelector('#resumen-cantidad');
     const resumenTotal = document.querySelector('#resumen-total');
     const resumenParticipaciones = document.querySelector('#resumen-participaciones');
+    const review = document.querySelector('#review');
     const success = document.querySelector('#success');
     const direccionBloque = document.querySelector('#direccion-bloque');
     const direccionFields = ['direccion', 'cp', 'localidad', 'provincia'].map(id => document.querySelector(`#${id}`));
@@ -169,22 +180,7 @@
       for (let i = 1; i <= count; i += 1) {
         const card = document.createElement('article');
         card.className = 'shirt-card';
-        card.innerHTML = `
-          <h3>Camiseta ${i}</h3>
-          <div class="form-grid">
-            <div class="form-field">
-              <label for="talla-${i}">Talla <span class="form-required">*</span></label>
-              <select id="talla-${i}" name="talla-${i}" required>
-                <option value="">Seleccionar talla</option>
-                <option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option><option>3XL</option>
-              </select>
-            </div>
-            <div class="form-field">
-              <label for="personalizacion-${i}">Nombre o texto para personalizar <span class="form-required">*</span></label>
-              <input id="personalizacion-${i}" name="personalizacion-${i}" type="text" maxlength="30" required placeholder="Ej.: JAVIER">
-              <p class="form-help">Máximo 30 caracteres.</p>
-            </div>
-          </div>`;
+        card.innerHTML = `<h3>Camiseta ${i}</h3><div class="form-grid"><div class="form-field"><label for="talla-${i}">Talla <span class="form-required">*</span></label><select id="talla-${i}" name="talla-${i}" required><option value="">Seleccionar talla</option><option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option><option>3XL</option></select></div><div class="form-field"><label for="personalizacion-${i}">Nombre o texto para personalizar <span class="form-required">*</span></label><input id="personalizacion-${i}" name="personalizacion-${i}" type="text" maxlength="30" required placeholder="Ej.: JAVIER"><p class="form-help">Máximo 30 caracteres.</p></div></div>`;
         shirtList.appendChild(card);
       }
       resumenCantidad.textContent = count;
@@ -199,6 +195,43 @@
       direccionFields.forEach(field => { field.required = show; });
     }
 
+    function valueOfRadio(name) {
+      const selected = form.querySelector(`input[name="${name}"]:checked`);
+      return selected ? selected.value : '';
+    }
+
+    function labelEntrega(value) { return value === 'domicilio' ? 'Envío a domicilio — toda España (gastos incluidos)' : 'Recogida'; }
+    function labelPago(value) { return value === 'bizum' ? 'Bizum' : 'Transferencia bancaria'; }
+
+    function buildReview() {
+      document.querySelector('#review-nombre').textContent = document.querySelector('#nombre').value;
+      document.querySelector('#review-telefono').textContent = document.querySelector('#telefono').value;
+      document.querySelector('#review-email').textContent = document.querySelector('#email').value;
+      const entrega = valueOfRadio('entrega');
+      const pago = valueOfRadio('pago');
+      document.querySelector('#review-entrega').textContent = labelEntrega(entrega);
+      document.querySelector('#review-pago').textContent = labelPago(pago);
+      document.querySelector('#review-total').textContent = resumenTotal.textContent;
+      document.querySelector('#review-participaciones').textContent = resumenParticipaciones.textContent;
+
+      const reviewShirts = document.querySelector('#review-shirts');
+      reviewShirts.innerHTML = '';
+      const count = Number.parseInt(cantidad.value, 10);
+      for (let i = 1; i <= count; i += 1) {
+        const li = document.createElement('li');
+        li.textContent = `Talla ${document.querySelector(`#talla-${i}`).value} · Personalización: ${document.querySelector(`#personalizacion-${i}`).value}`;
+        reviewShirts.appendChild(li);
+      }
+
+      const addressWrap = document.querySelector('#review-direccion-wrap');
+      if (entrega === 'domicilio') {
+        addressWrap.style.display = 'block';
+        document.querySelector('#review-direccion').textContent = `${document.querySelector('#direccion').value}, ${document.querySelector('#cp').value} ${document.querySelector('#localidad').value} (${document.querySelector('#provincia').value})`;
+      } else {
+        addressWrap.style.display = 'none';
+      }
+    }
+
     cantidad.addEventListener('input', renderShirts);
     cantidad.addEventListener('change', renderShirts);
     form.querySelectorAll('input[name="entrega"]').forEach(input => input.addEventListener('change', updateDelivery));
@@ -211,6 +244,13 @@
         form.reportValidity();
         return;
       }
+      buildReview();
+      form.style.display = 'none';
+      review.style.display = 'block';
+      review.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    document.querySelector('#confirmar-prueba').addEventListener('click', () => {
       success.style.display = 'block';
       success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     });
