@@ -19,14 +19,17 @@
     .form-required { color: #8a1f11; }
     .check-row { display: flex; gap: .65rem; align-items: flex-start; margin: 1.25rem 0; }
     .check-row input { width: 20px; height: 20px; flex: 0 0 auto; margin-top: .2rem; }
+    .option-list { display: grid; gap: .7rem; }
+    .option-row { display: flex; gap: .65rem; align-items: flex-start; padding: .75rem; border: 1px solid #dfe3dc; border-radius: .5rem; cursor: pointer; }
+    .option-row input { width: 20px; height: 20px; flex: 0 0 auto; margin-top: .1rem; }
     .summary { margin: 1.5rem 0; padding: 1rem 1.25rem; border-radius: .6rem; background: #eef0ea; }
     .summary strong { font-size: 1.1rem; }
     .shirt-list { display: grid; gap: 1rem; margin: 1rem 0 1.5rem; }
     .shirt-card { padding: 1rem; border: 1px solid #dfe3dc; border-radius: .65rem; background: #fafbf8; }
     .shirt-card h3 { margin-top: 0; }
-    .remove-shirt { margin-top: .25rem; border: 0; background: transparent; text-decoration: underline; cursor: pointer; font: inherit; }
     .notice { margin-bottom: 1.5rem; padding: 1rem 1.25rem; border-left: 4px solid #9a7b3f; background: #f7f7f3; }
     .success { display: none; margin-top: 1.5rem; padding: 1.25rem; border: 1px solid #b8bdb5; border-radius: .6rem; background: #eef0ea; }
+    .conditional { display: none; }
     @media (max-width: 760px) { .form-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
@@ -79,13 +82,41 @@
           <input id="cantidad" name="cantidad" type="number" min="1" step="1" value="1" required>
           <p class="form-help">Cada camiseta cuesta 15 € y genera 1 participación. Puedes añadir las unidades que necesites.</p>
         </div>
-
         <div id="shirt-list" class="shirt-list" aria-live="polite"></div>
+
+        <h2>Entrega</h2>
+        <div class="form-field">
+          <div class="option-list">
+            <label class="option-row"><input type="radio" name="entrega" value="recogida" required><span><strong>Recogida</strong><br><small>Recogida según las condiciones que indique Peña Jabalí Hunters.</small></span></label>
+            <label class="option-row"><input type="radio" name="entrega" value="domicilio" required><span><strong>Envío a domicilio — toda España</strong><br><small>Gastos de envío incluidos en el precio.</small></span></label>
+          </div>
+        </div>
+
+        <div id="direccion-bloque" class="conditional">
+          <h3>Dirección de envío</h3>
+          <div class="form-grid">
+            <div class="form-field"><label for="direccion">Dirección <span class="form-required">*</span></label><input id="direccion" name="direccion" type="text" autocomplete="street-address"></div>
+            <div class="form-field"><label for="cp">Código postal <span class="form-required">*</span></label><input id="cp" name="cp" type="text" inputmode="numeric" autocomplete="postal-code"></div>
+          </div>
+          <div class="form-grid">
+            <div class="form-field"><label for="localidad">Localidad <span class="form-required">*</span></label><input id="localidad" name="localidad" type="text" autocomplete="address-level2"></div>
+            <div class="form-field"><label for="provincia">Provincia <span class="form-required">*</span></label><input id="provincia" name="provincia" type="text" autocomplete="address-level1"></div>
+          </div>
+        </div>
+
+        <h2>Forma de pago</h2>
+        <div class="form-field">
+          <div class="option-list">
+            <label class="option-row"><input type="radio" name="pago" value="bizum" required><span><strong>Bizum</strong><br><small>Las instrucciones de pago se mostrarán al confirmar el pedido.</small></span></label>
+            <label class="option-row"><input type="radio" name="pago" value="transferencia" required><span><strong>Transferencia bancaria</strong><br><small>Los datos bancarios se mostrarán al confirmar el pedido.</small></span></label>
+          </div>
+          <p class="form-help">No se admite efectivo ni contrareembolso.</p>
+        </div>
 
         <div class="summary" aria-live="polite">
           <strong>Total provisional: <span id="resumen-total">15</span> €</strong>
           <p><span id="resumen-cantidad">1</span> camiseta(s) · <span id="resumen-participaciones">1</span> participación(es)</p>
-          <p>El método de pago y la entrega se incorporarán en la siguiente fase.</p>
+          <p>El pago todavía no se procesa automáticamente. Estamos validando el recorrido antes de conectar el sistema de cobro.</p>
         </div>
 
         <div class="form-field">
@@ -126,6 +157,8 @@
     const resumenTotal = document.querySelector('#resumen-total');
     const resumenParticipaciones = document.querySelector('#resumen-participaciones');
     const success = document.querySelector('#success');
+    const direccionBloque = document.querySelector('#direccion-bloque');
+    const direccionFields = ['direccion', 'cp', 'localidad', 'provincia'].map(id => document.querySelector(`#${id}`));
     const PRICE = 15;
 
     function renderShirts() {
@@ -133,7 +166,6 @@
       if (!Number.isFinite(count) || count < 1) count = 1;
       cantidad.value = count;
       shirtList.innerHTML = '';
-
       for (let i = 1; i <= count; i += 1) {
         const card = document.createElement('article');
         card.className = 'shirt-card';
@@ -155,15 +187,23 @@
           </div>`;
         shirtList.appendChild(card);
       }
-
       resumenCantidad.textContent = count;
       resumenParticipaciones.textContent = count;
       resumenTotal.textContent = count * PRICE;
     }
 
+    function updateDelivery() {
+      const domicilio = form.querySelector('input[name="entrega"][value="domicilio"]');
+      const show = domicilio.checked;
+      direccionBloque.style.display = show ? 'block' : 'none';
+      direccionFields.forEach(field => { field.required = show; });
+    }
+
     cantidad.addEventListener('input', renderShirts);
     cantidad.addEventListener('change', renderShirts);
+    form.querySelectorAll('input[name="entrega"]').forEach(input => input.addEventListener('change', updateDelivery));
     renderShirts();
+    updateDelivery();
 
     form.addEventListener('submit', (event) => {
       event.preventDefault();
