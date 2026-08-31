@@ -250,10 +250,115 @@
       review.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 
-    document.querySelector('#confirmar-prueba').addEventListener('click', () => {
-      success.style.display = 'block';
-      success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    const PUENTE_URL = 'https://script.google.com/macros/s/AKfycbweLVAAsiU4h8GBr8aObysANT8_-4AfYmJnd7WPxFcCV-4xsjLSnCPlwjiGIvz1-NU2/exec';
+
+document.querySelector('#confirmar-prueba').addEventListener('click', async () => {
+
+  const camisetas = [];
+
+  const count = Number.parseInt(cantidad.value, 10);
+
+  for (let i = 1; i <= count; i += 1) {
+
+    camisetas.push({
+      numero: i,
+      talla: document.querySelector(`#talla-${i}`).value,
+      personalizacion: document.querySelector(`#personalizacion-${i}`).value
     });
+
+  }
+
+  const datos = {
+
+    nombre: document.querySelector('#nombre').value,
+    telefono: document.querySelector('#telefono').value,
+    email: document.querySelector('#email').value,
+
+    cantidad: count,
+
+    camisetas: camisetas,
+
+    entrega: valueOfRadio('entrega'),
+
+    direccion: document.querySelector('#direccion').value,
+    cp: document.querySelector('#cp').value,
+    localidad: document.querySelector('#localidad').value,
+    provincia: document.querySelector('#provincia').value,
+
+    pago: valueOfRadio('pago'),
+
+    observaciones: document.querySelector('#observaciones').value
+
+  };
+
+  const boton = document.querySelector('#confirmar-prueba');
+
+  boton.disabled = true;
+  boton.textContent = 'Registrando pedido...';
+
+  try {
+
+    const respuesta = await fetch(PUENTE_URL, {
+
+      method: 'POST',
+
+      headers: {
+        'Content-Type': 'text/plain;charset=utf-8'
+      },
+
+      body: JSON.stringify(datos)
+
+    });
+
+    const resultado = await respuesta.json();
+
+    if (!resultado.ok) {
+      throw new Error(resultado.error || 'No se pudo registrar el pedido');
+    }
+
+    success.innerHTML = `
+      <h2>Pedido registrado correctamente</h2>
+      <p>
+        Tu pedido ha sido registrado correctamente.
+      </p>
+      <p>
+        <strong>ID de pedido:</strong> ${resultado.idPedido}
+      </p>
+      <p>
+        <strong>Camisetas:</strong> ${resultado.cantidad}
+      </p>
+      <p>
+        <strong>Importe:</strong> ${resultado.importe} €
+      </p>
+      <p>
+        El pedido queda pendiente de pago y validación.
+      </p>
+    `;
+
+    success.style.display = 'block';
+
+    boton.textContent = 'Pedido registrado';
+
+    success.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest'
+    });
+
+  } catch (error) {
+
+    console.error(error);
+
+    boton.disabled = false;
+    boton.textContent = 'Confirmar pedido (prueba)';
+
+    alert(
+      'No se ha podido registrar el pedido.\n\n' +
+      error.message
+    );
+
+  }
+
+});
   </script>
 </body>
 </html>
