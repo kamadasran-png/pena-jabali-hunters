@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="La Camiseta de la Suerte — compra la camiseta oficial de Peña Jabalí Hunters y consigue una participación por cada camiseta pagada y validada.">
+  <meta name="description" content="La Camiseta de la Suerte — Peña Jabalí Hunters.">
   <title>La Camiseta de la Suerte — Peña Jabalí Hunters</title>
   <link rel="stylesheet" href="css/styles.css">
   <style>
@@ -21,6 +21,11 @@
     .check-row input { width: 20px; height: 20px; flex: 0 0 auto; margin-top: .2rem; }
     .summary { margin: 1.5rem 0; padding: 1rem 1.25rem; border-radius: .6rem; background: #eef0ea; }
     .summary strong { font-size: 1.1rem; }
+    .shirt-list { display: grid; gap: 1rem; margin: 1rem 0 1.5rem; }
+    .shirt-card { padding: 1rem; border: 1px solid #dfe3dc; border-radius: .65rem; background: #fafbf8; }
+    .shirt-card h3 { margin-top: 0; }
+    .remove-shirt { margin-top: .25rem; border: 0; background: transparent; text-decoration: underline; cursor: pointer; font: inherit; }
+    .notice { margin-bottom: 1.5rem; padding: 1rem 1.25rem; border-left: 4px solid #9a7b3f; background: #f7f7f3; }
     .success { display: none; margin-top: 1.5rem; padding: 1.25rem; border: 1px solid #b8bdb5; border-radius: .6rem; background: #eef0ea; }
     @media (max-width: 760px) { .form-grid { grid-template-columns: 1fr; } }
   </style>
@@ -41,7 +46,7 @@
         <h1 id="page-title">LA CAMISETA DE LA SUERTE</h1>
         <p><strong>Tu camiseta. Tu participación. Tu oportunidad.</strong></p>
         <p>15 € · 1 camiseta = 1 participación</p>
-        <p>Compra la camiseta oficial de Peña Jabalí Hunters, personalízala con el nombre que quieras y participa en el sorteo de una Tarjeta HUNTERS 3 valorada en 300 €.</p>
+        <p>Compra tu camiseta oficial, personalízala con el nombre o texto que quieras y participa en el sorteo de una Tarjeta HUNTERS 3 valorada en 300 €.</p>
       </div>
     </section>
 
@@ -50,7 +55,7 @@
 
       <form id="camiseta-form" class="form-card" novalidate>
         <h2>Haz tu pedido</h2>
-        <p>Cada camiseta pagada y validada genera una participación. El número de participación será asignado por Peña Jabalí Hunters.</p>
+        <p>Completa tus datos y configura cada camiseta de tu pedido.</p>
 
         <h2>Tus datos</h2>
         <div class="form-grid">
@@ -68,31 +73,24 @@
           <input id="email" name="email" type="email" autocomplete="email" required>
         </div>
 
-        <h2>Pedido</h2>
-        <div class="form-grid">
-          <div class="form-field">
-            <label for="cantidad">¿Cuántas camisetas quieres comprar? <span class="form-required">*</span></label>
-            <input id="cantidad" name="cantidad" type="number" min="1" step="1" value="1" required>
-            <p class="form-help">Indica el número total de camisetas.</p>
-          </div>
-          <div class="form-field">
-            <label for="talla">Talla</label>
-            <select id="talla" name="talla">
-              <option value="">Seleccionar posteriormente</option>
-              <option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option><option>3XL</option>
-            </select>
-            <p class="form-help">La gestión de varias tallas por pedido se incorporará en la siguiente fase.</p>
-          </div>
+        <h2>Camisetas</h2>
+        <div class="form-field">
+          <label for="cantidad">¿Cuántas camisetas quieres comprar? <span class="form-required">*</span></label>
+          <input id="cantidad" name="cantidad" type="number" min="1" step="1" value="1" required>
+          <p class="form-help">Cada camiseta cuesta 15 € y genera 1 participación. Puedes añadir las unidades que necesites.</p>
+        </div>
+
+        <div id="shirt-list" class="shirt-list" aria-live="polite"></div>
+
+        <div class="summary" aria-live="polite">
+          <strong>Total provisional: <span id="resumen-total">15</span> €</strong>
+          <p><span id="resumen-cantidad">1</span> camiseta(s) · <span id="resumen-participaciones">1</span> participación(es)</p>
+          <p>El método de pago y la entrega se incorporarán en la siguiente fase.</p>
         </div>
 
         <div class="form-field">
           <label for="observaciones">Observaciones</label>
           <textarea id="observaciones" name="observaciones" placeholder="Cualquier indicación sobre tu pedido..."></textarea>
-        </div>
-
-        <div class="summary" aria-live="polite">
-          <strong>Pedido: <span id="resumen-cantidad">1</span> camiseta(s)</strong>
-          <p>El precio y el sistema de pago se incorporarán después de validar esta primera versión.</p>
         </div>
 
         <label class="check-row" for="acepto">
@@ -103,8 +101,8 @@
         <button class="cta cta-primary" type="submit">Continuar</button>
 
         <div id="success" class="success" role="status" aria-live="polite">
-          <h2>Formulario validado</h2>
-          <p>La estructura funciona correctamente. En la siguiente fase conectaremos el envío real, la gestión del pedido y el pago.</p>
+          <h2>Prueba completada</h2>
+          <p>La configuración del pedido funciona correctamente. Todavía no se ha enviado ni cobrado ningún pedido.</p>
         </div>
       </form>
     </section>
@@ -123,16 +121,56 @@
   <script>
     const form = document.querySelector('#camiseta-form');
     const cantidad = document.querySelector('#cantidad');
-    const resumen = document.querySelector('#resumen-cantidad');
+    const shirtList = document.querySelector('#shirt-list');
+    const resumenCantidad = document.querySelector('#resumen-cantidad');
+    const resumenTotal = document.querySelector('#resumen-total');
+    const resumenParticipaciones = document.querySelector('#resumen-participaciones');
     const success = document.querySelector('#success');
+    const PRICE = 15;
 
-    cantidad.addEventListener('input', () => {
-      const value = Math.max(1, Number.parseInt(cantidad.value || '1', 10));
-      resumen.textContent = Number.isFinite(value) ? value : 1;
-    });
+    function renderShirts() {
+      let count = Number.parseInt(cantidad.value, 10);
+      if (!Number.isFinite(count) || count < 1) count = 1;
+      cantidad.value = count;
+      shirtList.innerHTML = '';
+
+      for (let i = 1; i <= count; i += 1) {
+        const card = document.createElement('article');
+        card.className = 'shirt-card';
+        card.innerHTML = `
+          <h3>Camiseta ${i}</h3>
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="talla-${i}">Talla <span class="form-required">*</span></label>
+              <select id="talla-${i}" name="talla-${i}" required>
+                <option value="">Seleccionar talla</option>
+                <option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option><option>3XL</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="personalizacion-${i}">Nombre o texto para personalizar <span class="form-required">*</span></label>
+              <input id="personalizacion-${i}" name="personalizacion-${i}" type="text" maxlength="30" required placeholder="Ej.: JAVIER">
+              <p class="form-help">Máximo 30 caracteres.</p>
+            </div>
+          </div>`;
+        shirtList.appendChild(card);
+      }
+
+      resumenCantidad.textContent = count;
+      resumenParticipaciones.textContent = count;
+      resumenTotal.textContent = count * PRICE;
+    }
+
+    cantidad.addEventListener('input', renderShirts);
+    cantidad.addEventListener('change', renderShirts);
+    renderShirts();
 
     form.addEventListener('submit', (event) => {
       event.preventDefault();
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
       success.style.display = 'block';
       success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     });
