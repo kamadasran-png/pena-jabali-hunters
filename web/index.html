@@ -7,71 +7,29 @@
   <title>Peña Jabalí Hunters</title>
   <link rel="stylesheet" href="css/styles.css">
   <style>
-    /* C.14 — HERO prueba basada en composición aportada por el usuario */
+    /* C.14 — composición final en pruebas del encabezado + Hero */
+    .site-header__inner{position:relative;display:flex;align-items:center;justify-content:space-between}
+    .brand{position:absolute;left:50%;top:0;transform:translateX(-50%);z-index:50}
+    .brand__logo{width:300px;height:300px;transform:none}
+    .site-nav--left,.site-nav--right{display:flex!important;align-items:center;position:relative;z-index:51;gap:.85rem;min-width:0}
+    .site-nav--left{width:calc(50% - 175px);justify-content:flex-start;margin-right:auto}
+    .site-nav--right{width:calc(50% - 175px);justify-content:flex-end;margin-left:auto}
+    .site-nav--left a,.site-nav--right a{white-space:nowrap}
+    .site-nav--mobile{display:none!important}
     .hero--image{min-height:0;height:min(37.5vw,720px);display:flex;align-items:stretch;text-align:right}
     .hero--image .hero__media{background-size:cover;background-position:center center;background-repeat:no-repeat;background-color:var(--charcoal)}
     .hero--image::after{background:linear-gradient(90deg,rgba(32,35,31,0) 0%,rgba(32,35,31,.02) 45%,rgba(32,35,31,.16) 68%,rgba(32,35,31,.48) 100%)}
     .hero--image .hero__content{width:100%;height:100%;padding:0 7% 7%;display:flex;flex-direction:column;align-items:flex-end;justify-content:flex-end;text-align:center}
     .hero--image h1{width:min(43%,560px);max-width:560px;margin:0;color:var(--ivory);font-family:'Montserrat',system-ui,sans-serif;font-size:clamp(2rem,3.35vw,4rem);font-weight:500;line-height:1.18;letter-spacing:.015em;text-transform:uppercase;white-space:normal;text-shadow:0 2px 12px rgba(0,0,0,.28)}
     .hero--image .hero__content>p:last-child{width:min(43%,560px);max-width:560px;margin:.9rem 0 0;color:var(--ivory);font-family:'Montserrat',system-ui,sans-serif;font-size:clamp(.95rem,1.25vw,1.35rem);font-weight:500;line-height:1.3;text-shadow:0 2px 10px rgba(0,0,0,.3)}
-    @media (max-width:900px){
-      .hero--image{height:min(48vw,620px)}
-      .hero--image .hero__content{padding-right:5%;padding-bottom:6%}
-      .hero--image h1,.hero--image .hero__content>p:last-child{width:min(46%,500px)}
-      .hero--image h1{font-size:clamp(1.7rem,3.8vw,3rem)}
-    }
-    @media (max-width:760px){
-      .site-nav--left,.site-nav--right{display:none!important}
-      .site-nav--mobile{display:none!important;position:absolute;top:180px;left:0;width:100%;flex-direction:column;align-items:stretch;gap:0;background:var(--charcoal);padding-bottom:.75rem;z-index:40}
-      .site-nav--mobile.is-open{display:flex!important}
-      .site-nav--mobile a{padding:.7rem .75rem;border-top:1px solid rgba(245,243,236,.15)}
-      .hero--image{height:100vw;min-height:430px;max-height:620px}
-      .hero--image .hero__media{background-size:cover;background-position:center center}
-      .hero--image::after{background:linear-gradient(180deg,rgba(32,35,31,0) 35%,rgba(32,35,31,.10) 52%,rgba(32,35,31,.62) 100%)}
-      .hero--image .hero__content{padding:0 1.25rem 2.5rem;align-items:center;text-align:center;justify-content:flex-end}
-      .hero--image h1,.hero--image .hero__content>p:last-child{width:min(92%,520px);max-width:none}
-      .hero--image h1{font-size:clamp(1.8rem,8.2vw,3rem);line-height:1.13;letter-spacing:.01em}
-      .hero--image .hero__content>p:last-child{font-size:clamp(.95rem,4vw,1.15rem);margin-top:.7rem}
-    }
-    @media (max-width:420px){
-      .site-nav--mobile{top:155px}
-      .hero--image{height:125vw;min-height:500px;max-height:600px}
-      .hero--image .hero__media{background-position:center center}
-      .hero--image .hero__content{padding-bottom:2.2rem}
-    }
+    @media (max-width:900px){.site-nav--left,.site-nav--right{gap:.55rem}.site-nav--left{width:calc(50% - 165px)}.site-nav--right{width:calc(50% - 165px)}.site-nav a{font-size:.75rem}.hero--image{height:min(48vw,620px)}.hero--image .hero__content{padding-right:5%;padding-bottom:6%}.hero--image h1,.hero--image .hero__content>p:last-child{width:min(46%,500px)}.hero--image h1{font-size:clamp(1.7rem,3.8vw,3rem)}}
+    @media (max-width:760px){.site-nav--left,.site-nav--right{display:none!important}.site-nav--mobile{display:none!important;position:absolute;top:180px;left:0;width:100%;flex-direction:column;align-items:stretch;gap:0;background:var(--charcoal);padding-bottom:.75rem;z-index:60}.site-nav--mobile.is-open{display:flex!important}.site-nav--mobile a{padding:.7rem .75rem;border-top:1px solid rgba(245,243,236,.15)}.hero--image{height:100vw;min-height:430px;max-height:620px}.hero--image .hero__media{background-size:cover;background-position:center center}.hero--image::after{background:linear-gradient(180deg,rgba(32,35,31,0) 35%,rgba(32,35,31,.10) 52%,rgba(32,35,31,.62) 100%)}.hero--image .hero__content{padding:0 1.25rem 2.5rem;align-items:center;text-align:center;justify-content:flex-end}.hero--image h1,.hero--image .hero__content>p:last-child{width:min(92%,520px);max-width:none}.hero--image h1{font-size:clamp(1.8rem,8.2vw,3rem);line-height:1.13;letter-spacing:.01em}.hero--image .hero__content>p:last-child{font-size:clamp(.95rem,4vw,1.15rem);margin-top:.7rem}}
+    @media (max-width:420px){.site-nav--mobile{top:155px}.hero--image{height:125vw;min-height:500px;max-height:600px}.hero--image .hero__media{background-position:center center}.hero--image .hero__content{padding-bottom:2.2rem}}
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="site-header__inner">
-      <nav class="site-nav site-nav--left" aria-label="Navegación principal izquierda">
-        <a href="index.html">Inicio</a><a href="caza.html">Caza</a><a href="cotos.html">Cotos</a><a href="tarjetas-jornadas.html">Tarjetas y jornadas</a>
-      </nav>
-      <a class="brand" href="index.html" aria-label="Peña Jabalí Hunters — inicio"><img class="brand__logo" src="assets/logos/logo-pjhunters.png" alt="Peña Jabalí Hunters"></a>
-      <nav class="site-nav site-nav--right" aria-label="Navegación principal derecha">
-        <a href="galeria.html">Galería</a><a href="la-pena.html">La Peña</a><a href="contacto.html">Contacto</a>
-      </nav>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Abrir menú"><span aria-hidden="true">☰</span></button>
-      <nav id="mobile-nav" class="site-nav site-nav--mobile" aria-label="Navegación móvil">
-        <a href="index.html">Inicio</a><a href="caza.html">Caza</a><a href="cotos.html">Cotos</a><a href="tarjetas-jornadas.html">Tarjetas y jornadas</a><a href="galeria.html">Galería</a><a href="la-pena.html">La Peña</a><a href="contacto.html">Contacto</a>
-      </nav>
-    </div>
-  </header>
-  <main id="inicio" class="site-main">
-    <section class="hero hero--image" aria-labelledby="hero-title">
-      <div class="hero__media" aria-hidden="true"></div>
-      <div class="container hero__content">
-        <h1 id="hero-title">Caza, naturaleza y tradición</h1>
-        <p>Peña Jabalí Hunters</p>
-      </div>
-    </section>
-    <section class="section home-section" id="caza" aria-labelledby="home-caza-title"><div class="container"><h2 id="home-caza-title">Caza</h2><p>Información sobre nuestra actividad cinegética, modalidades y propuestas de caza.</p><a class="cta cta-primary" href="caza.html">Ver más</a></div></section>
-    <section class="section home-section" id="cotos" aria-labelledby="home-cotos-title"><div class="container"><h2 id="home-cotos-title">Cotos</h2><p>Conoce los territorios de caza y consulta la información disponible de cada coto.</p><div class="home-grid"><article class="home-card"><h3>Coto 1</h3><p>Información pendiente de incorporación.</p></article><article class="home-card"><h3>Coto 2</h3><p>Información pendiente de incorporación.</p></article></div><a class="cta cta-primary" href="cotos.html">Ver más</a></div></section>
-    <section class="section home-section" id="tarjetas-jornadas" aria-labelledby="home-oferta-title"><div class="container"><h2 id="home-oferta-title">Tarjetas y jornadas</h2><p>Consulta las opciones de caza, jornadas y propuestas disponibles.</p><div class="home-grid"><article class="home-card"><h3>Tarjetas</h3><p>Información pendiente de incorporación.</p><a class="cta cta-secondary" href="tarjetas-jornadas.html">Ver información</a></article><article class="home-card"><h3>Jornadas</h3><p>Información pendiente de incorporación.</p><a class="cta cta-secondary" href="tarjetas-jornadas.html">Ver información</a></article></div></div></section>
-    <section class="section home-section home-section--visual" id="galeria" aria-labelledby="home-galeria-title"><div class="container"><h2 id="home-galeria-title">Galería</h2><p>Una selección visual de cotos, caza, fauna y jornadas de Peña Jabalí Hunters.</p><div class="home-visual-placeholder" aria-label="Selección visual pendiente de incorporación">Imagen / selección visual pendiente de incorporación.</div><a class="cta cta-primary" href="galeria.html">Ver galería</a></div></section>
-    <section class="section home-section" id="la-pena" aria-labelledby="home-pena-title"><div class="container"><h2 id="home-pena-title">La Peña</h2><p>Conoce Peña Jabalí Hunters, su identidad y el proyecto que estamos construyendo.</p><a class="cta cta-primary" href="la-pena.html">Ver información</a></div></section>
-    <section class="section home-section home-section--contact" id="reserva" aria-labelledby="home-contact-title"><div class="container"><h2 id="home-contact-title">¿Quieres reservar o consultar?</h2><p>Estamos preparando el sistema de contacto y reserva. Mientras tanto, puedes acceder a la página de contacto.</p><div class="home-actions"><a class="cta cta-primary" href="contacto.html">Reservar</a><a class="cta cta-secondary" href="contacto.html">Consultar</a></div></div></section>
-  </main>
+  <header class="site-header"><div class="site-header__inner"><nav class="site-nav site-nav--left" aria-label="Navegación principal izquierda"><a href="index.html">Inicio</a><a href="caza.html">Caza</a><a href="cotos.html">Cotos</a><a href="tarjetas-jornadas.html">Tarjetas y jornadas</a></nav><a class="brand" href="index.html" aria-label="Peña Jabalí Hunters — inicio"><img class="brand__logo" src="assets/logos/logo-pjhunters.png" alt="Peña Jabalí Hunters"></a><nav class="site-nav site-nav--right" aria-label="Navegación principal derecha"><a href="galeria.html">Galería</a><a href="la-pena.html">La Peña</a><a href="contacto.html">Contacto</a></nav><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Abrir menú"><span aria-hidden="true">☰</span></button><nav id="mobile-nav" class="site-nav site-nav--mobile" aria-label="Navegación móvil"><a href="index.html">Inicio</a><a href="caza.html">Caza</a><a href="cotos.html">Cotos</a><a href="tarjetas-jornadas.html">Tarjetas y jornadas</a><a href="galeria.html">Galería</a><a href="la-pena.html">La Peña</a><a href="contacto.html">Contacto</a></nav></div></header>
+  <main id="inicio" class="site-main"><section class="hero hero--image" aria-labelledby="hero-title"><div class="hero__media" aria-hidden="true"></div><div class="container hero__content"><h1 id="hero-title">Caza, naturaleza y tradición</h1><p>Peña Jabalí Hunters</p></div></section><section class="section home-section" id="caza" aria-labelledby="home-caza-title"><div class="container"><h2 id="home-caza-title">Caza</h2><p>Información sobre nuestra actividad cinegética, modalidades y propuestas de caza.</p><a class="cta cta-primary" href="caza.html">Ver más</a></div></section><section class="section home-section" id="cotos" aria-labelledby="home-cotos-title"><div class="container"><h2 id="home-cotos-title">Cotos</h2><p>Conoce los territorios de caza y consulta la información disponible de cada coto.</p><div class="home-grid"><article class="home-card"><h3>Coto 1</h3><p>Información pendiente de incorporación.</p></article><article class="home-card"><h3>Coto 2</h3><p>Información pendiente de incorporación.</p></article></div><a class="cta cta-primary" href="cotos.html">Ver más</a></div></section><section class="section home-section" id="tarjetas-jornadas" aria-labelledby="home-oferta-title"><div class="container"><h2 id="home-oferta-title">Tarjetas y jornadas</h2><p>Consulta las opciones de caza, jornadas y propuestas disponibles.</p><div class="home-grid"><article class="home-card"><h3>Tarjetas</h3><p>Información pendiente de incorporación.</p><a class="cta cta-secondary" href="tarjetas-jornadas.html">Ver información</a></article><article class="home-card"><h3>Jornadas</h3><p>Información pendiente de incorporación.</p><a class="cta cta-secondary" href="tarjetas-jornadas.html">Ver información</a></article></div></div></section><section class="section home-section home-section--visual" id="galeria" aria-labelledby="home-galeria-title"><div class="container"><h2 id="home-galeria-title">Galería</h2><p>Una selección visual de cotos, caza, fauna y jornadas de Peña Jabalí Hunters.</p><div class="home-visual-placeholder" aria-label="Selección visual pendiente de incorporación">Imagen / selección visual pendiente de incorporación.</div><a class="cta cta-primary" href="galeria.html">Ver galería</a></div></section><section class="section home-section" id="la-pena" aria-labelledby="home-pena-title"><div class="container"><h2 id="home-pena-title">La Peña</h2><p>Conoce Peña Jabalí Hunters, su identidad y el proyecto que estamos construyendo.</p><a class="cta cta-primary" href="la-pena.html">Ver información</a></div></section><section class="section home-section home-section--contact" id="reserva" aria-labelledby="home-contact-title"><div class="container"><h2 id="home-contact-title">¿Quieres reservar o consultar?</h2><p>Estamos preparando el sistema de contacto y reserva. Mientras tanto, puedes acceder a la página de contacto.</p><div class="home-actions"><a class="cta cta-primary" href="contacto.html">Reservar</a><a class="cta cta-secondary" href="contacto.html">Consultar</a></div></div></section></main>
   <footer class="site-footer"><div class="container footer-grid"><section class="footer-block"><h2>Peña Jabalí Hunters</h2><img class="footer-logo" src="assets/logos/logo-pjhunters.png" alt="Logotipo Peña Jabalí Hunters"></section><section class="footer-block"><h2>Navegación</h2><p><a href="index.html">Inicio</a></p><p><a href="caza.html">Caza</a></p><p><a href="cotos.html">Cotos</a></p><p><a href="tarjetas-jornadas.html">Tarjetas y jornadas</a></p><p><a href="galeria.html">Galería</a></p><p><a href="la-pena.html">La Peña</a></p><p><a href="contacto.html">Contacto</a></p></section><section class="footer-block"><h2>Contacto y reservas</h2><p><a class="cta cta-primary" href="contacto.html">Contactar</a></p><p><a class="cta cta-secondary" href="contacto.html">Reservar</a></p></section><section class="footer-block"><h2>Información legal</h2><p><a href="legal.html">Aviso legal</a></p><p><a href="privacidad.html">Privacidad</a></p><p><a href="cookies.html">Cookies</a></p></section></div><div class="container footer-bottom"><p>© Peña Jabalí Hunters</p></div></footer>
   <script src="js/main.js" defer></script>
 </body>
