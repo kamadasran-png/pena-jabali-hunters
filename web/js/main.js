@@ -1,10 +1,12 @@
 // Base JavaScript for the Peña Jabalí Hunters web.
-// B.1: mobile navigation only. Other interactions will be added in later blocks.
+// B.2: shared navigation + promotion.
 
 document.documentElement.classList.add("js");
 
+// Interior pages use #site-nav; the home page uses #mobile-nav.
+// Support both so the same mobile navigation behavior works everywhere.
 const navToggle = document.querySelector(".nav-toggle");
-const siteNav = document.querySelector("#mobile-nav");
+const siteNav = document.querySelector("#mobile-nav, #site-nav");
 
 if (navToggle && siteNav) {
   navToggle.addEventListener("click", () => {
