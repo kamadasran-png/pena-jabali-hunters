@@ -4,7 +4,7 @@
 document.documentElement.classList.add("js");
 
 const navToggle = document.querySelector(".nav-toggle");
-const siteNav = document.querySelector("#site-nav");
+const siteNav = document.querySelector("#mobile-nav");
 
 if (navToggle && siteNav) {
   navToggle.addEventListener("click", () => {
