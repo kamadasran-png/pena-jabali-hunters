@@ -23,8 +23,8 @@ button { font: inherit; }
 .container { width: min(1120px, calc(100% - 2rem)); margin-inline: auto; min-width: 0; }
 .site-header { position: sticky; top: 0; z-index: 20; background: var(--charcoal); color: var(--ivory); border-bottom: 2px solid var(--gold); }
 .site-header__inner { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; width: min(1120px, calc(100% - 2rem)); min-height: 78px; margin-inline: auto; min-width: 0; }
-.brand { display: inline-flex; align-items: center; flex: 0 0 auto; text-decoration: none; }
-.brand__logo { display: block; width: 62px; height: 62px; object-fit: contain; }
+.brand { display: inline-flex; align-items: center; flex: 0 0 auto; text-decoration: none; position: relative; z-index: 30; }
+.brand__logo { display: block; width: 112px; height: 112px; object-fit: contain; transform: translateY(18px); }
 .site-nav { display: flex; align-items: center; justify-content: flex-end; gap: .75rem 1rem; min-width: 0; }
 .site-nav a { padding: .35rem 0; text-decoration: none; font-size: .92rem; font-weight: 600; transition: color var(--transition); }
 .site-nav a:hover, .site-nav a:focus-visible { color: var(--earth); text-decoration: none; }
@@ -93,7 +93,7 @@ h1, h2, h3 { font-family: 'Roboto Slab', Georgia, serif; color: var(--charcoal);
 }
 @media (max-width: 760px) {
   .site-header__inner { min-height: 68px; gap: 1rem; flex-wrap: wrap; }
-  .brand__logo { width: 54px; height: 54px; }
+  .brand__logo { width: 82px; height: 82px; transform: translateY(12px); }
   .nav-toggle { display: inline-flex; align-items: center; justify-content: center; margin-left: auto; }
   .site-nav { display: none; width: 100%; flex-direction: column; align-items: stretch; gap: 0; padding-bottom: .75rem; }
   .site-nav.is-open { display: flex; }
@@ -113,6 +113,7 @@ h1, h2, h3 { font-family: 'Roboto Slab', Georgia, serif; color: var(--charcoal);
 }
 @media (max-width: 420px) {
   .container, .site-header__inner { width: min(100% - 1.25rem, 1120px); }
+  .brand__logo { width: 76px; height: 76px; transform: translateY(10px); }
   .hero { padding-block: 4rem 3rem; }
   .section { padding-block: 2.5rem; }
 }
