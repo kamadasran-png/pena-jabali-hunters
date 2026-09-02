@@ -110,3 +110,32 @@ promo.innerHTML = `
 `;
 
 document.body.prepend(promo);
+
+// 2I.3 — Corrección quirúrgica del comportamiento de los botones del footer.
+// Solo afecta a Contactar y Reservar dentro del footer, en escritorio y móvil.
+const footerFix = document.createElement("style");
+footerFix.textContent = `
+  .site-footer .footer-block .cta-primary {
+    background: var(--orange) !important;
+    color: var(--charcoal) !important;
+    border-color: var(--orange) !important;
+  }
+  .site-footer .footer-block .cta-primary:hover,
+  .site-footer .footer-block .cta-primary:focus-visible {
+    background: #f1842d !important;
+    color: var(--charcoal) !important;
+    border-color: #f1842d !important;
+  }
+  .site-footer .footer-block .cta-secondary {
+    background: transparent !important;
+    color: var(--ivory) !important;
+    border-color: var(--ivory) !important;
+  }
+  .site-footer .footer-block .cta-secondary:hover,
+  .site-footer .footer-block .cta-secondary:focus-visible {
+    background: var(--ivory) !important;
+    color: var(--olive) !important;
+    border-color: var(--ivory) !important;
+  }
+`;
+document.head.appendChild(footerFix);
