@@ -268,9 +268,9 @@ Commit de corrección:
 
 ### 2I.3 — Estados interactivos
 
-**IMPLEMENTADO.**
+**CERRADO Y APROBADO.**
 
-Se han aplicado globalmente en `web/css/styles.css`:
+Se han aplicado globalmente en `web/css/styles.css` y, para el comportamiento específico del pie de página, en `web/js/main.js`:
 
 - hover;
 - focus;
@@ -280,11 +280,12 @@ Se han aplicado globalmente en `web/css/styles.css`:
 - respuesta táctil adecuada;
 - estados de botones, tarjetas, enlaces contextuales, categorías de galería y menú móvil;
 - zoom muy sutil en imágenes de galería;
-- soporte de `prefers-reduced-motion`.
+- soporte de `prefers-reduced-motion`;
+- comportamiento visual correcto de los botones de Contactar y Reservar del footer.
 
 La implementación respeta C.14.5, C.14.8 y C.14.10 y no modifica la arquitectura.
 
-**Pendiente de cierre definitivo: revisión visual en escritorio y móvil.**
+**Revisión visual validada por el usuario en escritorio y móvil.**
 
 ---
 
@@ -312,19 +313,35 @@ Content SHA anterior:
 
 ### 2I.3 — Estados interactivos
 
-Archivo:
+Archivo principal:
 
 `web/css/styles.css`
 
-Commit:
+Commit inicial del bloque:
 
 `c8f292218b6133a3f446862a7b873a5c4505f062`
 
-Content SHA actual:
+Content SHA inicial:
 
 `f7aa86a73d12479b54c17aa715acc45bcb2d483d`
 
-Antes de modificar de nuevo `styles.css` deberá recuperarse su SHA actual.
+### Corrección final de footer — 2I.3
+
+Archivo:
+
+`web/js/main.js`
+
+Commit:
+
+`bbf463578ab06110da1819b389d756b3e5f7ab71`
+
+Content SHA:
+
+`ce5bf4cbc682db1c0c7563e70d5e635121dd6dd1`
+
+La corrección fue revisada visualmente y validada por el usuario en escritorio y móvil.
+
+Antes de modificar de nuevo los archivos técnicos deberá recuperarse su SHA actual.
 
 ---
 
@@ -418,7 +435,9 @@ Bloques 2A → 2D y 2H cerrados.
 
 **2I.2 implementado.**
 
-**2I.3 implementado, pendiente de revisión visual para cierre.**
+**2I.3 cerrado y aprobado.**
+
+La revisión visual de 2I.3 fue validada en escritorio y móvil, incluyendo botones, tarjetas, navegación contextual, galería, menú móvil y comportamiento del footer.
 
 ### PÁGINAS
 
@@ -430,32 +449,17 @@ GitHub Pages mediante GitHub Actions operativo.
 
 ### CONTROL
 
-Este documento queda sincronizado con el estado real de trabajo hasta la implementación de **2I.3**.
+Este documento queda sincronizado con el estado real del proyecto tras el cierre de **2I.3**.
 
 ---
 
-## 16. Próximo paso obligatorio
+## 16. Próximo paso
 
-### **REVISIÓN VISUAL DE 2I.3**
+**NO SE INICIA AUTOMÁTICAMENTE NINGÚN BLOQUE NUEVO.**
 
-Antes de cerrar 2I.3 se comprobará:
+El bloque **2I.3 queda cerrado y aprobado**.
 
-- escritorio;
-- móvil;
-- hover;
-- focus con teclado;
-- active / pulsación;
-- botones;
-- tarjetas;
-- navegación contextual;
-- galería;
-- menú móvil;
-- ausencia de efectos excesivos;
-- coherencia con C.14.
-
-Si la revisión es correcta, **2I.3 se cerrará** y se volverá a sincronizar este documento antes de iniciar el siguiente bloque.
-
-No se avanzará automáticamente al siguiente bloque.
+El siguiente bloque se decidirá conjuntamente antes de cualquier nueva implementación.
 
 ---
 
@@ -473,7 +477,10 @@ No se avanzará automáticamente al siguiente bloque.
 - 01/09/2026 — Corrección estructural de `web/la-pena.html`.
 - 02/09/2026 — Sincronización del CONTROL_PROYECTO.md con el estado real hasta 2I.2.
 - 02/09/2026 — Implementación de 2I.3 — estados hover, focus y active globales.
-- 02/09/2026 — Actualización del control para registrar 2I.3 como implementado y pendiente de revisión visual para cierre.
+- 02/09/2026 — Corrección final del comportamiento visual del footer.
+- 02/09/2026 — Revisión visual de 2I.3 validada en escritorio y móvil.
+- 02/09/2026 — **Cierre y aprobación de 2I.3.**
+- 02/09/2026 — Sincronización del CONTROL_PROYECTO.md con el cierre de 2I.3.
 
 ---
 
