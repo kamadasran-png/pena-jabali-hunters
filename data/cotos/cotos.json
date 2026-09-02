@@ -48,5 +48,35 @@
       "Contacto: jabalihunters@gmail.com",
       "WhatsApp y teléfono: 625025243"
     ]
+  },
+  {
+    "id": "10225",
+    "nombre": "RAMBLA DEL CONDE",
+    "numero_coto": "10225",
+    "ubicacion": "Pozo Cañada",
+    "provincia": "Albacete",
+    "superficie": 500,
+    "superficie_cazadero": 300,
+    "descripcion": "Tierras de labor con cultivos de secano. Frutales de la variedad almendros. Arboleda y pinares, monte bajo mediterráneo de esparteras y coscojas. Sierra pronunciada bajo el tendido de parque eólico, con numerosas quebradas y regueros pronunciados que propician el rececho de muflón y aguardo de jabalí. Comparte instalaciones con el Coto El Pozanco. Buen acceso desde la carretera Nacional de Pozo Cañada a Hellín, después de 8 kilómetros de trayecto.",
+    "especies": [
+      "jabalí",
+      "muflon"
+    ],
+    "modalidades": [
+      "rececho",
+      "aguardos"
+    ],
+    "temporada": "2026/2027",
+    "periodos": "Estipulado por la legislación y la Orden de Vedas de Castilla-La Mancha vigente.",
+    "tarjetas": [],
+    "tarjetas_disponibles": 6,
+    "jornadas": [],
+    "estado": "activo",
+    "imagenes": [],
+    "observaciones": [
+      "Comparte instalaciones con el Coto El Pozanco.",
+      "Contacto: jabalihunters@gmail.com",
+      "WhatsApp y teléfono: 625025243"
+    ]
   }
 ]
