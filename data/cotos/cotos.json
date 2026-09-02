@@ -22,7 +22,16 @@
       "zorzal común"
     ],
     "modalidades": [
-      "Todas las modalidades autorizadas"
+      "aguardo-espera-diurno",
+      "aguardo-espera-nocturno",
+      "en-mano",
+      "al-salto",
+      "caza-con-galgos",
+      "ojeo",
+      "perdiz-con-reclamo",
+      "puesto-fijo",
+      "caza-con-perros-madriguera",
+      "cetreria"
     ],
     "temporada": "2026/2027",
     "periodos": "Estipulado por la legislación y la Orden de Vedas de Castilla-La Mancha vigente.",
