@@ -1,5 +1,5 @@
 [
-  {"id":"jabalí","nombre":"Jabalí","cotos":["AB-10425"]},
+  {"id":"jabalí","nombre":"Jabalí","cotos":["AB-10425","10225"]},
   {"id":"codorniz-comun","nombre":"Codorniz común","cotos":["AB-10425"]},
   {"id":"conejo","nombre":"Conejo","cotos":["AB-10425"]},
   {"id":"corneja-negra","nombre":"Corneja negra","cotos":["AB-10425"]},
@@ -10,5 +10,6 @@
   {"id":"perdiz-roja","nombre":"Perdiz roja","cotos":["AB-10425"]},
   {"id":"urraca","nombre":"Urraca","cotos":["AB-10425"]},
   {"id":"zorro","nombre":"Zorro","cotos":["AB-10425"]},
-  {"id":"zorzal-comun","nombre":"Zorzal común","cotos":["AB-10425"]}
+  {"id":"zorzal-comun","nombre":"Zorzal común","cotos":["AB-10425"]},
+  {"id":"muflon","nombre":"Muflón","cotos":["10225"]}
 ]
