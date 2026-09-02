@@ -325,7 +325,7 @@ Coto ↔ Especies ↔ Modalidades ↔ Jornadas ↔ Tarjetas
 
 **CERRADO Y APROBADO.**
 
-Cotos: `id`, `nombre`, `numero_coto`, `ubicacion`, `provincia`, `superficie`, `descripcion`, `especies`, `modalidades`, `temporada`, `periodos`, `tarjetas`, `jornadas`, `estado`, `imagenes`, `observaciones`.
+Cotos: `id`, `nombre`, `numero_coto`, `ubicacion`, `provincia`, `superficie`, `superficie_cazadero`, `descripcion`, `especies`, `modalidades`, `temporada`, `periodos`, `tarjetas`, `jornadas`, `estado`, `imagenes`, `observaciones`.
 
 Se añadió como criterio aprobado para el coto el campo `tarjetas_disponibles`.
 
@@ -404,6 +404,54 @@ Auditoría final del registro:
 
 **2J.5 queda cerrado tras carga, corrección relacional y auditoría final.**
 
+### 2J.6 — Segundo conjunto de datos reales: RAMBLA DEL CONDE
+
+**EN CURSO — DATOS CARGADOS, PENDIENTES DE AUDITORÍA FINAL.**
+
+Se inició la carga controlada del segundo coto con información real proporcionada directamente por el usuario. No existe POC de Rambla del Conde aportado al proyecto en este bloque.
+
+Datos cargados:
+
+- Nombre: **RAMBLA DEL CONDE**.
+- Nº de coto: **10225**.
+- Ubicación: **Pozo Cañada**.
+- Provincia: **Albacete**.
+- Superficie del coto: **500 ha**.
+- Cazadero autorizado: **300 ha**.
+- Descripción: tierras de labor con cultivos de secano; frutales de la variedad almendros; arboleda y pinares, monte bajo mediterráneo de esparteras y coscojas; sierra pronunciada bajo el tendido de parque eólico, con numerosas quebradas y regueros pronunciados que propician el rececho de muflón y aguardo de jabalí; comparte instalaciones con El Pozanco; buen acceso desde la carretera Nacional de Pozo Cañada a Hellín, después de 8 kilómetros de trayecto.
+- Especies: **jabalí y muflón**.
+- Modalidades: **rececho y aguardos**.
+- Temporada: **2026/2027**.
+- Periodo: **Estipulado por la legislación y la Orden de Vedas de Castilla-La Mancha vigente.**
+- Tarjetas disponibles: **6**.
+- Jornadas: sin jornadas concretas cargadas.
+- Imágenes: **pendientes de realizar**.
+- Observaciones específicas: **ninguna**.
+- Contacto: el mismo que El Pozanco (`jabalihunters@gmail.com` / `625025243`).
+
+Criterios aprobados durante 2J.6:
+
+- Añadir al modelo de cotos el campo `superficie_cazadero` para distinguir la superficie total del coto de la superficie de cazadero autorizada.
+- Aplicar a Rambla del Conde el mismo criterio de periodo aprobado para El Pozanco.
+- No inventar un POC ni datos derivados de un POC inexistente en el proyecto.
+- No crear imágenes ficticias; las imágenes quedarán pendientes hasta disponer de material real.
+- Mantener el criterio comercial ya aprobado: mostrar únicamente el número de tarjetas disponibles y gestionar privadamente el resto de información.
+- No implementar sistema de reservas online en esta fase.
+
+Archivos modificados:
+
+- `data/cotos/cotos.json` — registro de Rambla del Conde incorporado.
+- `data/especies/especies.json` — relación de jabalí y nuevo registro de muflón.
+- `data/modalidades/modalidades.json` — relaciones de rececho y aguardos.
+
+Commits del bloque:
+
+- `data/cotos/cotos.json`: `e024277ba723bd6925d632e37f84fb799c3edd18`.
+- `data/especies/especies.json`: `665d14a31b6da0fcd913203a33c16706520ef6a3`.
+- `data/modalidades/modalidades.json`: `9489f5df7ab704a2e5ded0af98250b7aab35803f`.
+
+El bloque queda pendiente de revisión/auditoría final antes de declararse cerrado.
+
 ---
 
 ## 12. Últimos cambios técnicos registrados
@@ -477,6 +525,10 @@ Content SHA final de `data/cotos/cotos.json`:
 `5da50ee0ff1ba8c1d720b20d019efaf7b3ccdffb`
 
 Los demás JSON de soporte de especies, modalidades y galería fueron cargados y verificados durante el bloque.
+
+### 2J.6 — Segundo coto: Rambla del Conde
+
+Carga inicial y relaciones de datos realizadas el 02/09/2026. El bloque permanece abierto hasta la auditoría final.
 
 ---
 
@@ -578,7 +630,9 @@ La revisión visual de 2I.3 fue validada en escritorio y móvil, incluyendo boto
 
 **2J.1 → 2J.5 cerrados y aprobados.**
 
-Primer conjunto de datos reales cargado y auditado: **EL POZANCO — AB-10425**.
+**2J.6 en curso:** Rambla del Conde cargado, pendiente de auditoría final.
+
+Conjuntos de datos reales cargados: **EL POZANCO — AB-10425** y **RAMBLA DEL CONDE — 10225**.
 
 ### PÁGINAS
 
@@ -590,7 +644,7 @@ GitHub Pages mediante GitHub Actions operativo.
 
 ### CONTROL
 
-Este documento queda sincronizado con el estado real del proyecto tras el cierre de **2J.5 — El Pozanco**.
+Este documento queda sincronizado con el estado real del proyecto tras la carga inicial de **2J.6 — Rambla del Conde**.
 
 ---
 
@@ -598,9 +652,7 @@ Este documento queda sincronizado con el estado real del proyecto tras el cierre
 
 **NO SE INICIA AUTOMÁTICAMENTE NINGÚN BLOQUE NUEVO.**
 
-El bloque **2J.5 queda cerrado y aprobado**.
-
-El siguiente bloque se decidirá conjuntamente antes de cualquier nueva implementación.
+El bloque **2J.6 permanece abierto** hasta completar su revisión y auditoría final.
 
 ---
 
@@ -629,6 +681,8 @@ El siguiente bloque se decidirá conjuntamente antes de cualquier nueva implemen
 - 02/09/2026 — Corrección de la relación `coto → modalidades` y auditoría final.
 - 02/09/2026 — **Cierre y aprobación de 2J.5.**
 - 02/09/2026 — Sincronización del CONTROL_PROYECTO.md con el cierre de 2J.5.
+- 02/09/2026 — **Inicio de 2J.6 y carga inicial de datos reales de Rambla del Conde.**
+- 02/09/2026 — Aprobación del campo `superficie_cazadero` y aplicación al registro de Rambla del Conde.
 
 ---
 
