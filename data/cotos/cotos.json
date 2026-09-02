@@ -1,1 +1,43 @@
-[]
+[
+  {
+    "id": "AB-10425",
+    "nombre": "EL POZANCO",
+    "numero_coto": "AB-10425",
+    "ubicacion": "Chinchilla de Monte-Aragón / Pozo Cañada",
+    "provincia": "Albacete",
+    "superficie": 698,
+    "descripcion": "Tierras de labor en régimen de secano y regadío, extensas y llanas. Frutales en distintas zonas del acotado, con variedades de almendro y nogal. Arboledas de pinos y monte bajo mediterráneo con esparteras y coscojas, fácil de cazar. Ramblas y quebradas poco pronunciadas y atractivas para el arranque de las piezas. Cuenta con cocina y baño completamente equipados. Buen acceso desde Pozo Cañada, a 1,5 kilómetros.",
+    "especies": [
+      "jabalí",
+      "codorniz común",
+      "conejo",
+      "corneja negra",
+      "faisán",
+      "liebre",
+      "paloma bravía",
+      "paloma torcaz",
+      "perdiz roja",
+      "urraca",
+      "zorro",
+      "zorzal común"
+    ],
+    "modalidades": [
+      "Todas las modalidades autorizadas"
+    ],
+    "temporada": "2026/2027",
+    "periodos": "Estipulado por la legislación y la Orden de Vedas de Castilla-La Mancha vigente.",
+    "tarjetas": [],
+    "tarjetas_disponibles": 5,
+    "jornadas": [],
+    "estado": "activo",
+    "imagenes": [
+      "web/assets/galeria/cotos/pozanco-monte.jpg",
+      "web/assets/galeria/cotos/pozanco-casa.jpg"
+    ],
+    "observaciones": [
+      "Disponible bajo acuerdo el cuartel comercial.",
+      "Contacto: jabalihunters@gmail.com",
+      "WhatsApp y teléfono: 625025243"
+    ]
+  }
+]
