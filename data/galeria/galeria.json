@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "id": "pozanco-monte",
+    "coto_id": "AB-10425",
+    "titulo": "Paisaje del acotado",
+    "archivo": "web/assets/galeria/cotos/pozanco-monte.jpg",
+    "alt": "Paisaje del acotado El Pozanco"
+  },
+  {
+    "id": "pozanco-casa",
+    "coto_id": "AB-10425",
+    "titulo": "Casa del coto",
+    "archivo": "web/assets/galeria/cotos/pozanco-casa.jpg",
+    "alt": "Casa e instalaciones del coto El Pozanco"
+  }
+]
