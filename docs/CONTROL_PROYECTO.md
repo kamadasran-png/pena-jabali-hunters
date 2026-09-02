@@ -289,7 +289,124 @@ La implementación respeta C.14.5, C.14.8 y C.14.10 y no modifica la arquitectur
 
 ---
 
-## 11. Últimos cambios técnicos registrados
+## 11. Sistema de datos y contenido — 2J
+
+### 2J.1 — Auditoría y diagnóstico
+
+**CERRADO Y APROBADO.**
+
+Se auditó la situación inicial de `data/` y `content/`. Las carpetas estructurales estaban creadas y sin datos reales cargados.
+
+### 2J.2 — Modelo de datos
+
+**CERRADO Y APROBADO.**
+
+Modelo aprobado:
+
+```text
+data/cotos/
+data/especies/
+data/modalidades/
+data/jornadas/
+data/tarjetas/
+data/galeria/
+data/historico/
+```
+
+`content/` permanece reservado al contenido editorial.
+
+Relaciones principales:
+
+```text
+Coto ↔ Especies ↔ Modalidades ↔ Jornadas ↔ Tarjetas
+```
+
+### 2J.3 — Campos definitivos
+
+**CERRADO Y APROBADO.**
+
+Cotos: `id`, `nombre`, `numero_coto`, `ubicacion`, `provincia`, `superficie`, `descripcion`, `especies`, `modalidades`, `temporada`, `periodos`, `tarjetas`, `jornadas`, `estado`, `imagenes`, `observaciones`.
+
+Se añadió como criterio aprobado para el coto el campo `tarjetas_disponibles`.
+
+Jornadas: `id`, `nombre`, `coto_id`, `fecha`, `tipo`, `modalidad`, `especies`, `numero_cazadores`, `precio`, `incluye`, `condiciones`, `disponibilidad`, `reserva`, `imagen`, `observaciones`, `unidad_precio`.
+
+Tarjetas: `id`, `nombre`, `cotos`, `especies`, `modalidades`, `periodo_validez`, `dias`, `precio`, `descuentos`, `condiciones`, `reservable`, `estado`, `observaciones`, `unidades_disponibles`.
+
+No se utiliza un campo general `precio` para los cotos.
+
+### 2J.4 — Creación de archivos base
+
+**CERRADO Y APROBADO.**
+
+Se crearon los siete JSON base:
+
+```text
+data/cotos/cotos.json
+data/especies/especies.json
+data/modalidades/modalidades.json
+data/jornadas/jornadas.json
+data/tarjetas/tarjetas.json
+data/galeria/galeria.json
+data/historico/historico.json
+```
+
+Inicialmente vacíos, preparados para la carga controlada de datos reales.
+
+### 2J.5 — Primer conjunto de datos reales: EL POZANCO
+
+**CERRADO Y APROBADO.**
+
+Se cargó y auditó el primer conjunto de datos reales del coto **EL POZANCO — AB-10425**.
+
+Datos públicos aprobados:
+
+- Nombre: **EL POZANCO**.
+- Nº de coto: **AB-10425**.
+- Ubicación: **Chinchilla de Monte-Aragón / Pozo Cañada**.
+- Provincia: **Albacete**.
+- Superficie: **698 ha**.
+- Temporada: **2026/2027**.
+- Descripción: texto aprobado literalmente por el usuario.
+- Periodo: **Estipulado por la legislación y la Orden de Vedas de Castilla-La Mancha vigente.**
+- Especies: especies autorizadas cargadas individualmente.
+- Modalidades: referencias individuales de las modalidades autorizadas.
+- Tarjetas disponibles: **5**.
+- Jornadas: sin jornadas concretas cargadas.
+- Reservas: **no existe sistema de reservas online en esta fase**; los botones quedan preparados para una futura funcionalidad.
+- Observación: **Disponible bajo acuerdo el cuartel comercial.**
+- Contacto: `jabalihunters@gmail.com`.
+- WhatsApp y teléfono: `625025243`.
+- Imágenes reales vinculadas al coto: `pozanco-monte.jpg` y `pozanco-casa.jpg`.
+
+Criterios de presentación aprobados para el coto:
+
+- No mostrar vigencia del POC.
+- No mostrar cupos oficiales.
+- Mostrar únicamente las modalidades autorizadas.
+- Eliminar el apartado de gestión técnica.
+- No publicar precio, condiciones privadas ni demás información comercial de las tarjetas en la ficha del coto.
+- La información comercial detallada de tarjetas se facilitará privadamente tras la consulta del interesado.
+- No implementar sistema de reservas en esta fase.
+
+Fuente documental principal para la identificación y autorización cinegética: resolución del POC del coto AB-10425 aportada y revisada durante 2J.5.
+
+Auditoría final del registro:
+
+- `data/cotos/cotos.json`: validado.
+- `data/especies/especies.json`: validado.
+- `data/modalidades/modalidades.json`: validado.
+- `data/galeria/galeria.json`: validado.
+- `data/tarjetas/tarjetas.json`: permanece sin ficha de tarjeta, de acuerdo con el criterio comercial aprobado.
+- `data/jornadas/jornadas.json`: permanece sin jornadas concretas.
+- Rutas de las dos imágenes verificadas en `web/assets/galeria/cotos/`.
+- Relación `coto → modalidades` corregida para utilizar los identificadores individuales de `modalidades.json`.
+
+**2J.5 queda cerrado tras carga, corrección relacional y auditoría final.**
+
+---
+
+## 12. Últimos cambios técnicos registrados
 
 ### Cotos — 2I.2
 
@@ -341,11 +458,29 @@ Content SHA:
 
 La corrección fue revisada visualmente y validada por el usuario en escritorio y móvil.
 
-Antes de modificar de nuevo los archivos técnicos deberá recuperarse su SHA actual.
+### 2J.4 — Archivos JSON base
+
+Se crearon los siete archivos JSON estructurales de datos para la carga controlada.
+
+### 2J.5 — Primera carga real de El Pozanco
+
+Commit de `data/cotos/cotos.json` con el registro inicial:
+
+`c8b7009fee65ea807e07e85d819f3f7cdaa86dba`
+
+Corrección relacional posterior del registro de modalidades:
+
+`1f20b346e34e77dd118d8546045d3b3e5db1a6ab`
+
+Content SHA final de `data/cotos/cotos.json`:
+
+`5da50ee0ff1ba8c1d720b20d019efaf7b3ccdffb`
+
+Los demás JSON de soporte de especies, modalidades y galería fueron cargados y verificados durante el bloque.
 
 ---
 
-## 12. Reglas de control de cambios
+## 13. Reglas de control de cambios
 
 El proyecto se desarrolla **por fases y bloques**, con control después de cada bloque.
 
@@ -377,7 +512,7 @@ Si una limitación técnica obliga a cambiar arquitectura, navegación, sistema 
 
 ---
 
-## 13. Principios de contenido y datos
+## 14. Principios de contenido y datos
 
 La información susceptible de cambiar con frecuencia debe mantenerse separada de la presentación cuando corresponda:
 
@@ -395,7 +530,7 @@ No se presentarán datos ficticios como definitivos.
 
 ---
 
-## 14. Seguridad y conservación
+## 15. Seguridad y conservación
 
 Nunca se incorporarán al repositorio público:
 
@@ -411,7 +546,7 @@ El material histórico primario y la copia maestra de rescate se conservan indep
 
 ---
 
-## 15. Estado actual consolidado — 02/09/2026
+## 16. Estado actual consolidado — 02/09/2026
 
 ### HISTÓRICO
 
@@ -439,6 +574,12 @@ Bloques 2A → 2D y 2H cerrados.
 
 La revisión visual de 2I.3 fue validada en escritorio y móvil, incluyendo botones, tarjetas, navegación contextual, galería, menú móvil y comportamiento del footer.
 
+### SISTEMA DE DATOS
+
+**2J.1 → 2J.5 cerrados y aprobados.**
+
+Primer conjunto de datos reales cargado y auditado: **EL POZANCO — AB-10425**.
+
 ### PÁGINAS
 
 Las siete páginas principales están creadas en `web/`.
@@ -449,21 +590,21 @@ GitHub Pages mediante GitHub Actions operativo.
 
 ### CONTROL
 
-Este documento queda sincronizado con el estado real del proyecto tras el cierre de **2I.3**.
+Este documento queda sincronizado con el estado real del proyecto tras el cierre de **2J.5 — El Pozanco**.
 
 ---
 
-## 16. Próximo paso
+## 17. Próximo paso
 
 **NO SE INICIA AUTOMÁTICAMENTE NINGÚN BLOQUE NUEVO.**
 
-El bloque **2I.3 queda cerrado y aprobado**.
+El bloque **2J.5 queda cerrado y aprobado**.
 
 El siguiente bloque se decidirá conjuntamente antes de cualquier nueva implementación.
 
 ---
 
-## 17. Historial resumido de control
+## 18. Historial resumido de control
 
 - 28/08/2026 — Cierre de FASE 0 y comienzo de FASE 1.
 - 28/08/2026 — Creación del repositorio y estructura inicial.
@@ -481,6 +622,13 @@ El siguiente bloque se decidirá conjuntamente antes de cualquier nueva implemen
 - 02/09/2026 — Revisión visual de 2I.3 validada en escritorio y móvil.
 - 02/09/2026 — **Cierre y aprobación de 2I.3.**
 - 02/09/2026 — Sincronización del CONTROL_PROYECTO.md con el cierre de 2I.3.
+- 02/09/2026 — Auditoría y aprobación del modelo de datos 2J.1 → 2J.3.
+- 02/09/2026 — Creación y aprobación de los JSON base 2J.4.
+- 02/09/2026 — Carga de datos reales de **EL POZANCO — AB-10425**.
+- 02/09/2026 — Incorporación y registro de las imágenes reales de El Pozanco.
+- 02/09/2026 — Corrección de la relación `coto → modalidades` y auditoría final.
+- 02/09/2026 — **Cierre y aprobación de 2J.5.**
+- 02/09/2026 — Sincronización del CONTROL_PROYECTO.md con el cierre de 2J.5.
 
 ---
 
