@@ -17,166 +17,96 @@
 
 **CERRADA.**
 
-La copia maestra de rescate permanece fuera de GitHub y no debe modificarse:
-
-`FASE_0_RESCATE_PENA_JABALI_HUNTERS_BACKUP.zip`
+La copia maestra de rescate permanece fuera de GitHub y no debe modificarse.
 
 ### FASE 1 — GITHUB Y CONSTRUCCIÓN
 
 **EN CURSO.**
 
-- FASE 1.1 — Repositorio: **COMPLETADA**.
-- FASE 1.2 — Arquitectura: **COMPLETADA**.
-- FASE 1.3 — Estructura física: **COMPLETADA**.
-- WEB 1.1 → WEB 1.11: **CERRADAS Y APROBADAS**.
+- FASE 1.1 — Repositorio: **COMPLETADA.**
+- FASE 1.2 — Arquitectura: **COMPLETADA.**
+- FASE 1.3 — Estructura física: **COMPLETADA.**
+- WEB 1.1 → WEB 1.11: **CERRADAS Y APROBADAS.**
 
-WEB 1.x define arquitectura funcional, navegación, contenidos, sistema visual, componentes, datos, estructura técnica, tecnología y metodología de construcción.
+El bloque de definición WEB 1.x está cerrado. La construcción física continúa por bloques.
 
 ### FASE 2 — ORGANIZACIÓN Y TRATAMIENTO DEL MATERIAL HISTÓRICO
 
 **EN CURSO / BLOQUE HISTÓRICO CONTROLADO.**
 
-- 2.1 → 2.10: **CERRADOS Y APROBADOS**.
-- 2.11 — ANT-01: **CERRADO**.
-- `ANT-02 → ANT-46`: **EN ESPERA**.
+- 2.1 → 2.10: **CERRADOS Y APROBADOS.**
+- 2.11 — Tratamiento inicial y registro de ANT-01: **CERRADO.**
 
-Los elementos históricos posteriores no se examinarán hasta que exista una necesidad concreta de utilización.
-
----
-
-## 3. Arquitectura física aprobada
-
-```text
-web/                  → web pública
-app/                  → futura aplicación
-assets/images/        → imágenes seleccionadas
-assets/logos/         → logotipos
-assets/documents/     → documentos públicos seleccionados
-data/                 → datos estructurados / JSON
-content/              → contenidos editoriales
-legal/                → documentación legal pública
-docs/                 → documentación técnica y control
-```
-
-No se crean nuevos directorios estructurales sin necesidad justificada y, cuando afecten a la arquitectura, sin aprobación previa.
+Los elementos históricos `ANT-02 → ANT-46` quedan **EN ESPERA** y no serán examinados hasta que exista una necesidad concreta de utilización.
 
 ---
 
-## 4. Archivo histórico de Antonino
+## 3. Estructura aprobada
 
-Estado de incorporación: **46/46 PDF — COMPLETADO.**
+- `web/` — web pública.
+- `app/` — futuras funcionalidades de aplicación.
+- `assets/images/` — imágenes seleccionadas.
+- `assets/logos/` — logotipos.
+- `assets/documents/` — documentos públicos seleccionados.
+- `data/` — datos estructurados y JSON.
+- `content/` — contenidos editoriales.
+- `legal/` — documentación legal pública.
+- `docs/` — documentación técnica, auditorías y control.
 
-- 46 documentos inventariados.
-- 46 PDF incorporados.
-- 0 pendientes.
-- Nombres originales conservados.
-- Material primario conservado íntegramente.
-- Inventario: `assets/documents/historico/antonino/INVENTARIO_PLANOS_ANTONINO.md`.
+### Estructura histórica de Antonino
 
-El archivo histórico primario nunca se modifica para crear derivados.
+El archivo histórico primario se conserva en:
 
-### Regla histórica permanente
+`assets/documents/historico/antonino/`
 
-Los originales son la fuente primaria. Cualquier derivado deberá conservar trazabilidad con su `ANT-XX` y será creado únicamente cuando exista una necesidad real de utilización.
-
-`ANT-02 → ANT-46` permanece en espera.
-
-### ANT-01
-
-**Barranco de la Mosca 1979.pdf** fue examinado y registrado como unidad histórica.
-
-- Fecha indicada: 8-4-1979.
-- Documento de 2 páginas.
-- Naturaleza: documento histórico manuscrito / plano de organización de batida.
-- Original localizado y conservado.
-- Derivados conceptualmente aprobados: DER-01, DER-02, DER-03, DER-04 y DER-05.
-- DER-06 fue excluido.
-- Los derivados aprobados no tienen obligación de creación inmediata ni ruta definitiva prefijada.
-
-Procedimiento general ANT-XX:
-
-```text
-INVENTARIO
-↓
-IDENTIFICACIÓN
-↓
-EXAMEN DEL ORIGINAL
-↓
-REGISTRO
-↓
-PROPUESTA DE DERIVADOS
-↓
-APROBACIÓN / EXCLUSIÓN
-↓
-ESPERA HASTA NECESIDAD REAL
-↓
-CREACIÓN
-↓
-RUTA DEFINIDA EN ESE MOMENTO
-↓
-VALIDACIÓN
-↓
-TRAZABILIDAD
-↓
-CIERRE
-```
-
-No se inventará, completará ni corregirá información histórica no verificable.
+Los documentos originales permanecen separados de cualquier derivado y no se modifican para producir material nuevo.
 
 ---
 
-## 5. Navegación funcional aprobada
+## 4. Archivo histórico primario — Antonino
 
-Las siete secciones principales son:
+**46/46 PDF incorporados — COMPLETADO.**
 
-```text
-INICIO · CAZA · COTOS · TARJETAS Y JORNADAS · GALERÍA · LA PEÑA · CONTACTO
-```
+- Total inventariado: 46.
+- PDF incorporados: 46.
+- PDF pendientes: 0.
+- Nombres originales: conservados.
+- Inventario: actualizado a 46/46.
+- Material primario: conservado íntegramente.
 
-La acción principal transversal es **RESERVAR / CONTACTAR**.
+Documento de inventario:
 
-Jerarquías aprobadas:
+`assets/documents/historico/antonino/INVENTARIO_PLANOS_ANTONINO.md`
 
-- **CAZA:** caza menor / caza mayor; las modalidades se integran en las páginas correspondientes.
-- **COTOS:** El Pozanco / Rambla del Conde.
-- **TARJETAS Y JORNADAS:** tarjetas / jornadas / ofertas.
-- **GALERÍA:** cotos / caza / fauna / jornadas / Peña Jabalí Hunters / histórico.
-- **LA PEÑA:** quiénes somos / filosofía / actividad / territorio / historia.
-- **CONTACTO:** contacto directo / reservas / formulario.
-
-La Galería funciona además como apoyo transversal y la navegación contextual conecta contenidos relacionados.
+`ANT-01` fue examinado y cerrado como unidad de examen y decisión. `ANT-02 → ANT-46` permanecen en espera.
 
 ---
 
-## 6. Modelo de páginas aprobado
+## 5. Principio de seguridad histórica
 
-### Inicio
+El material recuperado de la antigua web no se incorpora automáticamente al nuevo proyecto.
 
-Presentación principal → Caza → Cotos → Tarjetas/Jornadas → Galería → La Peña → CTA → pie.
+Todo archivo histórico deberá ser identificado, revisado, clasificado y aprobado antes de incorporarse a un uso derivado o público.
 
-### Secciones
+El archivo maestro de rescate permanece íntegro y separado del proyecto de construcción.
 
-Título → introducción → contenido → destacados → enlaces relacionados → CTA.
+Los derivados nunca sustituyen, modifican ni eliminan el documento histórico primario.
 
-### Coto
+---
 
-Identificación → presentación → territorio → especies → modalidades → temporada → galería → tarjetas/jornadas → reserva.
+## 6. Material derivado y publicación
 
-### Ficha comercial
+Los elementos históricos podrán, cuando corresponda y previa decisión, generar:
 
-Nombre → imagen → descripción → coto → modalidad → especies → fecha/periodo → precio → incluye → condiciones → reservar/consultar.
+- material derivado;
+- material reeditado;
+- contenidos documentales;
+- contenidos para la web pública;
+- otros formatos aprobados.
 
-### Galería
+La aprobación conceptual de un derivado no implica su creación inmediata.
 
-Categoría → elementos visuales → información asociada → enlaces relacionados.
-
-### La Peña
-
-Quiénes somos → filosofía → actividad → territorio → historia → contacto.
-
-### Contacto
-
-Contacto directo → WhatsApp → teléfono → email → ubicación → reservas → formulario.
+Los derivados se crearán únicamente cuando exista una necesidad real de utilización. Su nombre, formato y ruta se decidirán en el momento de utilización.
 
 ---
 
@@ -266,13 +196,11 @@ El sistema de componentes se desarrolla por bloques, sin diseñar cada página d
 
 El bloque `¿Quieres reservar?` es un **bloque editorial/CTA de acción**, no una Card ni una Card complementaria.
 
-La información visual y funcional común debe mantenerse mediante componentes reutilizables.
-
 ---
 
 ## 9. Estado de construcción física de la web
 
-La construcción física ya está iniciada y no se encuentra en el antiguo estado de “solo definición”.
+La construcción física está iniciada y se realiza progresivamente por bloques.
 
 ### Páginas existentes
 
@@ -300,7 +228,7 @@ La web se publica mediante GitHub Pages usando GitHub Actions porque la fuente f
 
 GitHub Pages está configurado con **GitHub Actions** y se han obtenido ejecuciones correctas del workflow de publicación.
 
-La verificación visual de la web se realiza progresivamente y no se considera que una ejecución técnica sustituya a la revisión visual.
+La ejecución técnica no sustituye a la revisión visual.
 
 ---
 
@@ -308,11 +236,9 @@ La verificación visual de la web se realiza progresivamente y no se considera q
 
 ### 2A → 2D
 
-**APROBADOS / CERRADOS** dentro del desarrollo de componentes y sistema visual.
+**APROBADOS / CERRADOS.**
 
 ### 2H
-
-Bloques de apoyo y presentación:
 
 - 2H.1 — Bloque editorial: **CERRADO**.
 - 2H.2 — Datos técnicos: **CERRADO**.
@@ -323,8 +249,6 @@ Bloques de apoyo y presentación:
 
 **IMPLEMENTADO Y VALIDADO CONCEPTUALMENTE.**
 
-Se ha aplicado navegación contextual a las páginas para facilitar el recorrido del usuario sin sustituir la navegación principal.
-
 Aplicaciones registradas:
 
 - **Caza:** enlaces hacia Cotos y Tarjetas y Jornadas.
@@ -334,13 +258,33 @@ Aplicaciones registradas:
 - **La Peña:** enlaces hacia Caza, Galería y Cotos.
 - **Contacto:** enlaces hacia Cotos, Tarjetas y Jornadas y Caza.
 
-### Corrección técnica reciente
+### Corrección técnica
 
 `web/la-pena.html` presentó una omisión de cierres de `div` durante la aplicación de 2I.2. Se corrigió sin modificar el contenido ni el diseño previsto.
 
 Commit de corrección:
 
 `ae47516300f1a3ca8f2c78e68133c139fe9cbb1c`
+
+### 2I.3 — Estados interactivos
+
+**IMPLEMENTADO.**
+
+Se han aplicado globalmente en `web/css/styles.css`:
+
+- hover;
+- focus;
+- active;
+- transiciones discretas de 240 ms;
+- foco visible y accesible;
+- respuesta táctil adecuada;
+- estados de botones, tarjetas, enlaces contextuales, categorías de galería y menú móvil;
+- zoom muy sutil en imágenes de galería;
+- soporte de `prefers-reduced-motion`.
+
+La implementación respeta C.14.5, C.14.8 y C.14.10 y no modifica la arquitectura.
+
+**Pendiente de cierre definitivo: revisión visual en escritorio y móvil.**
 
 ---
 
@@ -352,7 +296,7 @@ Commit:
 
 `6ed09a2ecff2846895ae9ddf1e2548183abab938`
 
-Content SHA registrado:
+Content SHA:
 
 `12154483dd5f68c28ae2db9e30890bc636d30abb`
 
@@ -362,9 +306,23 @@ Commit:
 
 `2f2ac5d6a3e76b555f273cecc7654e992a456a5c`
 
-Content SHA registrado:
+Content SHA anterior:
 
 `1f2eae12acc38582589fe6020e8bda5fec36ce40`
+
+### 2I.3 — Estados interactivos
+
+Archivo:
+
+`web/css/styles.css`
+
+Commit:
+
+`c8f292218b6133a3f446862a7b873a5c4505f062`
+
+Content SHA actual:
+
+`f7aa86a73d12479b54c17aa715acc45bcb2d483d`
 
 Antes de modificar de nuevo `styles.css` deberá recuperarse su SHA actual.
 
@@ -456,9 +414,11 @@ El material histórico primario y la copia maestra de rescate se conservan indep
 
 ### COMPONENTES
 
-Bloques iniciales y 2H cerrados.
+Bloques 2A → 2D y 2H cerrados.
 
-**2I.2 navegación contextual implementada.**
+**2I.2 implementado.**
+
+**2I.3 implementado, pendiente de revisión visual para cierre.**
 
 ### PÁGINAS
 
@@ -470,28 +430,32 @@ GitHub Pages mediante GitHub Actions operativo.
 
 ### CONTROL
 
-Este documento queda sincronizado con el estado real de trabajo hasta **2I.2**.
+Este documento queda sincronizado con el estado real de trabajo hasta la implementación de **2I.3**.
 
 ---
 
 ## 16. Próximo paso obligatorio
 
-Antes de realizar cualquier nuevo cambio funcional o visual:
+### **REVISIÓN VISUAL DE 2I.3**
 
-### **2I.3 — ESTADOS INTERACTIVOS**
+Antes de cerrar 2I.3 se comprobará:
 
-Implementar de forma global y coherente:
-
+- escritorio;
+- móvil;
 - hover;
-- focus;
-- active;
-- transiciones discretas;
-- foco visible y accesible;
-- respuesta táctil adecuada.
+- focus con teclado;
+- active / pulsación;
+- botones;
+- tarjetas;
+- navegación contextual;
+- galería;
+- menú móvil;
+- ausencia de efectos excesivos;
+- coherencia con C.14.
 
-La implementación deberá respetar C.14.5, C.14.8 y C.14.10.
+Si la revisión es correcta, **2I.3 se cerrará** y se volverá a sincronizar este documento antes de iniciar el siguiente bloque.
 
-**No se iniciará 2I.3 hasta considerar cerrado este control de proyecto.**
+No se avanzará automáticamente al siguiente bloque.
 
 ---
 
@@ -507,7 +471,9 @@ La implementación deberá respetar C.14.5, C.14.8 y C.14.10.
 - 30/08/2026 → 01/09/2026 — Construcción progresiva de componentes y páginas.
 - 01/09/2026 — Aplicación de 2I.2, navegación contextual.
 - 01/09/2026 — Corrección estructural de `web/la-pena.html`.
-- 02/09/2026 — **Sincronización del CONTROL_PROYECTO.md con el estado real hasta 2I.2.**
+- 02/09/2026 — Sincronización del CONTROL_PROYECTO.md con el estado real hasta 2I.2.
+- 02/09/2026 — Implementación de 2I.3 — estados hover, focus y active globales.
+- 02/09/2026 — Actualización del control para registrar 2I.3 como implementado y pendiente de revisión visual para cierre.
 
 ---
 
