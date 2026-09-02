@@ -1,1 +1,12 @@
-[]
+[
+  {"id":"aguardo-espera-diurno","nombre":"Aguardo o espera diurno","cotos":["AB-10425"]},
+  {"id":"aguardo-espera-nocturno","nombre":"Aguardo o espera nocturno","cotos":["AB-10425"]},
+  {"id":"en-mano","nombre":"En mano","cotos":["AB-10425"]},
+  {"id":"al-salto","nombre":"Al salto","cotos":["AB-10425"]},
+  {"id":"caza-con-galgos","nombre":"Caza con galgos","cotos":["AB-10425"]},
+  {"id":"ojeo","nombre":"Ojeo","cotos":["AB-10425"]},
+  {"id":"perdiz-con-reclamo","nombre":"Perdiz con reclamo","cotos":["AB-10425"]},
+  {"id":"puesto-fijo","nombre":"Puesto fijo","cotos":["AB-10425"]},
+  {"id":"caza-con-perros-madriguera","nombre":"Caza con perros madriguera","cotos":["AB-10425"]},
+  {"id":"cetreria","nombre":"Cetrería","cotos":["AB-10425"]}
+]
