@@ -8,5 +8,7 @@
   {"id":"perdiz-con-reclamo","nombre":"Perdiz con reclamo","cotos":["AB-10425"]},
   {"id":"puesto-fijo","nombre":"Puesto fijo","cotos":["AB-10425"]},
   {"id":"caza-con-perros-madriguera","nombre":"Caza con perros madriguera","cotos":["AB-10425"]},
-  {"id":"cetreria","nombre":"Cetrería","cotos":["AB-10425"]}
+  {"id":"cetreria","nombre":"Cetrería","cotos":["AB-10425"]},
+  {"id":"rececho","nombre":"Rececho","cotos":["10225"]},
+  {"id":"aguardos","nombre":"Aguardos","cotos":["10225"]}
 ]
