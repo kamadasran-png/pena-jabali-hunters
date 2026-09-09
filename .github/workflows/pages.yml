@@ -32,6 +32,8 @@ jobs:
         run: |
           mkdir -p web/assets/logos
           cp assets/logos/logo-pjhunters.png web/assets/logos/logo-pjhunters.png
+          mkdir -p web/data
+          cp -R data/. web/data/
 
       - name: Upload web artifact
         uses: actions/upload-pages-artifact@v4
