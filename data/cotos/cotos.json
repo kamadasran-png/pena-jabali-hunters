@@ -9,17 +9,17 @@
     "descripcion": "Tierras de labor en régimen de secano y regadío, extensas y llanas. Frutales en distintas zonas del acotado, con variedades de almendro y nogal. Arboledas de pinos y monte bajo mediterráneo con esparteras y coscojas, fácil de cazar. Ramblas y quebradas poco pronunciadas y atractivas para el arranque de las piezas. Cuenta con cocina y baño completamente equipados. Buen acceso desde Pozo Cañada, a 1,5 kilómetros.",
     "especies": [
       "jabalí",
-      "codorniz común",
+      "codorniz-comun",
       "conejo",
-      "corneja negra",
-      "faisán",
+      "corneja-negra",
+      "faisan",
       "liebre",
-      "paloma bravía",
-      "paloma torcaz",
-      "perdiz roja",
+      "paloma-bravia",
+      "paloma-torcaz",
+      "perdiz-roja",
       "urraca",
       "zorro",
-      "zorzal común"
+      "zorzal-comun"
     ],
     "modalidades": [
       "aguardo-espera-diurno",
@@ -31,12 +31,14 @@
       "perdiz-con-reclamo",
       "puesto-fijo",
       "caza-con-perros-madriguera",
-      "cetreria"
+      "cetreria",
+      "caza-con-arco",
+      "holandesa-desde-cerro"
     ],
     "temporada": "2026/2027",
     "periodos": "Estipulado por la legislación y la Orden de Vedas de Castilla-La Mancha vigente.",
-    "tarjetas": [],
-    "tarjetas_disponibles": 5,
+    "tarjetas": ["super-hunters"],
+    "tarjetas_disponibles": 6,
     "jornadas": [],
     "estado": "activo",
     "imagenes": [
@@ -64,11 +66,12 @@
     ],
     "modalidades": [
       "rececho",
-      "aguardos"
+      "aguardos",
+      "caza-con-arco"
     ],
     "temporada": "2026/2027",
     "periodos": "Estipulado por la legislación y la Orden de Vedas de Castilla-La Mancha vigente.",
-    "tarjetas": [],
+    "tarjetas": ["super-hunters"],
     "tarjetas_disponibles": 6,
     "jornadas": [],
     "estado": "activo",
