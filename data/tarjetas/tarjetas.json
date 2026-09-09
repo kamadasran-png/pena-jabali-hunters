@@ -6,49 +6,49 @@
     "especies": [
       {
         "coto_id": "AB-10425",
-        "especie": "jabalí",
+        "especie_id": "jabalí",
         "modalidades": ["aguardo-espera-nocturno", "caza-con-arco"],
         "periodo": "Todo el año"
       },
       {
         "coto_id": "AB-10425",
-        "especie": "conejo",
+        "especie_id": "conejo",
         "modalidades": ["al-salto", "cetreria"],
         "periodo": "08/10/2026 – 08/02/2027"
       },
       {
         "coto_id": "AB-10425",
-        "especie": "paloma torcaz",
+        "especie_id": "paloma-torcaz",
         "modalidades": ["al-salto"],
         "periodo": "08/10/2026 – 08/02/2027"
       },
       {
         "coto_id": "AB-10425",
-        "especie": "liebre",
+        "especie_id": "liebre",
         "modalidades": ["caza-con-galgos"],
         "periodo": "08/10/2026 – 08/02/2027"
       },
       {
         "coto_id": "AB-10425",
-        "especie": "perdiz roja",
+        "especie_id": "perdiz-roja",
         "modalidades": ["holandesa-desde-cerro", "en-mano"],
         "periodo": "15/09/2026 – 31/03/2027"
       },
       {
         "coto_id": "AB-10425",
-        "especie": "faisán",
+        "especie_id": "faisan",
         "modalidades": ["holandesa-desde-cerro", "en-mano"],
         "periodo": "15/09/2026 – 31/03/2027"
       },
       {
         "coto_id": "10225",
-        "especie": "jabalí",
+        "especie_id": "jabalí",
         "modalidades": ["aguardos", "rececho", "caza-con-arco"],
         "periodo": "Todo el año"
       },
       {
         "coto_id": "10225",
-        "especie": "muflon",
+        "especie_id": "muflon",
         "modalidades": ["aguardos", "rececho", "caza-con-arco"],
         "periodo": "08/10/2026 – 28/02/2027"
       }
