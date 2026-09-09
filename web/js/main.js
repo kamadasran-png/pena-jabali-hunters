@@ -1,6 +1,37 @@
 // Base JavaScript for the Peña Jabalí Hunters web.
 // B.3: shared navigation + common promotion + interior header alignment.
 
+// DATA LAYER — conexión automática con los JSON publicados en /web/data/.
+// No modifica la presentación: solo carga y expone los datos para las fases siguientes.
+const PJH_DATA_FILES = {
+  cotos: "data/cotos/cotos.json",
+  especies: "data/especies/especies.json",
+  modalidades: "data/modalidades/modalidades.json",
+  tarjetas: "data/tarjetas/tarjetas.json"
+};
+
+async function loadPJHData() {
+  const entries = Object.entries(PJH_DATA_FILES);
+  const results = await Promise.all(
+    entries.map(async ([key, path]) => {
+      const response = await fetch(path, { cache: "no-cache" });
+      if (!response.ok) throw new Error(`No se pudo cargar ${path} (${response.status})`);
+      return [key, await response.json()];
+    })
+  );
+
+  const data = Object.fromEntries(results);
+  window.PJHData = Object.freeze(data);
+  window.dispatchEvent(new CustomEvent("pjh:data-ready", { detail: data }));
+  return data;
+}
+
+window.PJHDataReady = loadPJHData().catch((error) => {
+  console.error("Peña Jabalí Hunters — error cargando datos:", error);
+  window.dispatchEvent(new CustomEvent("pjh:data-error", { detail: error }));
+  throw error;
+});
+
 document.documentElement.classList.add("js");
 
 const navToggle = document.querySelector(".nav-toggle");
