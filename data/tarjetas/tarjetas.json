@@ -1,1 +1,95 @@
-[]
+[
+  {
+    "id": "super-hunters",
+    "nombre": "TARJETA SUPER HUNTERS",
+    "cotos": ["AB-10425", "10225"],
+    "especies": [
+      {
+        "coto_id": "AB-10425",
+        "especie": "jabalí",
+        "modalidades": ["aguardo-espera-nocturno", "caza-con-arco"],
+        "periodo": "Todo el año"
+      },
+      {
+        "coto_id": "AB-10425",
+        "especie": "conejo",
+        "modalidades": ["al-salto", "cetreria"],
+        "periodo": "08/10/2026 – 08/02/2027"
+      },
+      {
+        "coto_id": "AB-10425",
+        "especie": "paloma torcaz",
+        "modalidades": ["al-salto"],
+        "periodo": "08/10/2026 – 08/02/2027"
+      },
+      {
+        "coto_id": "AB-10425",
+        "especie": "liebre",
+        "modalidades": ["caza-con-galgos"],
+        "periodo": "08/10/2026 – 08/02/2027"
+      },
+      {
+        "coto_id": "AB-10425",
+        "especie": "perdiz roja",
+        "modalidades": ["holandesa-desde-cerro", "en-mano"],
+        "periodo": "15/09/2026 – 31/03/2027"
+      },
+      {
+        "coto_id": "AB-10425",
+        "especie": "faisán",
+        "modalidades": ["holandesa-desde-cerro", "en-mano"],
+        "periodo": "15/09/2026 – 31/03/2027"
+      },
+      {
+        "coto_id": "10225",
+        "especie": "jabalí",
+        "modalidades": ["aguardos", "rececho", "caza-con-arco"],
+        "periodo": "Todo el año"
+      },
+      {
+        "coto_id": "10225",
+        "especie": "muflon",
+        "modalidades": ["aguardos", "rececho", "caza-con-arco"],
+        "periodo": "08/10/2026 – 28/02/2027"
+      }
+    ],
+    "modalidades": [
+      "aguardo-espera-nocturno",
+      "al-salto",
+      "caza-con-galgos",
+      "holandesa-desde-cerro",
+      "en-mano",
+      "cetreria",
+      "caza-con-arco",
+      "aguardos",
+      "rececho"
+    ],
+    "periodo_validez": "1 año desde la fecha de emisión",
+    "dias": null,
+    "precio": 900,
+    "descuentos": [],
+    "condiciones": [
+      "Tarjeta individual e intransferible.",
+      "Sin límite de jornadas durante el período de vigencia, respetando los períodos hábiles y las condiciones de cada coto.",
+      "Número de socio simpatizante.",
+      "Sin cupo interno de capturas.",
+      "En las sueltas incluidas, el titular queda exento del pago del pase al cazadero; la suelta no queda incluida gratuitamente.",
+      "La organización podrá limitar determinadas actividades por motivos de seguridad, gestión del coto o circunstancias excepcionales.",
+      "El incumplimiento de las condiciones establecidas podrá implicar la pérdida de la tarjeta sin derecho a devolución.",
+      "La cetrería incluida en la tarjeta excluye la altanería."
+    ],
+    "reservable": false,
+    "estado": "activo",
+    "observaciones": [
+      "Codorniz, paloma bravía, corneja negra, urraca, zorro y zorzal común quedan fuera de la tarjeta y a disposición del personal autorizado por Peña Jabalí Hunters.",
+      "La tarjeta no funciona mediante reservas de jornadas.",
+      "Contacto: jabalihunters@gmail.com",
+      "WhatsApp y teléfono: 625025243"
+    ],
+    "unidades_disponibles": 6,
+    "imagenes": [
+      "web/assets/tarjetas/anverso.png",
+      "web/assets/tarjetas/reverso.png"
+    ]
+  }
+]
