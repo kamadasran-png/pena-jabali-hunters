@@ -37,17 +37,61 @@
   }
 
   function renderTarjetas(data) {
-    const root = document.querySelector("[data-pjh-tarjetas]");
-    if (!root) return;
-    const card = data.tarjetas.find(t => t.estado === "activo");
-    if (!card) return;
-    const field = key => root.querySelector(`[data-field="${key}"]`);
-    field("nombre").textContent = card.nombre;
-    field("precio").textContent = `${card.precio} €`;
-    field("disponibilidad").textContent = `${card.unidades_disponibles} tarjetas`;
-    field("cotos").textContent = names(data.cotos, card.cotos).join(" · ");
-    field("validez").textContent = card.periodo_validez;
-    field("condiciones").innerHTML = card.condiciones.map(c => `<p>${c}</p>`).join("");
+    const template = document.querySelector("[data-pjh-tarjetas]");
+    if (!template) return;
+    const activeCards = data.tarjetas.filter(t => t.estado === "activo");
+    if (!activeCards.length) return;
+
+    const container = template.parentElement;
+    if (!container) return;
+
+    const cards = activeCards.map((card, index) => {
+      const root = index === 0 ? template : template.cloneNode(true);
+      if (index > 0) container.appendChild(root);
+
+      const field = key => root.querySelector(`[data-field="${key}"]`);
+      const nameField = field("nombre");
+      const priceField = field("precio");
+      const availabilityField = field("disponibilidad");
+      const cotosField = field("cotos");
+      const validityField = field("validez");
+      const conditionsField = field("condiciones");
+      const titleField = root.querySelector("h3");
+      const descriptionField = root.querySelector(".tarjeta-card > p:not(.eyebrow)");
+      const imageGrid = root.querySelector(".home-grid");
+      const imageItems = root.querySelectorAll(".home-grid > div");
+
+      if (nameField) nameField.textContent = card.nombre;
+      if (titleField) titleField.textContent = card.nombre;
+      if (priceField) priceField.textContent = `${card.precio} €`;
+      if (availabilityField) availabilityField.textContent = `${card.unidades_disponibles} tarjetas`;
+      if (cotosField) cotosField.textContent = names(data.cotos, card.cotos).join(" · ");
+      if (validityField) validityField.textContent = card.periodo_validez;
+      if (conditionsField) conditionsField.innerHTML = card.condiciones.map(c => `<p>${c}</p>`).join("");
+      if (descriptionField) descriptionField.textContent = card.dias ? `Una tarjeta con ${card.dias} jornadas de caza incluidas, según las condiciones establecidas.` : "Una tarjeta para disfrutar de los cazaderos de Peña Jabalí Hunters durante el período de vigencia establecido.";
+
+      if (imageGrid) {
+        if (card.imagenes && card.imagenes.length) {
+          imageItems.forEach((item, imageIndex) => {
+            const image = item.querySelector("img");
+            const src = card.imagenes[imageIndex];
+            if (image && src) {
+              image.src = src;
+              image.alt = `${imageIndex === 0 ? "Anverso" : "Reverso"} de la tarjeta ${card.nombre} de Peña Jabalí Hunters`;
+            } else if (item) {
+              item.hidden = true;
+            }
+          });
+        } else {
+          imageGrid.hidden = true;
+        }
+      }
+
+      return root;
+    });
+
+    // El primer elemento ya era el original; los siguientes son sus copias.
+    return cards;
   }
 
   function renderHome(data) {
