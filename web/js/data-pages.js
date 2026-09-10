@@ -45,7 +45,7 @@
     const container = template.parentElement;
     if (!container) return;
 
-    const cards = activeCards.map((card, index) => {
+    activeCards.forEach((card, index) => {
       const root = index === 0 ? template : template.cloneNode(true);
       if (index > 0) container.appendChild(root);
 
@@ -59,7 +59,7 @@
       const titleField = root.querySelector("h3");
       const descriptionField = root.querySelector(".tarjeta-card > p:not(.eyebrow)");
       const imageGrid = root.querySelector(".home-grid");
-      const imageItems = root.querySelectorAll(".home-grid > div");
+      const imageItems = imageGrid ? imageGrid.querySelectorAll(":scope > div") : [];
 
       if (nameField) nameField.textContent = card.nombre;
       if (titleField) titleField.textContent = card.nombre;
@@ -71,27 +71,20 @@
       if (descriptionField) descriptionField.textContent = card.dias ? `Una tarjeta con ${card.dias} jornadas de caza incluidas, según las condiciones establecidas.` : "Una tarjeta para disfrutar de los cazaderos de Peña Jabalí Hunters durante el período de vigencia establecido.";
 
       if (imageGrid) {
-        if (card.imagenes && card.imagenes.length) {
-          imageItems.forEach((item, imageIndex) => {
-            const image = item.querySelector("img");
-            const src = card.imagenes[imageIndex];
-            if (image && src) {
-              image.src = src;
-              image.alt = `${imageIndex === 0 ? "Anverso" : "Reverso"} de la tarjeta ${card.nombre} de Peña Jabalí Hunters`;
-            } else if (item) {
-              item.hidden = true;
-            }
-          });
-        } else {
-          imageGrid.hidden = true;
-        }
+        imageGrid.hidden = false;
+        imageItems.forEach((item, imageIndex) => {
+          const image = item.querySelector("img");
+          const src = card.imagenes?.[imageIndex];
+          if (image && src) {
+            image.src = new URL(src, document.baseURI).href;
+            image.alt = `${imageIndex === 0 ? "Anverso" : "Reverso"} de la tarjeta ${card.nombre} de Peña Jabalí Hunters`;
+            item.hidden = false;
+          } else if (item) {
+            item.hidden = true;
+          }
+        });
       }
-
-      return root;
     });
-
-    // El primer elemento ya era el original; los siguientes son sus copias.
-    return cards;
   }
 
   function renderHome(data) {
