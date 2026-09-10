@@ -91,5 +91,65 @@
       "web/assets/tarjetas/anverso.png",
       "web/assets/tarjetas/reverso.png"
     ]
+  },
+  {
+    "id": "hunters-3",
+    "nombre": "TARJETA HUNTERS 3",
+    "cotos": ["AB-10425"],
+    "especies": [
+      {
+        "coto_id": "AB-10425",
+        "especie_id": "conejo",
+        "modalidades": ["caza-con-perros-madriguera"],
+        "periodo": "Veda general y hurones"
+      },
+      {
+        "coto_id": "AB-10425",
+        "especie_id": "paloma-torcaz",
+        "modalidades": [],
+        "periodo": "Veda general"
+      },
+      {
+        "coto_id": "AB-10425",
+        "especie_id": "jabalí",
+        "modalidades": ["aguardo-espera-diurno", "aguardo-espera-nocturno"],
+        "periodo": "Aguardos"
+      }
+    ],
+    "modalidades": [
+      "caza-con-perros-madriguera",
+      "aguardo-espera-diurno",
+      "aguardo-espera-nocturno"
+    ],
+    "periodo_validez": "Desde su adquisición/asignación hasta el 31 de marzo de 2027",
+    "dias": 3,
+    "precio": 300,
+    "descuentos": [],
+    "condiciones": [
+      "Tarjeta con 3 jornadas de caza.",
+      "Posibilidad de invitados.",
+      "Transferencia total o parcial.",
+      "Número de socio simpatizante.",
+      "Sin cupo interno de capturas.",
+      "Las jornadas deberán reservarse previamente por WhatsApp y estarán sujetas a confirmación de la organización.",
+      "Una vez confirmada la fecha, no podrá modificarse.",
+      "Si no se disfruta la jornada en la fecha reservada, se perderá.",
+      "Las jornadas no disfrutadas se perderán al finalizar el período de validez.",
+      "El respeto a la normativa cinegética vigente es obligatorio.",
+      "El respeto a los socios y a la organización es obligatorio.",
+      "La peña podrá limitar jornadas por motivos de seguridad.",
+      "El incumplimiento podrá implicar la pérdida de la tarjeta sin devolución."
+    ],
+    "reservable": true,
+    "estado": "activo",
+    "observaciones": [
+      "La tarjeta participa en el sorteo “La camiseta de la suerte”.",
+      "El titular deberá indicar nombre, número de tarjeta, fecha solicitada, modalidad de caza y si acudirá con invitado.",
+      "La reserva solo será válida tras confirmación de la organización.",
+      "Contacto: jabalihunters@gmail.com",
+      "WhatsApp y teléfono: 625025243"
+    ],
+    "unidades_disponibles": 10,
+    "imagenes": []
   }
 ]
