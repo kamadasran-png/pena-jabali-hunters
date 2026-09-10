@@ -89,9 +89,27 @@
 
   function renderHome(data) {
     const root = document.querySelector("[data-pjh-home-cotos]");
-    if (!root) return;
-    root.innerHTML = data.cotos.filter(c => c.estado === "activo").map(c => `<article class="home-card"><h3>${c.nombre}</h3><p>${c.superficie} ha · ${c.ubicacion}</p><a class="cta cta-secondary" href="cotos.html">Ver coto</a></article>`).join("");
+    if (root) {
+      root.innerHTML = data.cotos.filter(c => c.estado === "activo").map(c => `<article class="home-card"><h3>${c.nombre}</h3><p>${c.superficie} ha · ${c.ubicacion}</p><a class="cta cta-secondary" href="cotos.html">Ver coto</a></article>`).join("");
+    }
   }
 
-  ready.then(data => { renderHome(data); renderCotos(data); renderCaza(data); renderTarjetas(data); }).catch(() => {});
+  function renderHomeTarjetas(data) {
+    const root = document.querySelector("[data-pjh-home-tarjetas]");
+    if (!root) return;
+    const activeCards = data.tarjetas.filter(t => t.estado === "activo");
+    if (!activeCards.length) return;
+
+    root.innerHTML = activeCards.map(card => {
+      const image = card.imagenes?.[0] ? new URL(card.imagenes[0], document.baseURI).href : "";
+      return `<article class="home-card" data-pjh-home-tarjeta>
+        ${image ? `<div><img src="${image}" alt="Anverso de la tarjeta ${card.nombre} de Peña Jabalí Hunters"></div>` : ""}
+        <h3>${card.nombre}</h3>
+        <p>${card.dias ? `Una tarjeta con ${card.dias} jornadas de caza incluidas.` : "Tarjeta de caza de Peña Jabalí Hunters."}</p>
+        <a class="cta cta-secondary" href="tarjetas-jornadas.html">Ver información</a>
+      </article>`;
+    }).join("");
+  }
+
+  ready.then(data => { renderHome(data); renderHomeTarjetas(data); renderCotos(data); renderCaza(data); renderTarjetas(data); }).catch(() => {});
 })();
