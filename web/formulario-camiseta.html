@@ -316,22 +316,54 @@ document.querySelector('#confirmar-prueba').addEventListener('click', async () =
       throw new Error(resultado.error || 'No se pudo registrar el pedido');
     }
 
+        // --------------------------------------------------
+    //  REDIRECCIÓN AL PAGO STRIPE SI ES BIZUM
+    // --------------------------------------------------
+
+    if (datos.pago === 'bizum') {
+
+      if (!resultado.stripeCheckoutUrl) {
+        throw new Error(
+          'Stripe no ha devuelto la URL de pago.'
+        );
+      }
+
+      window.location.href =
+        resultado.stripeCheckoutUrl;
+
+      return;
+    }
+
+
+    // --------------------------------------------------
+    //  PAGO POR TRANSFERENCIA
+    // --------------------------------------------------
+
     success.innerHTML = `
       <h2>Pedido registrado correctamente</h2>
+
       <p>
         Tu pedido ha sido registrado correctamente.
       </p>
+
       <p>
-        <strong>ID de pedido:</strong> ${resultado.idPedido}
+        <strong>ID de pedido:</strong>
+        ${resultado.idPedido}
       </p>
+
       <p>
-        <strong>Camisetas:</strong> ${resultado.cantidad}
+        <strong>Camisetas:</strong>
+        ${resultado.cantidad}
       </p>
+
       <p>
-        <strong>Importe:</strong> ${resultado.importe} €
+        <strong>Importe:</strong>
+        ${resultado.importe} €
       </p>
+
       <p>
-        El pedido queda pendiente de pago y validación.
+        El pedido queda pendiente de confirmación del pago
+        y de la asignación de las participaciones.
       </p>
     `;
 
@@ -343,7 +375,6 @@ document.querySelector('#confirmar-prueba').addEventListener('click', async () =
       behavior: 'smooth',
       block: 'nearest'
     });
-
   } catch (error) {
 
     console.error(error);
