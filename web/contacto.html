@@ -7,149 +7,37 @@
   <title>Contacto — Peña Jabalí Hunters</title>
   <link rel="stylesheet" href="css/styles.css">
   <style>
-    .contact-hero {
-      position: relative;
-      min-height: 420px;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      background: #20231F url("assets/hero/imagen%20coto1.png") center center / cover no-repeat;
-      color: #fff;
-    }
-    .contact-hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, rgba(20,22,19,.88) 0%, rgba(20,22,19,.68) 34%, rgba(20,22,19,.18) 72%, rgba(20,22,19,.08) 100%);
-    }
-    .contact-hero .container {
-      position: relative;
-      z-index: 1;
-    }
-    .contact-hero .eyebrow {
-      color: #D8C9A6;
-      margin-bottom: .8rem;
-    }
-    .contact-hero h1 {
-      color: #fff;
-      max-width: 680px;
-      margin-bottom: 1rem;
-    }
-    .contact-hero p:last-child {
-      max-width: 620px;
-      color: #F5F3EC;
-      font-size: 1.12rem;
-      margin: 0;
-    }
-    .contact-info-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-      margin-top: 2rem;
-    }
-    .contact-info-card {
-      background: #fff;
-      border: 1px solid rgba(32,35,31,.12);
-      padding: 1.6rem;
-    }
-    .contact-info-card h3 { margin-top: 0; }
-    .contact-info-card p { margin-bottom: .8rem; }
-    .contact-info-card a { font-weight: 700; }
-    .contact-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .9rem;
-      margin-top: 1.25rem;
-    }
-    .contact-panel {
-      background: #20231F;
-      color: #F5F3EC;
-      padding: 2rem;
-    }
-    .contact-panel h2 { color: #fff; }
-    .contact-panel p { color: #D8C9A6; }
-    @media (max-width: 760px) {
-      .contact-hero { min-height: 390px; background-position: 62% center; }
-      .contact-hero::before { background: linear-gradient(90deg, rgba(20,22,19,.9) 0%, rgba(20,22,19,.72) 60%, rgba(20,22,19,.35) 100%); }
-      .contact-info-grid { grid-template-columns: 1fr; }
-      .contact-hero h1 { font-size: clamp(2.5rem, 12vw, 4rem); }
-    }
+    .contact-hero{position:relative;min-height:420px;display:flex;align-items:center;overflow:hidden;background:#20231F url("assets/hero/imagen%20coto1.png") center center/cover no-repeat;color:#fff}
+    .contact-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,22,19,.88) 0%,rgba(20,22,19,.68) 34%,rgba(20,22,19,.18) 72%,rgba(20,22,19,.08) 100%)}
+    .contact-hero .container{position:relative;z-index:1}.contact-hero .eyebrow{color:#D8C9A6;margin-bottom:.8rem}.contact-hero h1{color:#fff;max-width:680px;margin-bottom:1rem}.contact-hero p:last-child{max-width:620px;color:#F5F3EC;font-size:1.12rem;margin:0}
+    .contact-info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2rem}.contact-info-card{background:#fff;border:1px solid rgba(32,35,31,.12);padding:1.6rem}.contact-info-card h3{margin-top:0}.contact-info-card p{margin-bottom:.8rem}.contact-info-card a{font-weight:700;color:var(--olive)}
+    .contact-panel{background:#20231F;color:#F5F3EC;padding:2rem}.contact-panel h2{color:#fff}.contact-panel p{color:#D8C9A6}.contact-actions{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:1.25rem}
+    .contact-form-wrap{max-width:820px;margin-top:2rem;padding:2rem;background:#fff;border:1px solid rgba(82,104,0,.22);border-radius:var(--radius);box-shadow:0 5px 18px rgba(32,35,31,.06)}
+    .contact-form{display:grid;gap:1.15rem}.contact-form__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.15rem}.contact-form__field{display:flex;flex-direction:column;gap:.4rem}.contact-form label{font-weight:600;font-size:.92rem}.contact-form input,.contact-form select,.contact-form textarea{width:100%;padding:.8rem .9rem;border:1px solid rgba(32,35,31,.28);border-radius:var(--radius);background:#fff;color:var(--charcoal);font:inherit}.contact-form textarea{min-height:150px;resize:vertical}.contact-form input:focus-visible,.contact-form select:focus-visible,.contact-form textarea:focus-visible{outline:3px solid var(--orange);outline-offset:2px;border-color:var(--olive)}.contact-form__consent{display:flex;align-items:flex-start;gap:.65rem;font-size:.82rem;line-height:1.5}.contact-form__consent input{width:auto;margin-top:.25rem}.contact-form__consent a{color:var(--olive);font-weight:600}.contact-form__note{margin:0!important;font-size:.82rem;color:var(--gray)!important}
+    @media(max-width:760px){.contact-hero{min-height:390px;background-position:62% center}.contact-hero::before{background:linear-gradient(90deg,rgba(20,22,19,.9) 0%,rgba(20,22,19,.72) 60%,rgba(20,22,19,.35) 100%)}.contact-info-grid,.contact-form__grid{grid-template-columns:1fr}.contact-hero h1{font-size:clamp(2.5rem,12vw,4rem)}.contact-form-wrap{padding:1.25rem}.contact-panel{padding:1.4rem}}
   </style>
 </head>
 <body>
-<header class="site-header">
-  <div class="site-header__inner">
-    <a class="brand" href="index.html" aria-label="Peña Jabalí Hunters — inicio"><img class="brand__logo" src="assets/logos/logo-pjhunters.png" alt="Peña Jabalí Hunters"></a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú"><span aria-hidden="true">☰</span></button>
-    <nav id="site-nav" class="site-nav" aria-label="Navegación principal">
-      <a href="index.html">Inicio</a><a href="caza.html">Caza</a><a href="cotos.html">Cotos</a><a href="tarjetas-jornadas.html">Tarjetas y jornadas</a><a href="galeria.html">Galería</a><a href="la-pena.html">La Peña</a><a href="contacto.html" aria-current="page">Contacto</a>
-    </nav>
-  </div>
-</header>
+<header class="site-header"><div class="site-header__inner"><a class="brand" href="index.html" aria-label="Peña Jabalí Hunters — inicio"><img class="brand__logo" src="assets/logos/logo-pjhunters.png" alt="Peña Jabalí Hunters"></a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú"><span aria-hidden="true">☰</span></button><nav id="site-nav" class="site-nav" aria-label="Navegación principal"><a href="index.html">Inicio</a><a href="caza.html">Caza</a><a href="cotos.html">Cotos</a><a href="tarjetas-jornadas.html">Tarjetas y jornadas</a><a href="galeria.html">Galería</a><a href="la-pena.html">La Peña</a><a href="contacto.html" aria-current="page">Contacto</a></nav></div></header>
 <main class="site-main">
-  <section class="contact-hero" aria-labelledby="page-title">
-    <div class="container">
-      <p class="eyebrow">PEÑA JABALÍ HUNTERS</p>
-      <h1 id="page-title">Contacto</h1>
-      <p>Estamos a tu disposición para resolver tus dudas y ayudarte a encontrar la información que necesitas.</p>
-    </div>
-  </section>
-
-  <section class="section container" aria-labelledby="contacta-title">
-    <a class="return-link" href="index.html">← Volver a Inicio</a>
-    <h2 id="contacta-title">Contacta con nosotros</h2>
-    <p>Si quieres conocer nuestros cotos, tarjetas, jornadas o cualquier otra actividad de Peña Jabalí Hunters, escríbenos y te atenderemos personalmente.</p>
-    <div class="contact-info-grid">
-      <article class="contact-info-card">
-        <h3>Email</h3>
-        <p>Para consultas generales, información y solicitudes.</p>
-        <a href="mailto:jabalihunters@gmail.com">jabalihunters@gmail.com</a>
-      </article>
-      <article class="contact-info-card">
-        <h3>Sede del club</h3>
-        <p>C/ Buen Suceso, 45<br>02640 Almansa (Albacete)</p>
-        <a href="mailto:jabalihunters@gmail.com?subject=Consulta%20Pe%C3%B1a%20Jabal%C3%AD%20Hunters">Escribir al club</a>
-      </article>
-      <article class="contact-info-card">
-        <h3>Reservas</h3>
-        <p>Consulta disponibilidad y condiciones de cotos, tarjetas y jornadas.</p>
-        <a href="tarjetas-jornadas.html">Ver tarjetas y jornadas →</a>
-      </article>
-    </div>
-  </section>
-
-  <section class="section container" aria-labelledby="consultas-title">
-    <div class="contact-panel">
-      <h2 id="consultas-title">Consultas y reservas</h2>
-      <p>Cuéntanos qué necesitas. Para agilizar la respuesta, indica en el correo el asunto de tu consulta y, si corresponde, la jornada, coto o tarjeta que te interesa.</p>
-      <div class="contact-actions">
-        <a class="cta cta-secondary" href="mailto:jabalihunters@gmail.com?subject=Consulta%20Pe%C3%B1a%20Jabal%C3%AD%20Hunters">Hacer una consulta</a>
-        <a class="cta cta-primary" href="tarjetas-jornadas.html">Consultar reservas</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section container" aria-labelledby="recorrido-title">
-    <div class="context-nav" aria-label="También te puede interesar">
-      <p class="eyebrow">CONTINÚA TU RECORRIDO</p>
-      <h2 id="recorrido-title">También te puede interesar</h2>
-      <div class="context-nav__links">
-        <a href="cotos.html">Cotos <span aria-hidden="true">→</span></a>
-        <a href="tarjetas-jornadas.html">Tarjetas y jornadas <span aria-hidden="true">→</span></a>
-        <a href="caza.html">Caza <span aria-hidden="true">→</span></a>
-      </div>
-    </div>
-  </section>
+<section class="contact-hero" aria-labelledby="page-title"><div class="container"><p class="eyebrow">PEÑA JABALÍ HUNTERS</p><h1 id="page-title">Contacto</h1><p>Estamos a tu disposición para resolver tus dudas y ayudarte a encontrar la información que necesitas.</p></div></section>
+<section class="section container" aria-labelledby="contacta-title"><a class="return-link" href="index.html">← Volver a Inicio</a><h2 id="contacta-title">Contacta con nosotros</h2><p>Si quieres conocer nuestros cotos, tarjetas, jornadas o cualquier otra actividad de Peña Jabalí Hunters, escríbenos y te atenderemos personalmente.</p><div class="contact-info-grid">
+<article class="contact-info-card"><h3>Email</h3><p>Para consultas generales, información y solicitudes.</p><a href="#formulario-contacto">Escribir un mensaje</a></article>
+<article class="contact-info-card"><h3>Sede del club</h3><p>C/ Buen Suceso, 45<br>02640 Almansa (Albacete)</p><a href="#formulario-contacto">Escribir al club</a></article>
+<article class="contact-info-card"><h3>Reservas</h3><p>Consulta disponibilidad y condiciones de cotos, tarjetas y jornadas.</p><a href="tarjetas-jornadas.html">Ver tarjetas y jornadas →</a></article>
+</div></section>
+<section id="formulario-contacto" class="section container" aria-labelledby="form-title"><h2 id="form-title">Haz tu consulta</h2><p>Rellena el formulario y prepara tu mensaje para enviarlo al correo oficial del club.</p><div class="contact-form-wrap"><form class="contact-form" id="contact-form">
+<div class="contact-form__grid"><div class="contact-form__field"><label for="nombre">Nombre *</label><input id="nombre" name="nombre" type="text" autocomplete="name" required></div><div class="contact-form__field"><label for="email">Correo electrónico *</label><input id="email" name="email" type="email" autocomplete="email" required></div></div>
+<div class="contact-form__grid"><div class="contact-form__field"><label for="motivo">Motivo de la consulta *</label><select id="motivo" name="motivo" required><option value="" selected disabled>Selecciona una opción</option><option>Información general</option><option>Cotos</option><option>Tarjetas y jornadas</option><option>Reserva</option><option>La Camiseta de la Suerte</option><option>Otro</option></select></div><div class="contact-form__field"><label for="telefono">Teléfono (opcional)</label><input id="telefono" name="telefono" type="tel" autocomplete="tel"></div></div>
+<div class="contact-form__field"><label for="mensaje">Mensaje *</label><textarea id="mensaje" name="mensaje" required placeholder="Escribe aquí tu consulta..."></textarea></div>
+<label class="contact-form__consent"><input type="checkbox" name="privacidad" required><span>He leído la <a href="privacidad.html" target="_blank" rel="noopener">Política de Privacidad</a> y acepto el tratamiento de los datos necesarios para atender mi consulta. *</span></label>
+<p class="contact-form__note">Al enviar, se abrirá tu aplicación de correo con el mensaje preparado para jabalihunters@gmail.com. Este formulario no almacena los datos en esta web.</p>
+<button class="cta cta-primary" type="submit">Enviar consulta</button>
+</form></div></section>
+<section class="section container" aria-labelledby="consultas-title"><div class="contact-panel"><h2 id="consultas-title">¿Prefieres escribir directamente?</h2><p>También puedes utilizar el correo oficial del club.</p><div class="contact-actions"><a class="cta cta-secondary" href="mailto:jabalihunters@gmail.com?subject=Consulta%20Pe%C3%B1a%20Jabal%C3%AD%20Hunters">Abrir correo</a><a class="cta cta-primary" href="tarjetas-jornadas.html">Consultar reservas</a></div></div></section>
+<section class="section container" aria-labelledby="recorrido-title"><div class="context-nav" aria-label="También te puede interesar"><p class="eyebrow">CONTINÚA TU RECORRIDO</p><h2 id="recorrido-title">También te puede interesar</h2><div class="context-nav__links"><a href="cotos.html">Cotos <span aria-hidden="true">→</span></a><a href="tarjetas-jornadas.html">Tarjetas y jornadas <span aria-hidden="true">→</span></a><a href="caza.html">Caza <span aria-hidden="true">→</span></a></div></div></section>
 </main>
-<footer class="site-footer">
-  <div class="container footer-grid">
-    <section class="footer-block"><h2>Peña Jabalí Hunters</h2><img class="footer-logo" src="assets/logos/logo-pjhunters.png" alt="Logotipo Peña Jabalí Hunters"></section>
-    <section class="footer-block"><h2>Navegación</h2><p><a href="index.html">Inicio</a></p><p><a href="caza.html">Caza</a></p><p><a href="cotos.html">Cotos</a></p><p><a href="tarjetas-jornadas.html">Tarjetas y jornadas</a></p><p><a href="galeria.html">Galería</a></p><p><a href="la-pena.html">La Peña</a></p><p><a href="contacto.html" aria-current="page">Contacto</a></p></section>
-    <section class="footer-block"><h2>Contacto y reservas</h2><p><a class="cta cta-primary" href="mailto:jabalihunters@gmail.com?subject=Consulta%20Pe%C3%B1a%20Jabal%C3%AD%20Hunters">Contactar</a></p><p><a class="cta cta-secondary" href="tarjetas-jornadas.html">Reservar</a></p></section>
-    <section class="footer-block"><h2>Información legal</h2><p><a href="legal.html">Aviso legal</a></p><p><a href="privacidad.html">Privacidad</a></p><p><a href="cookies.html">Cookies</a></p></section>
-  </div>
-  <div class="container footer-bottom"><p>© Peña Jabalí Hunters</p></div>
-</footer>
-<script src="js/main.js" defer></script>
+<footer class="site-footer"><div class="container footer-grid"><section class="footer-block"><h2>Peña Jabalí Hunters</h2><img class="footer-logo" src="assets/logos/logo-pjhunters.png" alt="Logotipo Peña Jabalí Hunters"></section><section class="footer-block"><h2>Navegación</h2><p><a href="index.html">Inicio</a></p><p><a href="caza.html">Caza</a></p><p><a href="cotos.html">Cotos</a></p><p><a href="tarjetas-jornadas.html">Tarjetas y jornadas</a></p><p><a href="galeria.html">Galería</a></p><p><a href="la-pena.html">La Peña</a></p><p><a href="contacto.html" aria-current="page">Contacto</a></p></section><section class="footer-block"><h2>Contacto y reservas</h2><p><a class="cta cta-primary" href="#formulario-contacto">Contactar</a></p><p><a class="cta cta-secondary" href="tarjetas-jornadas.html">Reservar</a></p></section><section class="footer-block"><h2>Información legal</h2><p><a href="legal.html">Aviso legal</a></p><p><a href="privacidad.html">Privacidad</a></p><p><a href="cookies.html">Cookies</a></p></section></div><div class="container footer-bottom"><p>© Peña Jabalí Hunters</p></div></footer>
+<script src="js/main.js" defer></script><script>document.getElementById('contact-form').addEventListener('submit',function(e){e.preventDefault();const f=e.currentTarget;const nombre=f.nombre.value.trim();const email=f.email.value.trim();const motivo=f.motivo.value;const telefono=f.telefono.value.trim();const mensaje=f.mensaje.value.trim();const subject=encodeURIComponent('Consulta Peña Jabalí Hunters — '+motivo);const body=encodeURIComponent('Nombre: '+nombre+'\nCorreo: '+email+'\nTeléfono: '+(telefono||'No indicado')+'\nMotivo: '+motivo+'\n\nMensaje:\n'+mensaje);window.location.href='mailto:jabalihunters@gmail.com?subject='+subject+'&body='+body;});</script>
 </body>
 </html>
