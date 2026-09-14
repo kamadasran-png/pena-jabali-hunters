@@ -1,0 +1,17 @@
+/* CARRUSEL DE MODALIDADES — página Caza */
+.modalities-carousel{position:relative;margin:1.75rem 0 0;padding:0 .25rem}
+.modalities-carousel__viewport{overflow:hidden;width:100%}
+.modalities-carousel__track{display:flex;transition:transform 360ms ease;will-change:transform}
+.modalities-carousel__slide{flex:0 0 33.333333%;margin:0;padding:.5rem}
+.modalities-carousel__slide img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow);background:var(--charcoal)}
+.modalities-carousel__controls{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1rem}
+.modalities-carousel__arrow{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;padding:0;border:1px solid var(--olive);border-radius:50%;background:var(--ivory);color:var(--olive);font-size:1.25rem;line-height:1;cursor:pointer;transition:background-color var(--transition),color var(--transition),border-color var(--transition),opacity var(--transition),transform var(--transition)}
+.modalities-carousel__arrow:hover:not(:disabled){background:var(--olive);color:var(--ivory);transform:translateY(-1px)}
+.modalities-carousel__arrow:focus-visible,.modalities-carousel__dots button:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.modalities-carousel__arrow:disabled{opacity:.35;cursor:default}
+.modalities-carousel__dots{display:flex;align-items:center;justify-content:center;gap:.45rem}
+.modalities-carousel__dots button{width:9px;height:9px;padding:0;border:0;border-radius:50%;background:var(--gold);opacity:.45;cursor:pointer;transition:transform var(--transition),opacity var(--transition)}
+.modalities-carousel__dots button[aria-current="true"]{opacity:1;transform:scale(1.25)}
+@media (max-width:900px){.modalities-carousel__slide{flex-basis:50%}}
+@media (max-width:760px){.modalities-carousel{padding:0}.modalities-carousel__slide{flex-basis:100%;padding:.25rem}.modalities-carousel__slide img{aspect-ratio:16/10}.modalities-carousel__controls{gap:.75rem;margin-top:.85rem}.modalities-carousel__arrow{width:40px;height:40px}.modalities-carousel__dots{gap:.4rem;max-width:calc(100% - 7rem);overflow:hidden}}
+@media (prefers-reduced-motion:reduce){.modalities-carousel__track{transition:none}}
