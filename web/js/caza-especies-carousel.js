@@ -73,7 +73,10 @@
     updateVisible();
   }
 
-  if (document.readyState === "loading") {
+  const ready = window.PJHDataReady;
+  if (ready && typeof ready.then === "function") {
+    ready.then(init).catch(() => {});
+  } else if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init, { once: true });
   } else {
     init();
