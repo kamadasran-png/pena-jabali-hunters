@@ -64,7 +64,7 @@
       if (nameField) nameField.textContent = card.nombre;
       if (titleField) titleField.textContent = card.nombre;
       if (priceField) priceField.textContent = `${card.precio} €`;
-      if (availabilityField) availabilityField.textContent = `${card.unidades_disponibles} tarjetas`;
+      if (availabilityField) availabilityField.textContent = card.unidades_disponibles != null ? `${card.unidades_disponibles} tarjetas` : "Consultar";
       if (cotosField) cotosField.textContent = names(data.cotos, card.cotos).join(" · ");
       if (validityField) validityField.textContent = card.periodo_validez;
       if (conditionsField) conditionsField.innerHTML = card.condiciones.map(c => `<p>${c}</p>`).join("");
