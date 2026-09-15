@@ -41,16 +41,17 @@
     if (!template) return;
     const activeCards = data.tarjetas.filter(t => t.estado === "activo" && t.id !== "super-hunters");
     if (!activeCards.length) return;
-    const container = template;
     const cardTemplate = template.querySelector(".tarjeta-card");
     if (!cardTemplate) return;
 
     activeCards.forEach((card, index) => {
       const root = index === 0 ? cardTemplate : cardTemplate.cloneNode(true);
-      if (index > 0) container.appendChild(root);
+      if (index > 0) template.appendChild(root);
 
       const field = key => root.querySelector(`[data-field="${key}"]`);
       const nameField = field("nombre");
+      const imageBox = field("imagen");
+      const image = imageBox?.querySelector("img");
       const daysField = field("dias");
       const priceField = field("precio");
       const cotosField = field("cotos");
@@ -67,6 +68,17 @@
       if (validityField) validityField.textContent = card.periodo_validez;
       if (conditionsField) conditionsField.innerHTML = card.condiciones.map(c => `<p>${c}</p>`).join("");
       if (descriptionField) descriptionField.textContent = `Una tarjeta con ${card.dias} jornadas de caza incluidas, según las condiciones establecidas.`;
+
+      if (imageBox && image) {
+        const src = card.imagenes?.[0];
+        if (src) {
+          image.src = new URL(src, document.baseURI).href;
+          image.alt = `Anverso de la tarjeta ${card.nombre} de Peña Jabalí Hunters`;
+          imageBox.hidden = false;
+        } else {
+          imageBox.hidden = true;
+        }
+      }
     });
   }
 
