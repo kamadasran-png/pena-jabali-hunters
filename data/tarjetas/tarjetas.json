@@ -64,7 +64,7 @@
     "reservable":true,
     "estado":"activo",
     "observaciones":["La tarjeta participa en el sorteo “La camiseta de la suerte”.","El titular deberá indicar nombre, número de tarjeta, fecha solicitada, modalidad de caza y si acudirá con invitado.","La reserva solo será válida tras confirmación de la organización.","Contacto: jabalihunters@gmail.com","WhatsApp y teléfono: 625025243"],
-    "imagenes":[]
+    "imagenes":["assets/tarjetas/hunters-5.png","assets/tarjetas/reverso.png"]
   },
   {
     "id":"hunters-10",
@@ -84,6 +84,6 @@
     "reservable":true,
     "estado":"activo",
     "observaciones":["La tarjeta participa en el sorteo “La camiseta de la suerte”.","El titular deberá indicar nombre, número de tarjeta, fecha solicitada, modalidad de caza y si acudirá con invitado.","La reserva solo será válida tras confirmación de la organización.","Contacto: jabalihunters@gmail.com","WhatsApp y teléfono: 625025243"],
-    "imagenes":[]
+    "imagenes":["assets/tarjetas/hunters-10.png","assets/tarjetas/reverso.png"]
   }
 ]
