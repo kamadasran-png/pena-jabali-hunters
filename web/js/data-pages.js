@@ -39,59 +39,40 @@
   function renderTarjetas(data) {
     const template = document.querySelector("[data-pjh-tarjetas]");
     if (!template) return;
-    const activeCards = data.tarjetas.filter(t => t.estado === "activo");
+    const activeCards = data.tarjetas.filter(t => t.estado === "activo" && t.id !== "super-hunters");
     if (!activeCards.length) return;
-
-    const container = template.parentElement;
-    if (!container) return;
+    const container = template;
+    const cardTemplate = template.querySelector(".tarjeta-card");
+    if (!cardTemplate) return;
 
     activeCards.forEach((card, index) => {
-      const root = index === 0 ? template : template.cloneNode(true);
+      const root = index === 0 ? cardTemplate : cardTemplate.cloneNode(true);
       if (index > 0) container.appendChild(root);
 
       const field = key => root.querySelector(`[data-field="${key}"]`);
       const nameField = field("nombre");
+      const daysField = field("dias");
       const priceField = field("precio");
-      const availabilityField = field("disponibilidad");
       const cotosField = field("cotos");
       const validityField = field("validez");
       const conditionsField = field("condiciones");
       const titleField = root.querySelector("h3");
-      const descriptionField = root.querySelector(".tarjeta-card > p:not(.eyebrow)");
-      const imageGrid = root.querySelector(".home-grid");
-      const imageItems = imageGrid ? imageGrid.querySelectorAll(":scope > div") : [];
+      const descriptionField = root.querySelector(".tarjeta-card__description");
 
       if (nameField) nameField.textContent = card.nombre;
       if (titleField) titleField.textContent = card.nombre;
+      if (daysField) daysField.textContent = card.dias ?? "Consultar";
       if (priceField) priceField.textContent = `${card.precio} €`;
-      if (availabilityField) availabilityField.textContent = card.unidades_disponibles != null ? `${card.unidades_disponibles} tarjetas` : "Consultar";
       if (cotosField) cotosField.textContent = names(data.cotos, card.cotos).join(" · ");
       if (validityField) validityField.textContent = card.periodo_validez;
       if (conditionsField) conditionsField.innerHTML = card.condiciones.map(c => `<p>${c}</p>`).join("");
-      if (descriptionField) descriptionField.textContent = card.dias ? `Una tarjeta con ${card.dias} jornadas de caza incluidas, según las condiciones establecidas.` : "Una tarjeta para disfrutar de los cazaderos de Peña Jabalí Hunters durante el período de vigencia establecido.";
-
-      if (imageGrid) {
-        imageGrid.hidden = false;
-        imageItems.forEach((item, imageIndex) => {
-          const image = item.querySelector("img");
-          const src = card.imagenes?.[imageIndex];
-          if (image && src) {
-            image.src = new URL(src, document.baseURI).href;
-            image.alt = `${imageIndex === 0 ? "Anverso" : "Reverso"} de la tarjeta ${card.nombre} de Peña Jabalí Hunters`;
-            item.hidden = false;
-          } else if (item) {
-            item.hidden = true;
-          }
-        });
-      }
+      if (descriptionField) descriptionField.textContent = `Una tarjeta con ${card.dias} jornadas de caza incluidas, según las condiciones establecidas.`;
     });
   }
 
   function renderHome(data) {
     const root = document.querySelector("[data-pjh-home-cotos]");
-    if (root) {
-      root.innerHTML = data.cotos.filter(c => c.estado === "activo").map(c => `<article class="home-card"><h3>${c.nombre}</h3><p>${c.superficie} ha · ${c.ubicacion}</p><a class="cta cta-secondary" href="cotos.html">Ver coto</a></article>`).join("");
-    }
+    if (root) root.innerHTML = data.cotos.filter(c => c.estado === "activo").map(c => `<article class="home-card"><h3>${c.nombre}</h3><p>${c.superficie} ha · ${c.ubicacion}</p><a class="cta cta-secondary" href="cotos.html">Ver coto</a></article>`).join("");
   }
 
   function renderHomeTarjetas(data) {
@@ -99,15 +80,9 @@
     if (!root) return;
     const activeCards = data.tarjetas.filter(t => t.estado === "activo");
     if (!activeCards.length) return;
-
     root.innerHTML = activeCards.map(card => {
       const image = card.imagenes?.[0] ? new URL(card.imagenes[0], document.baseURI).href : "";
-      return `<article class="home-card" data-pjh-home-tarjeta>
-        ${image ? `<div><img src="${image}" alt="Anverso de la tarjeta ${card.nombre} de Peña Jabalí Hunters"></div>` : ""}
-        <h3>${card.nombre}</h3>
-        <p>${card.dias ? `Una tarjeta con ${card.dias} jornadas de caza incluidas.` : "Tarjeta de caza de Peña Jabalí Hunters."}</p>
-        <a class="cta cta-secondary" href="tarjetas-jornadas.html">Ver información</a>
-      </article>`;
+      return `<article class="home-card" data-pjh-home-tarjeta>${image ? `<div><img src="${image}" alt="Anverso de la tarjeta ${card.nombre} de Peña Jabalí Hunters"></div>` : ""}<h3>${card.nombre}</h3><p>${card.dias ? `Una tarjeta con ${card.dias} jornadas de caza incluidas.` : "Tarjeta de caza de Peña Jabalí Hunters."}</p><a class="cta cta-secondary" href="tarjetas-jornadas.html">Ver información</a></article>`;
     }).join("");
   }
 
