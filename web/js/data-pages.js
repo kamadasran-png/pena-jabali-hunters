@@ -31,8 +31,8 @@
     const speciesRoot = document.querySelector("[data-pjh-especies]");
     const modalitiesRoot = document.querySelector("[data-pjh-modalidades]");
     const relatedRoot = document.querySelector("[data-pjh-cotos-relacionados]");
-    if (speciesRoot) speciesRoot.innerHTML = `<div class="home-grid">${data.especies.map(e => `<article class="card home-card"><h3>${e.nombre}</h3><p>${names(data.cotos, e.cotos).join(" · ")}</p></article>`).join("")}</div>`;
-    if (modalitiesRoot) modalitiesRoot.innerHTML = `<div class="home-grid">${data.modalidades.map(m => `<article class="card home-card"><h3>${m.nombre}</h3><p>${names(data.cotos, m.cotos).join(" · ")}</p></article>`).join("")}</div>`;
+    if (speciesRoot) speciesRoot.innerHTML = `<div class="home-grid">${data.especies.map(e => `<article class="card home-card"><h3>${e.nombre}</h3><p>${names(data.cotos, e.cotos).join(" · ")}</p></article>`).join("")}`;
+    if (modalitiesRoot) modalitiesRoot.innerHTML = `<div class="home-grid">${data.modalidades.map(m => `<article class="card home-card"><h3>${m.nombre}</h3><p>${names(data.cotos, m.cotos).join(" · ")}</p></article>`).join("")}`;
     if (relatedRoot) relatedRoot.innerHTML = data.cotos.filter(c => c.estado === "activo").map(c => `<a class="card home-card" href="cotos.html"><h3>${c.nombre}</h3><p>${c.superficie} ha · ${names(data.especies, c.especies).slice(0, 5).join(" · ")}</p></a>`).join("");
   }
 
@@ -54,26 +54,21 @@
       const image = imageBox?.querySelector("img");
       const daysField = field("dias");
       const priceField = field("precio");
-      const cotosField = field("cotos");
-      const validityField = field("validez");
       const conditionsField = field("condiciones");
       const titleField = root.querySelector("h3");
-      const descriptionField = root.querySelector(".tarjeta-card__description");
 
       if (nameField) nameField.textContent = card.nombre;
       if (titleField) titleField.textContent = card.nombre;
       if (daysField) daysField.textContent = card.dias ?? "Consultar";
       if (priceField) priceField.textContent = `${card.precio} €`;
-      if (cotosField) cotosField.textContent = names(data.cotos, card.cotos).join(" · ");
-      if (validityField) validityField.textContent = card.periodo_validez;
-      if (conditionsField) conditionsField.innerHTML = card.condiciones.map(c => `<p>${c}</p>`).join("");
-      if (descriptionField) descriptionField.textContent = `Una tarjeta con ${card.dias} jornadas de caza incluidas, según las condiciones establecidas.`;
+      if (conditionsField) conditionsField.innerHTML = (card.condiciones || []).map(c => `<p>${c}</p>`).join("");
 
       if (imageBox && image) {
         const src = card.imagenes?.[0];
         if (src) {
           image.src = new URL(src, document.baseURI).href;
           image.alt = `Anverso de la tarjeta ${card.nombre} de Peña Jabalí Hunters`;
+          image.loading = "lazy";
           imageBox.hidden = false;
         } else {
           imageBox.hidden = true;
@@ -94,7 +89,7 @@
     if (!activeCards.length) return;
     root.innerHTML = activeCards.map(card => {
       const image = card.imagenes?.[0] ? new URL(card.imagenes[0], document.baseURI).href : "";
-      return `<article class="home-card" data-pjh-home-tarjeta>${image ? `<div><img src="${image}" alt="Anverso de la tarjeta ${card.nombre} de Peña Jabalí Hunters"></div>` : ""}<h3>${card.nombre}</h3><p>${card.dias ? `Una tarjeta con ${card.dias} jornadas de caza incluidas.` : "Tarjeta de caza de Peña Jabalí Hunters."}</p><a class="cta cta-secondary" href="tarjetas-jornadas.html">Ver información</a></article>`;
+      return `<article class="home-card" data-pjh-home-tarjeta>${image ? `<div><img src="${image}" alt="Anverso de la tarjeta ${card.nombre} de Peña Jabalí Hunters" loading="lazy"></div>` : ""}<h3>${card.nombre}</h3><p>${card.dias ? `Una tarjeta con ${card.dias} jornadas de caza incluidas.` : "Tarjeta de caza de Peña Jabalí Hunters."}</p><a class="cta cta-secondary" href="tarjetas-jornadas.html">Ver información</a></article>`;
     }).join("");
   }
 
