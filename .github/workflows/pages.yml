@@ -35,6 +35,27 @@ jobs:
           mkdir -p web/data
           cp -R data/. web/data/
 
+      - name: Validate published data
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          required = [
+              Path("web/data/cotos/cotos.json"),
+              Path("web/data/especies/especies.json"),
+              Path("web/data/modalidades/modalidades.json"),
+              Path("web/data/tarjetas/tarjetas.json"),
+          ]
+
+          for path in required:
+              if not path.is_file() or path.stat().st_size == 0:
+                  raise SystemExit(f"Falta el archivo de datos publicado: {path}")
+              with path.open(encoding="utf-8") as fh:
+                  json.load(fh)
+              print(f"OK: {path}")
+          PY
+
       - name: Upload web artifact
         uses: actions/upload-pages-artifact@v4
         with:
