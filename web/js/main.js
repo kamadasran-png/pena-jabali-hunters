@@ -94,6 +94,20 @@ promo.innerHTML = `
 `;
 document.body.prepend(promo);
 
+const specialOffer = document.createElement("aside");
+specialOffer.className = "site-promo site-promo--offer";
+specialOffer.setAttribute("aria-label", "Oferta especial El Pozanco");
+specialOffer.innerHTML = `
+  <div class="site-promo__inner">
+    <div class="site-promo__text">
+      <strong>🔥 OFERTA ESPECIAL · EL POZANCO</strong>
+      <span>100 € por cazador · 10 conejos por escopeta · 5 perdices de obsequio por escopeta · máx. 6 escopetas</span>
+    </div>
+    <a class="cta cta-primary site-promo__cta" href="tarjetas-jornadas.html#oferta-especial">VER OFERTA · 625 025 243</a>
+  </div>
+`;
+promo.insertAdjacentElement("afterend", specialOffer);
+
 // 2I.3 — Corrección quirúrgica del comportamiento de los botones del footer.
 // Contactar = naranja / naranja claro. Reservar = transparente / marfil.
 const footerFix = document.createElement("style");
