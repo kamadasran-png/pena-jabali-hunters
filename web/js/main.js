@@ -2,7 +2,7 @@
 // B.3: shared navigation + common promotion + interior header alignment.
 
 // DATA LAYER — conexión automática con los JSON publicados en /web/data/.
-// No modifica la presentación: solo carga y expone los datos para las fases siguientes.
+// No modifica la presentación: carga, valida y expone los datos para las fases siguientes.
 const PJH_DATA_FILES = {
   cotos: "data/cotos/cotos.json",
   especies: "data/especies/especies.json",
@@ -14,9 +14,18 @@ async function loadPJHData() {
   const entries = Object.entries(PJH_DATA_FILES);
   const results = await Promise.all(
     entries.map(async ([key, path]) => {
-      const response = await fetch(path, { cache: "no-cache" });
-      if (!response.ok) throw new Error(`No se pudo cargar ${path} (${response.status})`);
-      return [key, await response.json()];
+      const url = new URL(path, document.baseURI);
+      const response = await fetch(url.href, { cache: "no-cache" });
+      if (!response.ok) {
+        throw new Error(`No se pudo cargar ${path} (${response.status})`);
+      }
+
+      const value = await response.json();
+      if (!Array.isArray(value)) {
+        throw new Error(`Formato no válido en ${path}: se esperaba un array JSON`);
+      }
+
+      return [key, value];
     })
   );
 
