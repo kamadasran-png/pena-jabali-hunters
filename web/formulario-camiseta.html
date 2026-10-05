@@ -104,7 +104,7 @@
         <h2>Forma de pago</h2>
         <div class="form-field">
           <div class="option-list">
-            <label class="option-row"><input type="radio" name="pago" value="bizum" required><span><strong>Bizum</strong><br><small>Serás redirigido a Stripe para realizar el pago mediante Bizum.</small></span></label>
+            <label class="option-row"><input type="radio" name="pago" value="bizum" required><span><strong>Bizum</strong><br><small>Serás redirigido a Stripe para realizar la aportación mediante Bizum.</small></span></label>
             <label class="option-row"><input type="radio" name="pago" value="transferencia" required><span><strong>Transferencia bancaria</strong><br><small>Los datos bancarios se mostrarán al confirmar el pedido.</small></span></label>
           </div>
           <p class="form-help">No se admite efectivo ni contrareembolso.</p>
@@ -131,7 +131,7 @@
             <dt>Teléfono</dt><dd id="review-telefono"></dd>
             <dt>Correo</dt><dd id="review-email"></dd>
             <dt>Entrega</dt><dd id="review-entrega"></dd>
-            <dt>Pago elegido</dt><dd id="review-pago"></dd>
+            <dt>Canal de aportación</dt><dd id="review-pago"></dd>
             <dt>Total</dt><dd><strong><span id="review-total"></span> €</strong></dd>
             <dt>Participaciones</dt><dd id="review-participaciones"></dd>
           </dl>
@@ -347,7 +347,7 @@ document.querySelector('#confirmar-prueba').addEventListener('click', async () =
       </p>
 
       <p>
-        <strong>ID de pedido:</strong>
+        <strong>ID de registro:</strong>
         ${resultado.idPedido}
       </p>
 
