@@ -54,8 +54,8 @@
         <p class="eyebrow">PEÑA JABALÍ HUNTERS</p>
         <h1 id="page-title">LA CAMISETA DE LA SUERTE</h1>
         <p><strong>Tu camiseta. Tu participación. Tu oportunidad.</strong></p>
-        <p>15 € · 1 camiseta = 1 participación</p>
-        <p>Compra tu camiseta oficial, personalízala con el nombre o texto que quieras y participa en el sorteo de una Tarjeta HUNTERS 3 valorada en 300 €.</p>
+        <p>15 € · 1 donativo = 1 participación</p>
+        <p>Realiza tu aportación/donativo de 15 €, recibe la camiseta oficial como elemento asociado a la promoción y participa en el sorteo de una Tarjeta HUNTERS 3 valorada en 300 €.</p>
       </div>
     </section>
 
@@ -63,8 +63,8 @@
       <a class="return-link" href="index.html">← Volver a Inicio</a>
 
       <form id="camiseta-form" class="form-card" novalidate>
-        <h2>Haz tu pedido</h2>
-        <p>Completa tus datos y configura cada camiseta de tu pedido.</p>
+        <h2>Realiza tu aportación</h2>
+        <p>Completa tus datos y configura la camiseta asociada a cada participación.</p>
 
         <h2>Tus datos</h2>
         <div class="form-grid">
@@ -75,9 +75,9 @@
 
         <h2>Camisetas</h2>
         <div class="form-field">
-          <label for="cantidad">¿Cuántas camisetas quieres comprar? <span class="form-required">*</span></label>
+          <label for="cantidad">¿Cuántas aportaciones quieres realizar? <span class="form-required">*</span></label>
           <input id="cantidad" name="cantidad" type="number" min="1" step="1" value="1" required>
-          <p class="form-help">Cada camiseta cuesta 15 € y genera 1 participación. Puedes añadir las unidades que necesites.</p>
+          <p class="form-help">Cada aportación/donativo es de 15 € y genera 1 participación. La camiseta se gestiona como elemento asociado a cada participación.</p>
         </div>
         <div id="shirt-list" class="shirt-list" aria-live="polite"></div>
 
@@ -85,7 +85,7 @@
         <div class="form-field">
           <div class="option-list">
             <label class="option-row"><input type="radio" name="entrega" value="recogida" required><span><strong>Recogida</strong><br><small>Recogida según las condiciones que indique Peña Jabalí Hunters.</small></span></label>
-            <label class="option-row"><input type="radio" name="entrega" value="domicilio" required><span><strong>Envío a domicilio — toda España</strong><br><small>Gastos de envío incluidos en el precio.</small></span></label>
+            <label class="option-row"><input type="radio" name="entrega" value="domicilio" required><span><strong>Envío a domicilio — toda España</strong><br><small>Gastos de envío incluidos según las condiciones de entrega comunicadas por el Club.</small></span></label>
           </div>
         </div>
 
@@ -101,30 +101,30 @@
           </div>
         </div>
 
-        <h2>Forma de pago</h2>
+        <h2>Realización de la aportación/donativo</h2>
         <div class="form-field">
           <div class="option-list">
             <label class="option-row"><input type="radio" name="pago" value="bizum" required><span><strong>Bizum</strong><br><small>Serás redirigido a Stripe para realizar la aportación mediante Bizum.</small></span></label>
-            <label class="option-row"><input type="radio" name="pago" value="transferencia" required><span><strong>Transferencia bancaria</strong><br><small>Los datos bancarios se mostrarán al confirmar el pedido.</small></span></label>
+            <label class="option-row"><input type="radio" name="pago" value="transferencia" required><span><strong>Transferencia bancaria</strong><br><small>Los datos bancarios se mostrarán al confirmar la aportación.</small></span></label>
           </div>
           <p class="form-help">No se admite efectivo ni contrareembolso.</p>
         </div>
 
         <div class="summary" aria-live="polite">
-          <strong>Total: <span id="resumen-total">15</span> €</strong>
-          <p><span id="resumen-cantidad">1</span> camiseta(s) · <span id="resumen-participaciones">1</span> participación(es)</p>
+          <strong>Donativo total: <span id="resumen-total">15</span> €</strong>
+          <p><span id="resumen-cantidad">1</span> donativo(s) · <span id="resumen-participaciones">1</span> participación(es)</p>
         </div>
 
-        <div class="form-field"><label for="observaciones">Observaciones</label><textarea id="observaciones" name="observaciones" placeholder="Cualquier indicación sobre tu pedido..."></textarea></div>
+        <div class="form-field"><label for="observaciones">Observaciones</label><textarea id="observaciones" name="observaciones" placeholder="Cualquier indicación sobre tu aportación o la entrega de la camiseta..."></textarea></div>
 
-        <label class="check-row" for="acepto"><input id="acepto" name="acepto" type="checkbox" required><span>Acepto que los datos facilitados se utilicen para gestionar mi solicitud y pedido. <span class="form-required">*</span></span></label>
+        <label class="check-row" for="acepto"><input id="acepto" name="acepto" type="checkbox" required><span>Acepto que los datos facilitados se utilicen para gestionar mi aportación/donativo, mi participación y la entrega del elemento asociado a la promoción. <span class="form-required">*</span></span></label>
 
-        <button class="cta cta-primary" type="submit">Revisar pedido</button>
+        <button class="cta cta-primary" type="submit">Revisar aportación</button>
       </form>
 
       <section id="review" class="review form-card" aria-labelledby="review-title">
-        <h2 id="review-title">Revisa tu pedido</h2>
-        <p>Comprueba todos los datos antes de confirmar. En esta fase de pruebas no se realiza ningún cobro.</p>
+        <h2 id="review-title">Revisa tu aportación</h2>
+        <p>Comprueba todos los datos antes de confirmar. En esta fase de pruebas no se realiza ningún cobro real.</p>
         <div class="review-box">
           <dl>
             <dt>Cliente</dt><dd id="review-nombre"></dd>
@@ -132,17 +132,17 @@
             <dt>Correo</dt><dd id="review-email"></dd>
             <dt>Entrega</dt><dd id="review-entrega"></dd>
             <dt>Canal de aportación</dt><dd id="review-pago"></dd>
-            <dt>Total</dt><dd><strong><span id="review-total"></span> €</strong></dd>
+            <dt>Donativo total</dt><dd><strong><span id="review-total"></span> €</strong></dd>
             <dt>Participaciones</dt><dd id="review-participaciones"></dd>
           </dl>
           <h3>Camisetas</h3>
           <ol id="review-shirts" class="review-shirts"></ol>
           <p id="review-direccion-wrap"><strong>Dirección:</strong> <span id="review-direccion"></span></p>
-          <p><strong>Estado:</strong> pendiente de pago y validación.</p>
+          <p><strong>Estado:</strong> pendiente de realización y validación del donativo.</p>
         </div>
-        <button id="confirmar-prueba" class="cta cta-primary" type="button">Confirmar pedido (prueba)</button>
+        <button id="confirmar-prueba" class="cta cta-primary" type="button">Confirmar aportación (prueba)</button>
         <div id="success" class="success" role="status" aria-live="polite">
-          <h2>Pedido de prueba registrado</h2>
+          <h2>Aportación de prueba registrada</h2>
           <p>La revisión funciona correctamente. No se ha realizado ningún cobro ni se ha asignado ninguna participación real.</p>
         </div>
       </section>
@@ -294,7 +294,7 @@ document.querySelector('#confirmar-prueba').addEventListener('click', async () =
   const boton = document.querySelector('#confirmar-prueba');
 
   boton.disabled = true;
-  boton.textContent = 'Registrando pedido...';
+  boton.textContent = 'Registrando aportación...';
 
   try {
 
@@ -313,7 +313,7 @@ document.querySelector('#confirmar-prueba').addEventListener('click', async () =
     const resultado = await respuesta.json();
 
     if (!resultado.ok) {
-      throw new Error(resultado.error || 'No se pudo registrar el pedido');
+      throw new Error(resultado.error || 'No se pudo registrar la aportación');
     }
 
         // --------------------------------------------------
@@ -340,10 +340,10 @@ document.querySelector('#confirmar-prueba').addEventListener('click', async () =
     // --------------------------------------------------
 
     success.innerHTML = `
-      <h2>Pedido registrado correctamente</h2>
+      <h2>Aportación registrada correctamente</h2>
 
       <p>
-        Tu pedido ha sido registrado correctamente.
+        Tu aportación ha sido registrada correctamente.
       </p>
 
       <p>
@@ -357,19 +357,19 @@ document.querySelector('#confirmar-prueba').addEventListener('click', async () =
       </p>
 
       <p>
-        <strong>Importe:</strong>
+        <strong>Donativo:</strong>
         ${resultado.importe} €
       </p>
 
       <p>
-        El pedido queda pendiente de confirmación del pago
-        y de la asignación de las participaciones.
+        La aportación queda pendiente de confirmación y validación.
+        Las participaciones se asignarán una vez confirmado el donativo.
       </p>
     `;
 
     success.style.display = 'block';
 
-    boton.textContent = 'Pedido registrado';
+    boton.textContent = 'Aportación registrada';
 
     success.scrollIntoView({
       behavior: 'smooth',
@@ -380,10 +380,10 @@ document.querySelector('#confirmar-prueba').addEventListener('click', async () =
     console.error(error);
 
     boton.disabled = false;
-    boton.textContent = 'Confirmar pedido (prueba)';
+    boton.textContent = 'Confirmar aportación (prueba)';
 
     alert(
-      'No se ha podido registrar el pedido.\n\n' +
+      'No se ha podido registrar la aportación.\n\n' +
       error.message
     );
 
