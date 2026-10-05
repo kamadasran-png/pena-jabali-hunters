@@ -105,8 +105,9 @@
         <div class="form-field">
           <div class="option-list">
             <label class="option-row"><input type="radio" name="pago" value="bizum" required><span><strong>Bizum</strong><br><small>Serás redirigido a Stripe para realizar la aportación mediante Bizum.</small></span></label>
+            <label class="option-row"><input type="radio" name="pago" value="tarjeta" required><span><strong>Tarjeta de débito/crédito</strong><br><small>Serás redirigido a Stripe para realizar la aportación mediante tarjeta.</small></span></label>
           </div>
-          <p class="form-help">El único canal de pago disponible es Bizum mediante Stripe. No se admite efectivo ni contrareembolso.</p>
+          <p class="form-help">Puedes realizar la aportación mediante Bizum o tarjeta de débito/crédito a través de Stripe. No se admite efectivo ni contrareembolso.</p>
         </div>
 
         <div class="summary" aria-live="polite">
@@ -123,7 +124,7 @@
 
       <section id="review" class="review form-card" aria-labelledby="review-title">
         <h2 id="review-title">Revisa tu aportación</h2>
-        <p>Comprueba todos los datos antes de confirmar tu donativo. Al confirmar, serás redirigido a Stripe para realizar el pago mediante Bizum.</p>
+        <p>Comprueba todos los datos antes de confirmar tu donativo. Al confirmar, serás redirigido a Stripe para realizar el pago mediante el método seleccionado.</p>
         <div class="review-box">
           <dl>
             <dt>Cliente</dt><dd id="review-nombre"></dd>
@@ -200,7 +201,11 @@
     }
 
     function labelEntrega(value) { return value === 'domicilio' ? 'Envío a domicilio — toda España (gastos incluidos)' : 'Recogida'; }
-    function labelPago(value) { return value === 'bizum' ? 'Bizum mediante Stripe' : ''; }
+    function labelPago(value) {
+      if (value === 'bizum') return 'Bizum mediante Stripe';
+      if (value === 'tarjeta') return 'Tarjeta de débito/crédito mediante Stripe';
+      return '';
+    }
 
     function buildReview() {
       document.querySelector('#review-nombre').textContent = document.querySelector('#nombre').value;
@@ -275,7 +280,7 @@ document.querySelector('#confirmar-donativo').addEventListener('click', async ()
     cp: document.querySelector('#cp').value,
     localidad: document.querySelector('#localidad').value,
     provincia: document.querySelector('#provincia').value,
-    pago: 'bizum',
+    pago: valueOfRadio('pago'),
     observaciones: document.querySelector('#observaciones').value
   };
 
