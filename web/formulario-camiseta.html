@@ -107,7 +107,7 @@
             <label class="option-row"><input type="radio" name="pago" value="bizum" required><span><strong>Bizum</strong><br><small>Serás redirigido a Stripe para realizar la aportación mediante Bizum.</small></span></label>
             <label class="option-row"><input type="radio" name="pago" value="transferencia" required><span><strong>Transferencia bancaria</strong><br><small>Los datos bancarios se mostrarán al confirmar la aportación.</small></span></label>
           </div>
-          <p class="form-help">No se admite efectivo ni contrareembolso.</p>
+          <p class="form-help">El único canal de pago disponible es Bizum mediante Stripe. No se admite efectivo, transferencia bancaria ni contrareembolso.</p>
         </div>
 
         <div class="summary" aria-live="polite">
@@ -124,7 +124,7 @@
 
       <section id="review" class="review form-card" aria-labelledby="review-title">
         <h2 id="review-title">Revisa tu aportación</h2>
-        <p>Comprueba todos los datos antes de confirmar. En esta fase de pruebas no se realiza ningún cobro real.</p>
+        <p>Comprueba todos los datos antes de confirmar tu donativo. Al confirmar, serás redirigido a Stripe para realizar el pago mediante Bizum.</p>
         <div class="review-box">
           <dl>
             <dt>Cliente</dt><dd id="review-nombre"></dd>
@@ -140,10 +140,10 @@
           <p id="review-direccion-wrap"><strong>Dirección:</strong> <span id="review-direccion"></span></p>
           <p><strong>Estado:</strong> pendiente de realización y validación del donativo.</p>
         </div>
-        <button id="confirmar-prueba" class="cta cta-primary" type="button">Confirmar aportación (prueba)</button>
+        <button id="confirmar-prueba" class="cta cta-primary" type="button">Confirmar donativo y continuar a Stripe</button>
         <div id="success" class="success" role="status" aria-live="polite">
-          <h2>Aportación de prueba registrada</h2>
-          <p>La revisión funciona correctamente. No se ha realizado ningún cobro ni se ha asignado ninguna participación real.</p>
+          <h2>Donativo registrado</h2>
+          <p>Tu donativo ha sido registrado y está pendiente de validación. Las participaciones se asignarán una vez confirmado el pago.</p>
         </div>
       </section>
     </section>
@@ -201,7 +201,7 @@
     }
 
     function labelEntrega(value) { return value === 'domicilio' ? 'Envío a domicilio — toda España (gastos incluidos)' : 'Recogida'; }
-    function labelPago(value) { return value === 'bizum' ? 'Bizum' : 'Transferencia bancaria'; }
+    function labelPago(value) { return value === 'bizum' ? 'Bizum mediante Stripe' : ''; }
 
     function buildReview() {
       document.querySelector('#review-nombre').textContent = document.querySelector('#nombre').value;
@@ -255,138 +255,59 @@
 document.querySelector('#confirmar-prueba').addEventListener('click', async () => {
 
   const camisetas = [];
-
   const count = Number.parseInt(cantidad.value, 10);
 
   for (let i = 1; i <= count; i += 1) {
-
     camisetas.push({
       numero: i,
       talla: document.querySelector(`#talla-${i}`).value,
       personalizacion: document.querySelector(`#personalizacion-${i}`).value
     });
-
   }
 
   const datos = {
-
     nombre: document.querySelector('#nombre').value,
     telefono: document.querySelector('#telefono').value,
     email: document.querySelector('#email').value,
-
     cantidad: count,
-
     camisetas: camisetas,
-
     entrega: valueOfRadio('entrega'),
-
     direccion: document.querySelector('#direccion').value,
     cp: document.querySelector('#cp').value,
     localidad: document.querySelector('#localidad').value,
     provincia: document.querySelector('#provincia').value,
-
-    pago: valueOfRadio('pago'),
-
+    pago: 'bizum',
     observaciones: document.querySelector('#observaciones').value
-
   };
 
   const boton = document.querySelector('#confirmar-prueba');
-
   boton.disabled = true;
-  boton.textContent = 'Registrando aportación...';
+  boton.textContent = 'Preparando donativo...';
 
   try {
-
     const respuesta = await fetch(PUENTE_URL, {
-
       method: 'POST',
-
-      headers: {
-        'Content-Type': 'text/plain;charset=utf-8'
-      },
-
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
       body: JSON.stringify(datos)
-
     });
 
     const resultado = await respuesta.json();
 
     if (!resultado.ok) {
-      throw new Error(resultado.error || 'No se pudo registrar la aportación');
+      throw new Error(resultado.error || 'No se pudo registrar el donativo');
     }
 
-        // --------------------------------------------------
-    //  REDIRECCIÓN AL PAGO STRIPE SI ES BIZUM
-    // --------------------------------------------------
-
-    if (datos.pago === 'bizum') {
-
-      if (!resultado.stripeCheckoutUrl) {
-        throw new Error(
-          'Stripe no ha devuelto la URL de pago.'
-        );
-      }
-
-      window.location.href =
-        resultado.stripeCheckoutUrl;
-
-      return;
+    if (!resultado.stripeCheckoutUrl) {
+      throw new Error('Stripe no ha devuelto la URL de pago.');
     }
 
+    window.location.href = resultado.stripeCheckoutUrl;
 
-    // --------------------------------------------------
-    //  PAGO POR TRANSFERENCIA
-    // --------------------------------------------------
-
-    success.innerHTML = `
-      <h2>Aportación registrada correctamente</h2>
-
-      <p>
-        Tu aportación ha sido registrada correctamente.
-      </p>
-
-      <p>
-        <strong>ID de registro:</strong>
-        ${resultado.idPedido}
-      </p>
-
-      <p>
-        <strong>Camisetas:</strong>
-        ${resultado.cantidad}
-      </p>
-
-      <p>
-        <strong>Donativo:</strong>
-        ${resultado.importe} €
-      </p>
-
-      <p>
-        La aportación queda pendiente de confirmación y validación.
-        Las participaciones se asignarán una vez confirmado el donativo.
-      </p>
-    `;
-
-    success.style.display = 'block';
-
-    boton.textContent = 'Aportación registrada';
-
-    success.scrollIntoView({
-      behavior: 'smooth',
-      block: 'nearest'
-    });
   } catch (error) {
-
     console.error(error);
-
     boton.disabled = false;
-    boton.textContent = 'Confirmar aportación (prueba)';
-
-    alert(
-      'No se ha podido registrar la aportación.\n\n' +
-      error.message
-    );
-
+    boton.textContent = 'Confirmar donativo y continuar a Stripe';
+    alert('No se ha podido iniciar el donativo.\\n\\n' + error.message);
   }
 
 });
