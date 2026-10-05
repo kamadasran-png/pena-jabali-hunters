@@ -107,7 +107,7 @@
             <label class="option-row"><input type="radio" name="pago" value="bizum" required><span><strong>Bizum</strong><br><small>Serás redirigido a Stripe para realizar la aportación mediante Bizum.</small></span></label>
             <label class="option-row"><input type="radio" name="pago" value="transferencia" required><span><strong>Transferencia bancaria</strong><br><small>Los datos bancarios se mostrarán al confirmar la aportación.</small></span></label>
           </div>
-          <p class="form-help">El único canal de pago disponible es Bizum mediante Stripe. No se admite efectivo, transferencia bancaria ni contrareembolso.</p>
+          <p class="form-help">El único canal de pago disponible es Bizum mediante Stripe. No se admite efectivo ni contrareembolso.</p>
         </div>
 
         <div class="summary" aria-live="polite">
@@ -140,7 +140,7 @@
           <p id="review-direccion-wrap"><strong>Dirección:</strong> <span id="review-direccion"></span></p>
           <p><strong>Estado:</strong> pendiente de realización y validación del donativo.</p>
         </div>
-        <button id="confirmar-prueba" class="cta cta-primary" type="button">Confirmar donativo y continuar a Stripe</button>
+        <button id="confirmar-donativo" class="cta cta-primary" type="button">Confirmar donativo y continuar a Stripe</button>
         <div id="success" class="success" role="status" aria-live="polite">
           <h2>Donativo registrado</h2>
           <p>Tu donativo ha sido registrado y está pendiente de validación. Las participaciones se asignarán una vez confirmado el pago.</p>
@@ -252,7 +252,7 @@
 
     const PUENTE_URL = 'https://script.google.com/macros/s/AKfycbweLVAAsiU4h8GBr8aObysANT8_-4AfYmJnd7WPxFcCV-4xsjLSnCPlwjiGIvz1-NU2/exec';
 
-document.querySelector('#confirmar-prueba').addEventListener('click', async () => {
+document.querySelector('#confirmar-donativo').addEventListener('click', async () => {
 
   const camisetas = [];
   const count = Number.parseInt(cantidad.value, 10);
@@ -280,7 +280,7 @@ document.querySelector('#confirmar-prueba').addEventListener('click', async () =
     observaciones: document.querySelector('#observaciones').value
   };
 
-  const boton = document.querySelector('#confirmar-prueba');
+  const boton = document.querySelector('#confirmar-donativo');
   boton.disabled = true;
   boton.textContent = 'Preparando donativo...';
 
