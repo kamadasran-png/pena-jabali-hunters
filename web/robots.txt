@@ -9,3 +9,5 @@ Disallow: /data/
 Disallow: /assets/
 
 # Las páginas públicas HTML permanecen rastreables.
+
+Sitemap: https://cazadordejabalies.com/sitemap.xml
