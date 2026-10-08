@@ -1,0 +1,11 @@
+# Peña Jabalí Hunters — robots.txt
+# Directiva para buscadores y rastreadores.
+
+User-agent: *
+Allow: /
+
+Disallow: /js/
+Disallow: /data/
+Disallow: /assets/
+
+# Las páginas públicas HTML permanecen rastreables.
