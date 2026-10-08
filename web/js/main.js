@@ -87,9 +87,9 @@ promo.innerHTML = `
   <div class="site-promo__inner">
     <div class="site-promo__text">
       <strong>🍀 LA CAMISETA DE LA SUERTE</strong>
-      <span>15 € · 1 camiseta = 1 participación · Tarjeta HUNTERS 3 valorada en 300 €</span>
+      <span>15 € · 1 aportación/donativo = 1 participación · Camiseta asociada · Tarjeta HUNTERS 3 valorada en 300 €</span>
     </div>
-    <a class="cta cta-primary site-promo__cta" href="formulario-camiseta.html">QUIERO MI CAMISETA</a>
+    <a class="cta cta-primary site-promo__cta" href="formulario-camiseta.html">QUIERO PARTICIPAR</a>
   </div>
 `;
 document.body.prepend(promo);
