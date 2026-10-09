@@ -138,3 +138,36 @@ footerFix.textContent = `
   }
 `;
 document.head.appendChild(footerFix);
+
+// REDES SOCIALES OFICIALES — enlaces facilitados por la Peña.
+(function initSocialLinks(){
+  const socialMarkup = `
+    <a class="social-link social-link--facebook" href="https://www.facebook.com/clubjabalihunters" target="_blank" rel="noopener noreferrer" aria-label="Facebook oficial de Peña Jabalí Hunters" title="Facebook">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.4 21v-8.2h2.8l.42-3.2H13.4V7.55c0-.93.26-1.56 1.6-1.56h1.72V3.13c-.3-.04-1.35-.13-2.57-.13-2.55 0-4.3 1.56-4.3 4.42V9.6H7v3.2h2.85V21h3.55z"/></svg>
+    </a>
+    <a class="social-link social-link--instagram" href="https://www.instagram.com/jabalihunters/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Peña Jabalí Hunters" title="Instagram">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.1" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.7" cy="6.5" r="1.2"/></svg>
+    </a>`;
+  const makeGroup = (extraClass, label) => {
+    const group = document.createElement("nav");
+    group.className = "social-links " + extraClass;
+    group.setAttribute("aria-label", label);
+    group.innerHTML = socialMarkup;
+    return group;
+  };
+
+  const headerInner = document.querySelector(".site-header__inner");
+  if (headerInner && !headerInner.querySelector(".social-links--header")) {
+    headerInner.appendChild(makeGroup("social-links--header", "Redes sociales oficiales"));
+  }
+
+  const nav = document.querySelector("#mobile-nav, #site-nav");
+  if (nav && !nav.querySelector(".social-links--menu")) {
+    nav.appendChild(makeGroup("social-links--menu", "Redes sociales oficiales"));
+  }
+
+  const footerBrand = document.querySelector(".site-footer .footer-block");
+  if (footerBrand && !footerBrand.querySelector(".social-links--footer")) {
+    footerBrand.appendChild(makeGroup("social-links--footer", "Síguenos en redes sociales"));
+  }
+})();
