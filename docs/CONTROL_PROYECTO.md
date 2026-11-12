@@ -7,7 +7,7 @@
 - Rama principal: `main`
 - Visibilidad: pública
 - Inicio FASE 1: 28/08/2026
-- Última sincronización: **02/09/2026**
+- Última sincronización documental: **12/11/2026** (reconciliación con GitHub; véase apartado 19).
 
 ---
 
@@ -687,3 +687,114 @@ El bloque **2J.6 permanece abierto** hasta completar su revisión y auditoría f
 ---
 
 **DOCUMENTO DE CONTROL INTERNO DEL PROYECTO.**
+
+
+---
+
+## 19. Reconciliación del estado con GitHub — 12/11/2026
+
+**Alcance:** actualización documental basada en la rama `main`, el árbol actual del repositorio, los archivos de datos, el workflow de publicación y el historial de commits disponible hasta el último cambio registrado el **09/10/2026**.
+
+Esta reconciliación registra hechos técnicos observables. No modifica por sí misma decisiones comerciales, superficies, condiciones cinegéticas, arquitectura aprobada ni criterios de publicación. Las discrepancias se mantienen abiertas hasta decisión expresa.
+
+### 19.1. Actividad posterior a la sincronización anterior
+
+Desde la sincronización del 02/09/2026 se han incorporado, entre otros, los siguientes bloques de trabajo:
+
+- **Capa de datos 2J / FASE 2:** conexión de Inicio, Caza, Cotos y Tarjetas con los archivos JSON; publicación de los datos junto a la web; validación de archivos antes del despliegue.
+- **Tarjetas:** incorporación de SUPER HUNTERS y de HUNTERS 3, HUNTERS 5 y HUNTERS 10, con imágenes, condiciones y presentación diferenciada.
+- **Jornadas:** incorporación de jornadas y agenda desplegable de sueltas de perdiz 2026/2027, con acceso directo desde la portada.
+- **Inicio y páginas de actividad:** actualización de los heroes y secciones principales; incorporación de oferta especial de El Pozanco y oferta temporal de cabra montés.
+- **Caza y galería:** carruseles visuales de especies y modalidades; ampliación de categorías y sección de vídeos; separación de páginas de Caza y fauna y de Jornadas y La Peña.
+- **La Peña e histórico:** creación de la página histórica, incorporación de los cuatro capítulos y seis apéndices, con enlaces documentales y ajustes editoriales.
+- **Contacto:** formulario que prepara el mensaje en la aplicación de correo del visitante; no almacena los datos en la web.
+- **La Camiseta de la Suerte:** actualización del formulario y del flujo de aportación/participación; integración de pago con tarjeta y Bizum mediante Stripe y páginas de retorno de pago correcto y cancelado. La existencia del código no equivale a una certificación de prueba integral de todos los escenarios de pago.
+- **Legal y SEO:** páginas de aviso legal, privacidad y cookies; robots.txt, sitemap.xml, canonical y metadatos; verificación de Google Search Console.
+- **Redes sociales:** enlaces oficiales de Facebook e Instagram en cabecera, menú móvil y pie de página.
+
+### 19.2. Estado físico actual de la web
+
+La carpeta `web/` contiene, además de las siete páginas principales:
+
+- `caza-fauna.html`.
+- `jornadas-la-pena.html`.
+- `historia-pena-jabali.html`.
+- `historia-capitulo-I.html` a `historia-capitulo-IV.html`.
+- `apendices.html` y `apendice-I.html` a `apendice-VI.html`.
+- Páginas legales, formulario de La Camiseta de la Suerte y páginas de retorno de pago.
+- Recursos CSS, JavaScript, imágenes, datos publicados, robots.txt y sitemap.xml.
+
+La existencia de estas páginas y recursos queda registrada como implementación presente en GitHub. Su presencia no supone que se haya aprobado una modificación de la arquitectura funcional original.
+
+### 19.3. Capa de datos y publicación
+
+La capa de datos está conectada a la web mediante `web/js/main.js` y `web/js/data-pages.js`. El workflow `.github/workflows/pages.yml`:
+
+1. Prepara el contenido de `web/`.
+2. Copia `data/` a `web/data/`.
+3. Valida que los JSON de cotos, especies, modalidades y tarjetas existan, no estén vacíos y sean JSON válido.
+4. Publica el contenido de `web/` mediante GitHub Pages.
+
+Por tanto, los JSON copiados a `web/data/` forman parte del contenido público desplegado y pueden consultarse desde la web.
+
+Estado observado de los datos:
+
+- `data/cotos/cotos.json`: contiene EL POZANCO y RAMBLA DEL CONDE.
+- `data/especies/especies.json`: contiene las especies relacionadas con ambos cotos.
+- `data/modalidades/modalidades.json`: contiene las modalidades relacionadas con ambos cotos.
+- `data/tarjetas/tarjetas.json`: contiene cuatro registros: SUPER HUNTERS, HUNTERS 3, HUNTERS 5 y HUNTERS 10.
+- `data/jornadas/jornadas.json`: permanece vacío (`[]`).
+- `data/galeria/galeria.json`: contiene dos registros de imágenes de EL POZANCO.
+
+### 19.4. Discrepancias que requieren decisión
+
+No se corrigen automáticamente. Deben resolverse antes de considerar plenamente sincronizado el contenido de control con las decisiones posteriores:
+
+**A. Superficie de RAMBLA DEL CONDE**
+
+- GitHub registra actualmente `superficie: 500` y `superficie_cazadero: 300`.
+- Existe una indicación posterior del proyecto de actualizar la superficie total a **300 ha**.
+- Se debe confirmar si el dato correcto es 300 ha de superficie total y si debe mantenerse o eliminarse el campo de superficie de cazadero. No modificar el JSON hasta resolverlo.
+
+**B. Tarjetas disponibles de EL POZANCO**
+
+- El control anterior indicaba 5 tarjetas.
+- El JSON actual registra 6 tarjetas disponibles.
+- Confirmar el número vigente antes de modificar el control o los datos.
+
+**C. Publicidad de condiciones y precios de tarjetas**
+
+- El control anterior establecía que la información comercial detallada debía facilitarse privadamente.
+- El JSON actual de tarjetas contiene precios, condiciones y observaciones.
+- El workflow publica esos JSON en `web/data/`.
+- Debe decidirse si esos datos están autorizados para consulta pública o si debe separarse la información pública de la información interna/comercial. No retirar ni publicar información adicional hasta recibir decisión.
+
+**D. Estado de 2J.6 — RAMBLA DEL CONDE**
+
+- El registro está incorporado en los JSON y relacionado con especies y modalidades.
+- No hay imágenes vinculadas en el registro (`imagenes: []`).
+- No hay jornadas concretas cargadas.
+- La auditoría final y la confirmación de superficies siguen pendientes.
+
+### 19.5. Aplicación
+
+La carpeta `app/` continúa sin implementación funcional; únicamente conserva el archivo de mantenimiento de carpeta. La aplicación no debe marcarse como iniciada ni completada.
+
+### 19.6. Estado del despliegue
+
+El workflow de GitHub Pages utiliza GitHub Actions. Las últimas ejecuciones consultadas, correspondientes al 09/10/2026, muestran despliegues completados con resultado correcto para los cambios finales de esa fecha. La última ejecución consultada concluyó correctamente.
+
+Esto acredita el resultado del despliegue registrado, pero no sustituye una revisión visual actual ni una prueba funcional completa de formularios y pagos.
+
+### 19.7. Situación de control tras la reconciliación
+
+- **Arquitectura WEB 1.x:** se mantiene como aprobada; no se modifica en esta reconciliación.
+- **Sistema visual C.14:** se mantiene como definitivo y aprobado.
+- **Componentes 2A–2I.3:** se mantienen con el estado de cierre ya registrado.
+- **Sistema de datos 2J:** conectado a la web y publicado; el estado de 2J.6 requiere resolver las discrepancias del apartado 19.4 y completar su auditoría.
+- **Web:** ampliada e implementada con los cambios descritos en 19.1 y 19.2.
+- **Aplicación:** pendiente de desarrollo.
+- **Despliegue:** GitHub Pages operativo según las últimas ejecuciones consultadas del 09/10/2026.
+- **Próximo paso:** resolver las discrepancias A–C y completar la auditoría de 2J.6. No iniciar un bloque nuevo ni alterar decisiones aprobadas por inferencia.
+
+**Esta sección 19 es la referencia de reconciliación técnica más reciente. Los apartados anteriores conservan su valor como registro histórico de las decisiones y estados que tenían en sus respectivas fechas.**
